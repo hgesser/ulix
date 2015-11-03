@@ -1,0 +1,535 @@
+00000000000i[     ] Bochs x86 Emulator 2.4.5
+00000000000i[     ]   Build from CVS snapshot, on April 25, 2010
+00000000000i[     ] System configuration
+00000000000i[     ]   processors: 1 (cores=1, HT threads=1)
+00000000000i[     ]   A20 line support: yes
+00000000000i[     ] CPU configuration
+00000000000i[     ]   level: 6
+00000000000i[     ]   SMP support: no
+00000000000i[     ]   APIC support: yes
+00000000000i[     ]   FPU support: yes
+00000000000i[     ]   MMX support: yes
+00000000000i[     ]   3dnow! support: no
+00000000000i[     ]   SEP support: yes
+00000000000i[     ]   SSE support: sse2
+00000000000i[     ]   XSAVE support: no
+00000000000i[     ]   AES support: no
+00000000000i[     ]   MOVBE support: no
+00000000000i[     ]   x86-64 support: no
+00000000000i[     ]   MWAIT support: no
+00000000000i[     ]   VMX support: no
+00000000000i[     ] Optimization configuration
+00000000000i[     ]   RepeatSpeedups support: yes
+00000000000i[     ]   Trace cache support: yes
+00000000000i[     ]   Fast function calls: yes
+00000000000i[     ] Devices configuration
+00000000000i[     ]   ACPI support: no
+00000000000i[     ]   NE2000 support: no
+00000000000i[     ]   PCI support: no, enabled=no
+00000000000i[     ]   SB16 support: no
+00000000000i[     ]   USB support: no
+00000000000i[     ]   VGA extension support: vbe 
+00000000000i[MEM0 ] allocated memory at 0x103400000. after alignment, vector=0x103400000
+00000000000i[MEM0 ] 64,00MB
+00000000000i[MEM0 ] mem block size = 0x00100000, blocks=64
+00000000000i[MEM0 ] rom at 0xfffe0000/131072 ('/usr/share/bochs/BIOS-bochs-latest')
+00000000000i[MEM0 ] rom at 0xc0000/40448 ('/usr/share/bochs/VGABIOS-lgpl-latest')
+00000000000i[VTIME] using 'realtime pit' synchronization method
+00000000000i[CMOS ] Using local time for initial clock
+00000000000i[CMOS ] Setting initial clock to: Tue Jun  2 19:13:43 2015 (time0=1433265223)
+00000000000i[DMA  ] channel 4 used by cascade
+00000000000i[DMA  ] channel 2 used by Floppy Drive
+00000000000i[FDD  ] fd0: 'ulixboot.img' ro=0, h=2,t=80,spt=18
+00000000000i[FDD  ] fd1: 'minixdata-old.img' ro=0, h=2,t=80,spt=18
+00000000000i[VGA  ] interval=50000
+00000000000i[MEM0 ] Register memory access handlers: 0x000a0000 - 0x000bffff
+00000000000i[XGUI ] test_alloc_colors: 16 colors available out of 16 colors tried
+00000000000i[XGUI ] font 8 wide x 16 high, display depth = 24
+00000000000i[MEM0 ] Register memory access handlers: 0xe0000000 - 0xe0ffffff
+00000000000i[VGA  ] VBE Bochs Display Extension Enabled
+00000000000i[     ] init_dev of 'unmapped' plugin device by virtual method
+00000000000i[     ] init_dev of 'biosdev' plugin device by virtual method
+00000000000i[     ] init_dev of 'speaker' plugin device by virtual method
+00000000000i[     ] init_dev of 'extfpuirq' plugin device by virtual method
+00000000000i[     ] init_dev of 'iodebug' plugin device by virtual method
+00000000000i[     ] init_dev of 'ioapic' plugin device by virtual method
+00000000000i[IOAP ] initializing I/O APIC
+00000000000i[MEM0 ] Register memory access handlers: 0xfec00000 - 0xfec00fff
+00000000000i[     ] init_dev of 'keyboard' plugin device by virtual method
+00000000000i[KBD  ] will paste characters every 1000 keyboard ticks
+00000000000i[     ] init_dev of 'harddrv' plugin device by virtual method
+00000000000i[HD   ] HD on ata0-0: 'minixdata.img' 'flat' mode 
+00000000000p[HD   ] >>PANIC<< ata0-0: geometry autodetection failed
+00000000000i[HD   ] ata0-0: autodetect geometry: CHS=2/16/63
+00000000000i[HD   ] HD on ata0-1: 'bigdisk.img' 'flat' mode 
+00000000000p[HD   ] >>PANIC<< ata0-1: geometry autodetection failed
+00000000000i[HD   ] ata0-1: autodetect geometry: CHS=198/16/63
+00000000000i[HD   ] translation on ata0-0 set to 'none'
+00000000000i[HD   ] translation on ata0-1 set to 'none'
+00000000000i[HD   ] Using boot sequence floppy, none, none
+00000000000i[HD   ] Floppy boot signature check is enabled
+00000000000i[     ] init_dev of 'serial' plugin device by virtual method
+00000000000i[SER  ] com1 at 0x03f8 irq 4
+00000000000i[     ] init_dev of 'parallel' plugin device by virtual method
+00000000000i[PAR  ] parallel port 1 at 0x0378 irq 7
+00000000000i[     ] register state of 'unmapped' plugin device by virtual method
+00000000000i[     ] register state of 'biosdev' plugin device by virtual method
+00000000000i[     ] register state of 'speaker' plugin device by virtual method
+00000000000i[     ] register state of 'extfpuirq' plugin device by virtual method
+00000000000i[     ] register state of 'iodebug' plugin device by virtual method
+00000000000i[     ] register state of 'ioapic' plugin device by virtual method
+00000000000i[     ] register state of 'keyboard' plugin device by virtual method
+00000000000i[     ] register state of 'harddrv' plugin device by virtual method
+00000000000i[     ] register state of 'serial' plugin device by virtual method
+00000000000i[     ] register state of 'parallel' plugin device by virtual method
+00000000000i[SYS  ] bx_pc_system_c::Reset(HARDWARE) called
+00000000000i[CPU0 ] cpu hardware reset
+00000000000i[APIC0] allocate APIC id=0 (MMIO enabled) to 0xfee00000
+00000000000i[CPU0 ] CPUID[0x00000000]: 00000003 756e6547 6c65746e 49656e69
+00000000000i[CPU0 ] CPUID[0x00000001]: 00000f00 00000800 00000000 078bfbff
+00000000000i[CPU0 ] CPUID[0x00000002]: 00410601 00000000 00000000 00000000
+00000000000i[CPU0 ] CPUID[0x00000003]: 00000000 00000000 00000000 00000000
+00000000000i[CPU0 ] CPUID[0x00000004]: 00000000 00000000 00000000 00000000
+00000000000i[CPU0 ] CPUID[0x80000000]: 80000004 00000000 00000000 00000000
+00000000000i[CPU0 ] CPUID[0x80000001]: 00000000 00000000 00000000 00000000
+00000000000i[CPU0 ] CPUID[0x80000002]: 20202020 20202020 20202020 6e492020
+00000000000i[CPU0 ] CPUID[0x80000003]: 286c6574 50202952 69746e65 52286d75
+00000000000i[CPU0 ] CPUID[0x80000004]: 20342029 20555043 20202020 00202020
+00000000000i[     ] reset of 'unmapped' plugin device by virtual method
+00000000000i[     ] reset of 'biosdev' plugin device by virtual method
+00000000000i[     ] reset of 'speaker' plugin device by virtual method
+00000000000i[     ] reset of 'extfpuirq' plugin device by virtual method
+00000000000i[     ] reset of 'iodebug' plugin device by virtual method
+00000000000i[     ] reset of 'ioapic' plugin device by virtual method
+00000000000i[     ] reset of 'keyboard' plugin device by virtual method
+00000000000i[     ] reset of 'harddrv' plugin device by virtual method
+00000000000i[     ] reset of 'serial' plugin device by virtual method
+00000000000i[     ] reset of 'parallel' plugin device by virtual method
+00000000000i[XGUI ] [x] Mouse off
+00000003305i[BIOS ] $Revision: 1.247 $ $Date: 2010/04/04 19:33:50 $
+00000316446i[KBD  ] reset-disable command received
+00000441532i[VBIOS] VGABios $Id: vgabios.c,v 1.69 2009/04/07 18:18:20 vruppert Exp $
+00000441603i[VGA  ] VBE known Display Interface b0c0
+00000441635i[VGA  ] VBE known Display Interface b0c5
+00000444560i[VBIOS] VBE Bios $Id: vbe.c,v 1.62 2009/01/25 15:46:25 vruppert Exp $
+00000475000i[XGUI ] charmap update. Font Height is 16
+00000525000i[XGUI ] charmap update. Font Height is 16
+00000762076i[BIOS ] Starting rombios32
+00000762556i[BIOS ] Shutdown flag 0
+00000763195i[BIOS ] ram_size=0x04000000
+00000763658i[BIOS ] ram_end=64MB
+00000779060i[BIOS ] Found 1 cpu(s)
+00000795236i[BIOS ] bios_table_addr: 0x000fbc18 end=0x000fcc00
+00000807859i[BIOS ] bios_table_cur_addr: 0x000fbc18
+00000820078i[BIOS ] ata0-0: PCHS=2/16/63 translation=none LCHS=2/16/63
+00000878375i[BIOS ] ata0-1: PCHS=198/16/63 translation=none LCHS=198/16/63
+00041767121i[BIOS ] Booting from 0000:7c00
+00043167430i[BIOS ] int13_harddisk: function 41, unmapped device for ELDL=82
+00043172206i[BIOS ] int13_harddisk: function 08, unmapped device for ELDL=82
+00043176858i[BIOS ] *** int 15h function AX=00c0, BX=0000 not yet supported!
+00073161382i[FDD  ] io_write: config control register: 0x00
+00073163520e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163521e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163522e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163523e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163524e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163525e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163526e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163527e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163528e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163529e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163530e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163531e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163532e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163533e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163534e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163535e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163536e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163537e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163538e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163539e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163540e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163541e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163542e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163543e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163544e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163545e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163546e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163547e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163548e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163549e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163550e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163551e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163552e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163553e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163554e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163555e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163556e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163557e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163558e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163559e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163560e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163561e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163562e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163563e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163564e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163565e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163566e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163567e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163568e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163569e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163570e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163571e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163572e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163573e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163574e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163575e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163576e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163577e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163578e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163579e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163580e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163581e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163582e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163583e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163584e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163585e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163586e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163587e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163588e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163589e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163590e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163591e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163592e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163593e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163594e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163595e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163596e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163597e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163598e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163599e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163600e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163601e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163602e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163603e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163604e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163605e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163606e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163607e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163608e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163609e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163610e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163611e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163612e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163613e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163614e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163615e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163616e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163617e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163618e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163619e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163620e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163621e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163622e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163623e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163624e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163625e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163626e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163627e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163628e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163629e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163630e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163631e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163632e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163633e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163634e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163635e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163636e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163637e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163638e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163639e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163640e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163641e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163642e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163643e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163644e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163645e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163646e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073163647e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170167e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170168e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170169e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170170e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170171e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170172e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170173e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170174e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170175e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170176e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170177e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170178e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170179e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170180e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170181e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170182e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170183e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170184e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170185e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170186e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170187e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170188e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170189e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170190e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170191e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170192e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170193e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170194e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170195e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170196e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170197e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170198e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170199e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170200e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170201e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170202e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170203e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170204e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170205e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170206e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170207e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170208e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170209e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170210e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170211e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170212e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170213e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170214e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170215e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170216e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170217e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170218e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170219e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170220e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170221e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170222e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170223e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170224e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170225e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170226e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170227e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170228e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170229e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170230e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170231e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170232e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170233e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170234e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170235e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170236e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170237e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170238e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170239e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170240e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170241e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170242e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170243e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170244e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170245e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170246e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170247e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170248e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170249e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170250e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170251e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170252e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170253e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170254e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170255e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170256e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170257e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170258e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170259e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170260e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170261e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170262e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170263e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170264e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170265e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170266e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170267e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170268e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170269e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170270e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170271e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170272e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170273e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170274e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170275e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170276e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170277e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170278e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170279e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170280e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170281e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170282e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170283e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170284e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170285e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170286e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170287e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170288e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170289e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170290e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170291e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170292e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170293e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073170294e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073178931e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073178932e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073178933e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073178934e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073178935e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073178936e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073178937e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073178938e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073178939e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073178940e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073178941e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073178942e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073178943e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073178944e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073178945e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073178946e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073178947e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073178948e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073178949e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073178950e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073178951e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073178952e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073178953e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073178954e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073178955e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073178956e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073178957e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073178958e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073178959e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073178960e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073178961e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073178962e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073178963e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073178964e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073178965e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073178966e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073178967e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073178968e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073178969e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073178970e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073178971e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073178972e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073178973e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073178974e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073178975e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073178976e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073178977e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073178978e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073178979e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073178980e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073178981e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073178982e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073178983e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073178984e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073178985e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073178986e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073178987e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073178988e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073178989e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073178990e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073178991e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073178992e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073178993e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073178994e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073178995e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073178996e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073178997e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073178998e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073178999e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073179000e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073179001e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073179002e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073179003e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073179004e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073179005e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073179006e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073179007e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073179008e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073179009e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073179010e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073179011e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073179012e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073179013e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073179014e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073179015e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073179016e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073179017e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073179018e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073179019e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073179020e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073179021e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073179022e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073179023e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073179024e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073179025e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073179026e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073179027e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073179028e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073179029e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073179030e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073179031e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073179032e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073179033e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073179034e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073179035e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073179036e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073179037e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073179038e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073179039e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073179040e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073179041e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073179042e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073179043e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073179044e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073179045e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073179046e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073179047e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073179048e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073179049e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073179050e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073179051e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073179052e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073179053e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073179054e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073179055e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073179056e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073179057e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00073179058e[HD   ] IO read(0x01f0) with drq == 0: last command was ech
+00091377723i[     ] dbg: Quit
+00091377723i[CPU0 ] CPU is in protected mode (active)
+00091377723i[CPU0 ] CS.d_b = 32 bit
+00091377723i[CPU0 ] SS.d_b = 32 bit
+00091377723i[CPU0 ] | EAX=c01e0087  EBX=00000003  ECX=00000001  EDX=00000000
+00091377723i[CPU0 ] | ESP=bfffe3d8  EBP=bfffe3e8  ESI=00000031  EDI=bfffff50
+00091377723i[CPU0 ] | IOPL=0 id vip vif ac vm rf nt of df IF tf sf zf af pf cf
+00091377723i[CPU0 ] | SEG selector     base    limit G D
+00091377723i[CPU0 ] | SEG sltr(index|ti|rpl)     base    limit G D
+00091377723i[CPU0 ] |  CS:0008( 0001| 0|  0) 00000000 ffffffff 1 1
+00091377723i[CPU0 ] |  DS:0023( 0004| 0|  3) 00000000 ffffffff 1 1
+00091377723i[CPU0 ] |  SS:0010( 0002| 0|  0) 00000000 ffffffff 1 1
+00091377723i[CPU0 ] |  ES:0023( 0004| 0|  3) 00000000 ffffffff 1 1
+00091377723i[CPU0 ] |  FS:0023( 0004| 0|  3) 00000000 ffffffff 1 1
+00091377723i[CPU0 ] |  GS:0023( 0004| 0|  3) 00000000 ffffffff 1 1
+00091377723i[CPU0 ] | EIP=c0110e60 (c0110e60)
+00091377723i[CPU0 ] | CR0=0xe0000011 CR2=0x00000000
+00091377723i[CPU0 ] | CR3=0x0041a000 CR4=0x00000000
+00091377723i[CMOS ] Last time is 1433265405 (Tue Jun  2 19:16:45 2015)
+00091377723i[XGUI ] Exit
+00091377723i[CTRL ] quit_sim called with exit code 0

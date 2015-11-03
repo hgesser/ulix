@@ -1,0 +1,25 @@
+KILL(1)                   ULIX General Commands Manual                 KILL(1)
+
+NAME
+     kill -- terminate or signal a process
+
+SYNOPSIS
+     kill [-signal_number] pid
+
+DESCRIPTION
+     The kill utility sends a signal to the process specified by the pid op-
+     erand(s).  Only the super-user may send signals to other users' proces-
+     ses. The options are as follows:
+
+     -signal_number
+             A non-negative decimal integer, specifying the signal to be sent
+             instead of the default TERM.
+
+     Some of the more commonly used signals:
+     9       KILL (non-catchable, non-ignorable kill)
+     15      TERM (software termination signal)
+
+NOTES
+     This is a shortened version of the kill manpage from Mac OS X.
+
+ULIX                            June 7, 2014                              ULIX

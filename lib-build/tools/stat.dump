@@ -1,0 +1,2570 @@
+
+stat:     file format elf32-i386
+
+
+Disassembly of section .text:
+
+00000000 <code>:
+       0:	8d 4c 24 04          	lea    ecx,[esp+0x4]
+       4:	83 e4 f0             	and    esp,0xfffffff0
+       7:	ff 71 fc             	push   DWORD PTR [ecx-0x4]
+       a:	55                   	push   ebp
+       b:	89 e5                	mov    ebp,esp
+       d:	53                   	push   ebx
+       e:	51                   	push   ecx
+       f:	83 ec 10             	sub    esp,0x10
+      12:	89 cb                	mov    ebx,ecx
+      14:	83 3b 02             	cmp    DWORD PTR [ebx],0x2
+      17:	74 1d                	je     36 <code+0x36>
+      19:	83 ec 0c             	sub    esp,0xc
+      1c:	68 6e 18 00 00       	push   0x186e
+      21:	e8 21 18 00 00       	call   1847 <code+0x1847>
+      26:	83 c4 10             	add    esp,0x10
+      29:	83 ec 0c             	sub    esp,0xc
+      2c:	6a 00                	push   0x0
+      2e:	e8 c1 06 00 00       	call   6f4 <code+0x6f4>
+      33:	83 c4 10             	add    esp,0x10
+      36:	8b 43 04             	mov    eax,DWORD PTR [ebx+0x4]
+      39:	83 c0 04             	add    eax,0x4
+      3c:	8b 00                	mov    eax,DWORD PTR [eax]
+      3e:	83 ec 08             	sub    esp,0x8
+      41:	50                   	push   eax
+      42:	68 8b 18 00 00       	push   0x188b
+      47:	e8 fb 17 00 00       	call   1847 <code+0x1847>
+      4c:	83 c4 10             	add    esp,0x10
+      4f:	8b 43 04             	mov    eax,DWORD PTR [ebx+0x4]
+      52:	83 c0 04             	add    eax,0x4
+      55:	8b 00                	mov    eax,DWORD PTR [eax]
+      57:	83 ec 08             	sub    esp,0x8
+      5a:	68 a0 30 00 00       	push   0x30a0
+      5f:	50                   	push   eax
+      60:	e8 11 09 00 00       	call   976 <code+0x976>
+      65:	83 c4 10             	add    esp,0x10
+      68:	89 45 f4             	mov    DWORD PTR [ebp-0xc],eax
+      6b:	83 7d f4 ff          	cmp    DWORD PTR [ebp-0xc],0xffffffff
+      6f:	75 1d                	jne    8e <code+0x8e>
+      71:	83 ec 0c             	sub    esp,0xc
+      74:	68 a6 18 00 00       	push   0x18a6
+      79:	e8 c9 17 00 00       	call   1847 <code+0x1847>
+      7e:	83 c4 10             	add    esp,0x10
+      81:	83 ec 0c             	sub    esp,0xc
+      84:	6a 01                	push   0x1
+      86:	e8 69 06 00 00       	call   6f4 <code+0x6f4>
+      8b:	83 c4 10             	add    esp,0x10
+      8e:	a1 a0 30 00 00       	mov    eax,ds:0x30a0
+      93:	0f b6 d0             	movzx  edx,al
+      96:	a1 a0 30 00 00       	mov    eax,ds:0x30a0
+      9b:	c1 e8 08             	shr    eax,0x8
+      9e:	83 ec 04             	sub    esp,0x4
+      a1:	52                   	push   edx
+      a2:	50                   	push   eax
+      a3:	68 ae 18 00 00       	push   0x18ae
+      a8:	e8 9a 17 00 00       	call   1847 <code+0x1847>
+      ad:	83 c4 10             	add    esp,0x10
+      b0:	a1 a4 30 00 00       	mov    eax,ds:0x30a4
+      b5:	0f b7 c0             	movzx  eax,ax
+      b8:	83 ec 08             	sub    esp,0x8
+      bb:	50                   	push   eax
+      bc:	68 c0 18 00 00       	push   0x18c0
+      c1:	e8 81 17 00 00       	call   1847 <code+0x1847>
+      c6:	83 c4 10             	add    esp,0x10
+      c9:	66 a1 a6 30 00 00    	mov    ax,ds:0x30a6
+      cf:	0f b7 c0             	movzx  eax,ax
+      d2:	83 ec 08             	sub    esp,0x8
+      d5:	50                   	push   eax
+      d6:	68 cd 18 00 00       	push   0x18cd
+      db:	e8 67 17 00 00       	call   1847 <code+0x1847>
+      e0:	83 c4 10             	add    esp,0x10
+      e3:	a1 a8 30 00 00       	mov    eax,ds:0x30a8
+      e8:	0f b7 c0             	movzx  eax,ax
+      eb:	83 ec 08             	sub    esp,0x8
+      ee:	50                   	push   eax
+      ef:	68 da 18 00 00       	push   0x18da
+      f4:	e8 4e 17 00 00       	call   1847 <code+0x1847>
+      f9:	83 c4 10             	add    esp,0x10
+      fc:	a1 ac 30 00 00       	mov    eax,ds:0x30ac
+     101:	0f b7 d0             	movzx  edx,ax
+     104:	66 a1 aa 30 00 00    	mov    ax,ds:0x30aa
+     10a:	0f b7 c0             	movzx  eax,ax
+     10d:	83 ec 04             	sub    esp,0x4
+     110:	52                   	push   edx
+     111:	50                   	push   eax
+     112:	68 e7 18 00 00       	push   0x18e7
+     117:	e8 2b 17 00 00       	call   1847 <code+0x1847>
+     11c:	83 c4 10             	add    esp,0x10
+     11f:	66 a1 ae 30 00 00    	mov    ax,ds:0x30ae
+     125:	0f b7 c0             	movzx  eax,ax
+     128:	83 ec 08             	sub    esp,0x8
+     12b:	50                   	push   eax
+     12c:	68 f4 18 00 00       	push   0x18f4
+     131:	e8 11 17 00 00       	call   1847 <code+0x1847>
+     136:	83 c4 10             	add    esp,0x10
+     139:	a1 b0 30 00 00       	mov    eax,ds:0x30b0
+     13e:	83 ec 08             	sub    esp,0x8
+     141:	50                   	push   eax
+     142:	68 01 19 00 00       	push   0x1901
+     147:	e8 fb 16 00 00       	call   1847 <code+0x1847>
+     14c:	83 c4 10             	add    esp,0x10
+     14f:	a1 b4 30 00 00       	mov    eax,ds:0x30b4
+     154:	83 ec 08             	sub    esp,0x8
+     157:	50                   	push   eax
+     158:	68 0e 19 00 00       	push   0x190e
+     15d:	e8 e5 16 00 00       	call   1847 <code+0x1847>
+     162:	83 c4 10             	add    esp,0x10
+     165:	a1 b8 30 00 00       	mov    eax,ds:0x30b8
+     16a:	83 ec 08             	sub    esp,0x8
+     16d:	50                   	push   eax
+     16e:	68 1b 19 00 00       	push   0x191b
+     173:	e8 cf 16 00 00       	call   1847 <code+0x1847>
+     178:	83 c4 10             	add    esp,0x10
+     17b:	a1 bc 30 00 00       	mov    eax,ds:0x30bc
+     180:	83 ec 08             	sub    esp,0x8
+     183:	50                   	push   eax
+     184:	68 28 19 00 00       	push   0x1928
+     189:	e8 b9 16 00 00       	call   1847 <code+0x1847>
+     18e:	83 c4 10             	add    esp,0x10
+     191:	83 ec 0c             	sub    esp,0xc
+     194:	6a 00                	push   0x0
+     196:	e8 59 05 00 00       	call   6f4 <code+0x6f4>
+     19b:	83 c4 10             	add    esp,0x10
+     19e:	8d 65 f8             	lea    esp,[ebp-0x8]
+     1a1:	83 c4 00             	add    esp,0x0
+     1a4:	59                   	pop    ecx
+     1a5:	5b                   	pop    ebx
+     1a6:	c9                   	leave  
+     1a7:	8d 61 fc             	lea    esp,[ecx-0x4]
+     1aa:	c3                   	ret    
+     1ab:	00 81 ec 1c 01 00    	add    BYTE PTR [ecx+0x11cec],al
+     1b1:	00 83 ec 0c ff b4    	add    BYTE PTR [ebx-0x4b00f314],al
+     1b7:	24 2c                	and    al,0x2c
+     1b9:	01 00                	add    DWORD PTR [eax],eax
+     1bb:	00 e8                	add    al,ch
+     1bd:	ca 01 00             	retf   0x1
+     1c0:	00 83 c4 10 83 f8    	add    BYTE PTR [ebx-0x77cef3c],al
+     1c6:	01 75 44             	add    DWORD PTR [ebp+0x44],esi
+     1c9:	8b 84 24 20 01 00 00 	mov    eax,DWORD PTR [esp+0x120]
+     1d0:	8a 00                	mov    al,BYTE PTR [eax]
+     1d2:	3c 2f                	cmp    al,0x2f
+     1d4:	75 37                	jne    20d <code+0x20d>
+     1d6:	83 ec 04             	sub    esp,0x4
+     1d9:	6a 01                	push   0x1
+     1db:	68 38 19 00 00       	push   0x1938
+     1e0:	ff b4 24 30 01 00 00 	push   DWORD PTR [esp+0x130]
+     1e7:	e8 e5 02 00 00       	call   4d1 <code+0x4d1>
+     1ec:	83 c4 10             	add    esp,0x10
+     1ef:	83 ec 04             	sub    esp,0x4
+     1f2:	6a 01                	push   0x1
+     1f4:	68 38 19 00 00       	push   0x1938
+     1f9:	ff b4 24 34 01 00 00 	push   DWORD PTR [esp+0x134]
+     200:	e8 cc 02 00 00       	call   4d1 <code+0x4d1>
+     205:	83 c4 10             	add    esp,0x10
+     208:	e9 2d 01 00 00       	jmp    33a <code+0x33a>
+     20d:	83 ec 04             	sub    esp,0x4
+     210:	68 00 01 00 00       	push   0x100
+     215:	ff b4 24 28 01 00 00 	push   DWORD PTR [esp+0x128]
+     21c:	8d 44 24 18          	lea    eax,[esp+0x18]
+     220:	50                   	push   eax
+     221:	e8 ab 02 00 00       	call   4d1 <code+0x4d1>
+     226:	83 c4 10             	add    esp,0x10
+     229:	83 ec 0c             	sub    esp,0xc
+     22c:	8d 44 24 18          	lea    eax,[esp+0x18]
+     230:	50                   	push   eax
+     231:	e8 55 01 00 00       	call   38b <code+0x38b>
+     236:	83 c4 10             	add    esp,0x10
+     239:	48                   	dec    eax
+     23a:	89 84 24 0c 01 00 00 	mov    DWORD PTR [esp+0x10c],eax
+     241:	8b 84 24 0c 01 00 00 	mov    eax,DWORD PTR [esp+0x10c]
+     248:	8a 44 04 0c          	mov    al,BYTE PTR [esp+eax*1+0xc]
+     24c:	3c 2f                	cmp    al,0x2f
+     24e:	75 16                	jne    266 <code+0x266>
+     250:	8b 84 24 0c 01 00 00 	mov    eax,DWORD PTR [esp+0x10c]
+     257:	c6 44 04 0c 00       	mov    BYTE PTR [esp+eax*1+0xc],0x0
+     25c:	ff 8c 24 0c 01 00 00 	dec    DWORD PTR [esp+0x10c]
+     263:	eb 01                	jmp    266 <code+0x266>
+     265:	90                   	nop
+     266:	ff 8c 24 0c 01 00 00 	dec    DWORD PTR [esp+0x10c]
+     26d:	83 bc 24 0c 01 00 00 	cmp    DWORD PTR [esp+0x10c],0xffffffff
+     274:	ff 
+     275:	75 3a                	jne    2b1 <code+0x2b1>
+     277:	83 ec 04             	sub    esp,0x4
+     27a:	6a 02                	push   0x2
+     27c:	68 3a 19 00 00       	push   0x193a
+     281:	ff b4 24 30 01 00 00 	push   DWORD PTR [esp+0x130]
+     288:	e8 44 02 00 00       	call   4d1 <code+0x4d1>
+     28d:	83 c4 10             	add    esp,0x10
+     290:	83 ec 04             	sub    esp,0x4
+     293:	68 00 01 00 00       	push   0x100
+     298:	8d 44 24 14          	lea    eax,[esp+0x14]
+     29c:	50                   	push   eax
+     29d:	ff b4 24 34 01 00 00 	push   DWORD PTR [esp+0x134]
+     2a4:	e8 28 02 00 00       	call   4d1 <code+0x4d1>
+     2a9:	83 c4 10             	add    esp,0x10
+     2ac:	e9 89 00 00 00       	jmp    33a <code+0x33a>
+     2b1:	8b 84 24 0c 01 00 00 	mov    eax,DWORD PTR [esp+0x10c]
+     2b8:	8a 44 04 0c          	mov    al,BYTE PTR [esp+eax*1+0xc]
+     2bc:	3c 2f                	cmp    al,0x2f
+     2be:	75 a5                	jne    265 <code+0x265>
+     2c0:	83 bc 24 0c 01 00 00 	cmp    DWORD PTR [esp+0x10c],0x0
+     2c7:	00 
+     2c8:	75 1b                	jne    2e5 <code+0x2e5>
+     2ca:	83 ec 04             	sub    esp,0x4
+     2cd:	6a 02                	push   0x2
+     2cf:	68 38 19 00 00       	push   0x1938
+     2d4:	ff b4 24 30 01 00 00 	push   DWORD PTR [esp+0x130]
+     2db:	e8 f1 01 00 00       	call   4d1 <code+0x4d1>
+     2e0:	83 c4 10             	add    esp,0x10
+     2e3:	eb 2f                	jmp    314 <code+0x314>
+     2e5:	83 ec 04             	sub    esp,0x4
+     2e8:	ff b4 24 10 01 00 00 	push   DWORD PTR [esp+0x110]
+     2ef:	8d 44 24 14          	lea    eax,[esp+0x14]
+     2f3:	50                   	push   eax
+     2f4:	ff b4 24 30 01 00 00 	push   DWORD PTR [esp+0x130]
+     2fb:	e8 b4 02 00 00       	call   5b4 <code+0x5b4>
+     300:	83 c4 10             	add    esp,0x10
+     303:	8b 84 24 0c 01 00 00 	mov    eax,DWORD PTR [esp+0x10c]
+     30a:	03 84 24 24 01 00 00 	add    eax,DWORD PTR [esp+0x124]
+     311:	c6 00 00             	mov    BYTE PTR [eax],0x0
+     314:	8b 84 24 0c 01 00 00 	mov    eax,DWORD PTR [esp+0x10c]
+     31b:	8d 50 01             	lea    edx,[eax+0x1]
+     31e:	8d 44 24 0c          	lea    eax,[esp+0xc]
+     322:	01 d0                	add    eax,edx
+     324:	83 ec 04             	sub    esp,0x4
+     327:	6a 1e                	push   0x1e
+     329:	50                   	push   eax
+     32a:	ff b4 24 34 01 00 00 	push   DWORD PTR [esp+0x134]
+     331:	e8 9b 01 00 00       	call   4d1 <code+0x4d1>
+     336:	83 c4 10             	add    esp,0x10
+     339:	90                   	nop
+     33a:	81 c4 1c 01 00 00    	add    esp,0x11c
+     340:	c3                   	ret    
+     341:	83 ec 0c             	sub    esp,0xc
+     344:	83 ec 04             	sub    esp,0x4
+     347:	68 e0 32 00 00       	push   0x32e0
+     34c:	68 e0 31 00 00       	push   0x31e0
+     351:	ff 74 24 1c          	push   DWORD PTR [esp+0x1c]
+     355:	e8 52 fe ff ff       	call   1ac <code+0x1ac>
+     35a:	83 c4 10             	add    esp,0x10
+     35d:	b8 e0 32 00 00       	mov    eax,0x32e0
+     362:	83 c4 0c             	add    esp,0xc
+     365:	c3                   	ret    
+     366:	83 ec 0c             	sub    esp,0xc
+     369:	83 ec 04             	sub    esp,0x4
+     36c:	68 c0 31 00 00       	push   0x31c0
+     371:	68 c0 30 00 00       	push   0x30c0
+     376:	ff 74 24 1c          	push   DWORD PTR [esp+0x1c]
+     37a:	e8 2d fe ff ff       	call   1ac <code+0x1ac>
+     37f:	83 c4 10             	add    esp,0x10
+     382:	b8 c0 30 00 00       	mov    eax,0x30c0
+     387:	83 c4 0c             	add    esp,0xc
+     38a:	c3                   	ret    
+     38b:	83 ec 10             	sub    esp,0x10
+     38e:	c7 44 24 0c 00 00 00 	mov    DWORD PTR [esp+0xc],0x0
+     395:	00 
+     396:	eb 08                	jmp    3a0 <code+0x3a0>
+     398:	ff 44 24 0c          	inc    DWORD PTR [esp+0xc]
+     39c:	ff 44 24 14          	inc    DWORD PTR [esp+0x14]
+     3a0:	8b 44 24 14          	mov    eax,DWORD PTR [esp+0x14]
+     3a4:	8a 00                	mov    al,BYTE PTR [eax]
+     3a6:	84 c0                	test   al,al
+     3a8:	75 ee                	jne    398 <code+0x398>
+     3aa:	8b 44 24 0c          	mov    eax,DWORD PTR [esp+0xc]
+     3ae:	83 c4 10             	add    esp,0x10
+     3b1:	c3                   	ret    
+     3b2:	83 ec 10             	sub    esp,0x10
+     3b5:	eb 08                	jmp    3bf <code+0x3bf>
+     3b7:	ff 44 24 14          	inc    DWORD PTR [esp+0x14]
+     3bb:	ff 44 24 18          	inc    DWORD PTR [esp+0x18]
+     3bf:	8b 44 24 14          	mov    eax,DWORD PTR [esp+0x14]
+     3c3:	8a 00                	mov    al,BYTE PTR [eax]
+     3c5:	84 c0                	test   al,al
+     3c7:	74 10                	je     3d9 <code+0x3d9>
+     3c9:	8b 44 24 14          	mov    eax,DWORD PTR [esp+0x14]
+     3cd:	8a 10                	mov    dl,BYTE PTR [eax]
+     3cf:	8b 44 24 18          	mov    eax,DWORD PTR [esp+0x18]
+     3d3:	8a 00                	mov    al,BYTE PTR [eax]
+     3d5:	38 c2                	cmp    dl,al
+     3d7:	74 de                	je     3b7 <code+0x3b7>
+     3d9:	8b 44 24 14          	mov    eax,DWORD PTR [esp+0x14]
+     3dd:	8a 00                	mov    al,BYTE PTR [eax]
+     3df:	88 44 24 0e          	mov    BYTE PTR [esp+0xe],al
+     3e3:	8b 44 24 18          	mov    eax,DWORD PTR [esp+0x18]
+     3e7:	8a 00                	mov    al,BYTE PTR [eax]
+     3e9:	88 44 24 0f          	mov    BYTE PTR [esp+0xf],al
+     3ed:	8a 44 24 0e          	mov    al,BYTE PTR [esp+0xe]
+     3f1:	3a 44 24 0f          	cmp    al,BYTE PTR [esp+0xf]
+     3f5:	72 10                	jb     407 <code+0x407>
+     3f7:	8a 44 24 0e          	mov    al,BYTE PTR [esp+0xe]
+     3fb:	3a 44 24 0f          	cmp    al,BYTE PTR [esp+0xf]
+     3ff:	0f 97 c0             	seta   al
+     402:	0f b6 c0             	movzx  eax,al
+     405:	eb 05                	jmp    40c <code+0x40c>
+     407:	b8 ff ff ff ff       	mov    eax,0xffffffff
+     40c:	83 c4 10             	add    esp,0x10
+     40f:	c3                   	ret    
+     410:	83 ec 10             	sub    esp,0x10
+     413:	83 7c 24 1c 00       	cmp    DWORD PTR [esp+0x1c],0x0
+     418:	75 29                	jne    443 <code+0x443>
+     41a:	b8 00 00 00 00       	mov    eax,0x0
+     41f:	eb 76                	jmp    497 <code+0x497>
+     421:	83 7c 24 1c 00       	cmp    DWORD PTR [esp+0x1c],0x0
+     426:	74 0a                	je     432 <code+0x432>
+     428:	8b 44 24 14          	mov    eax,DWORD PTR [esp+0x14]
+     42c:	8a 00                	mov    al,BYTE PTR [eax]
+     42e:	84 c0                	test   al,al
+     430:	75 07                	jne    439 <code+0x439>
+     432:	b8 00 00 00 00       	mov    eax,0x0
+     437:	eb 5e                	jmp    497 <code+0x497>
+     439:	ff 44 24 14          	inc    DWORD PTR [esp+0x14]
+     43d:	ff 44 24 18          	inc    DWORD PTR [esp+0x18]
+     441:	eb 01                	jmp    444 <code+0x444>
+     443:	90                   	nop
+     444:	83 7c 24 1c 00       	cmp    DWORD PTR [esp+0x1c],0x0
+     449:	0f 95 c0             	setne  al
+     44c:	ff 4c 24 1c          	dec    DWORD PTR [esp+0x1c]
+     450:	84 c0                	test   al,al
+     452:	74 10                	je     464 <code+0x464>
+     454:	8b 44 24 14          	mov    eax,DWORD PTR [esp+0x14]
+     458:	8a 10                	mov    dl,BYTE PTR [eax]
+     45a:	8b 44 24 18          	mov    eax,DWORD PTR [esp+0x18]
+     45e:	8a 00                	mov    al,BYTE PTR [eax]
+     460:	38 c2                	cmp    dl,al
+     462:	74 bd                	je     421 <code+0x421>
+     464:	8b 44 24 14          	mov    eax,DWORD PTR [esp+0x14]
+     468:	8a 00                	mov    al,BYTE PTR [eax]
+     46a:	88 44 24 0e          	mov    BYTE PTR [esp+0xe],al
+     46e:	8b 44 24 18          	mov    eax,DWORD PTR [esp+0x18]
+     472:	8a 00                	mov    al,BYTE PTR [eax]
+     474:	88 44 24 0f          	mov    BYTE PTR [esp+0xf],al
+     478:	8a 44 24 0e          	mov    al,BYTE PTR [esp+0xe]
+     47c:	3a 44 24 0f          	cmp    al,BYTE PTR [esp+0xf]
+     480:	72 10                	jb     492 <code+0x492>
+     482:	8a 44 24 0e          	mov    al,BYTE PTR [esp+0xe]
+     486:	3a 44 24 0f          	cmp    al,BYTE PTR [esp+0xf]
+     48a:	0f 97 c0             	seta   al
+     48d:	0f b6 c0             	movzx  eax,al
+     490:	eb 05                	jmp    497 <code+0x497>
+     492:	b8 ff ff ff ff       	mov    eax,0xffffffff
+     497:	83 c4 10             	add    esp,0x10
+     49a:	c3                   	ret    
+     49b:	83 ec 10             	sub    esp,0x10
+     49e:	8b 44 24 14          	mov    eax,DWORD PTR [esp+0x14]
+     4a2:	89 44 24 0c          	mov    DWORD PTR [esp+0xc],eax
+     4a6:	8b 44 24 18          	mov    eax,DWORD PTR [esp+0x18]
+     4aa:	8a 10                	mov    dl,BYTE PTR [eax]
+     4ac:	8b 44 24 14          	mov    eax,DWORD PTR [esp+0x14]
+     4b0:	88 10                	mov    BYTE PTR [eax],dl
+     4b2:	8b 44 24 14          	mov    eax,DWORD PTR [esp+0x14]
+     4b6:	8a 00                	mov    al,BYTE PTR [eax]
+     4b8:	84 c0                	test   al,al
+     4ba:	0f 95 c0             	setne  al
+     4bd:	ff 44 24 14          	inc    DWORD PTR [esp+0x14]
+     4c1:	ff 44 24 18          	inc    DWORD PTR [esp+0x18]
+     4c5:	84 c0                	test   al,al
+     4c7:	75 dd                	jne    4a6 <code+0x4a6>
+     4c9:	8b 44 24 0c          	mov    eax,DWORD PTR [esp+0xc]
+     4cd:	83 c4 10             	add    esp,0x10
+     4d0:	c3                   	ret    
+     4d1:	83 ec 10             	sub    esp,0x10
+     4d4:	8b 44 24 18          	mov    eax,DWORD PTR [esp+0x18]
+     4d8:	89 44 24 08          	mov    DWORD PTR [esp+0x8],eax
+     4dc:	8b 44 24 14          	mov    eax,DWORD PTR [esp+0x14]
+     4e0:	89 44 24 0c          	mov    DWORD PTR [esp+0xc],eax
+     4e4:	eb 22                	jmp    508 <code+0x508>
+     4e6:	8b 44 24 08          	mov    eax,DWORD PTR [esp+0x8]
+     4ea:	8a 10                	mov    dl,BYTE PTR [eax]
+     4ec:	8b 44 24 0c          	mov    eax,DWORD PTR [esp+0xc]
+     4f0:	88 10                	mov    BYTE PTR [eax],dl
+     4f2:	8b 44 24 0c          	mov    eax,DWORD PTR [esp+0xc]
+     4f6:	8a 00                	mov    al,BYTE PTR [eax]
+     4f8:	84 c0                	test   al,al
+     4fa:	74 15                	je     511 <code+0x511>
+     4fc:	ff 44 24 0c          	inc    DWORD PTR [esp+0xc]
+     500:	ff 44 24 08          	inc    DWORD PTR [esp+0x8]
+     504:	ff 4c 24 1c          	dec    DWORD PTR [esp+0x1c]
+     508:	83 7c 24 1c 00       	cmp    DWORD PTR [esp+0x1c],0x0
+     50d:	75 d7                	jne    4e6 <code+0x4e6>
+     50f:	eb 01                	jmp    512 <code+0x512>
+     511:	90                   	nop
+     512:	8b 44 24 14          	mov    eax,DWORD PTR [esp+0x14]
+     516:	83 c4 10             	add    esp,0x10
+     519:	c3                   	ret    
+     51a:	83 ec 10             	sub    esp,0x10
+     51d:	c7 44 24 0c 00 00 00 	mov    DWORD PTR [esp+0xc],0x0
+     524:	00 
+     525:	eb 26                	jmp    54d <code+0x54d>
+     527:	8b 54 24 0c          	mov    edx,DWORD PTR [esp+0xc]
+     52b:	89 d0                	mov    eax,edx
+     52d:	c1 e0 02             	shl    eax,0x2
+     530:	01 d0                	add    eax,edx
+     532:	d1 e0                	shl    eax,1
+     534:	89 c2                	mov    edx,eax
+     536:	8b 44 24 14          	mov    eax,DWORD PTR [esp+0x14]
+     53a:	8a 00                	mov    al,BYTE PTR [eax]
+     53c:	0f be c0             	movsx  eax,al
+     53f:	83 e8 30             	sub    eax,0x30
+     542:	8d 04 02             	lea    eax,[edx+eax*1]
+     545:	89 44 24 0c          	mov    DWORD PTR [esp+0xc],eax
+     549:	ff 44 24 14          	inc    DWORD PTR [esp+0x14]
+     54d:	8b 44 24 14          	mov    eax,DWORD PTR [esp+0x14]
+     551:	8a 00                	mov    al,BYTE PTR [eax]
+     553:	3c 2f                	cmp    al,0x2f
+     555:	7e 0a                	jle    561 <code+0x561>
+     557:	8b 44 24 14          	mov    eax,DWORD PTR [esp+0x14]
+     55b:	8a 00                	mov    al,BYTE PTR [eax]
+     55d:	3c 39                	cmp    al,0x39
+     55f:	7e c6                	jle    527 <code+0x527>
+     561:	8b 44 24 0c          	mov    eax,DWORD PTR [esp+0xc]
+     565:	83 c4 10             	add    esp,0x10
+     568:	c3                   	ret    
+     569:	83 ec 10             	sub    esp,0x10
+     56c:	c7 44 24 0c 00 00 00 	mov    DWORD PTR [esp+0xc],0x0
+     573:	00 
+     574:	eb 22                	jmp    598 <code+0x598>
+     576:	8b 44 24 0c          	mov    eax,DWORD PTR [esp+0xc]
+     57a:	8d 14 c5 00 00 00 00 	lea    edx,[eax*8+0x0]
+     581:	8b 44 24 14          	mov    eax,DWORD PTR [esp+0x14]
+     585:	8a 00                	mov    al,BYTE PTR [eax]
+     587:	0f be c0             	movsx  eax,al
+     58a:	83 e8 30             	sub    eax,0x30
+     58d:	8d 04 02             	lea    eax,[edx+eax*1]
+     590:	89 44 24 0c          	mov    DWORD PTR [esp+0xc],eax
+     594:	ff 44 24 14          	inc    DWORD PTR [esp+0x14]
+     598:	8b 44 24 14          	mov    eax,DWORD PTR [esp+0x14]
+     59c:	8a 00                	mov    al,BYTE PTR [eax]
+     59e:	3c 2f                	cmp    al,0x2f
+     5a0:	7e 0a                	jle    5ac <code+0x5ac>
+     5a2:	8b 44 24 14          	mov    eax,DWORD PTR [esp+0x14]
+     5a6:	8a 00                	mov    al,BYTE PTR [eax]
+     5a8:	3c 37                	cmp    al,0x37
+     5aa:	7e ca                	jle    576 <code+0x576>
+     5ac:	8b 44 24 0c          	mov    eax,DWORD PTR [esp+0xc]
+     5b0:	83 c4 10             	add    esp,0x10
+     5b3:	c3                   	ret    
+     5b4:	83 ec 10             	sub    esp,0x10
+     5b7:	8b 44 24 18          	mov    eax,DWORD PTR [esp+0x18]
+     5bb:	89 44 24 08          	mov    DWORD PTR [esp+0x8],eax
+     5bf:	8b 44 24 14          	mov    eax,DWORD PTR [esp+0x14]
+     5c3:	89 44 24 0c          	mov    DWORD PTR [esp+0xc],eax
+     5c7:	eb 18                	jmp    5e1 <code+0x5e1>
+     5c9:	8b 44 24 08          	mov    eax,DWORD PTR [esp+0x8]
+     5cd:	8a 10                	mov    dl,BYTE PTR [eax]
+     5cf:	8b 44 24 0c          	mov    eax,DWORD PTR [esp+0xc]
+     5d3:	88 10                	mov    BYTE PTR [eax],dl
+     5d5:	ff 44 24 0c          	inc    DWORD PTR [esp+0xc]
+     5d9:	ff 44 24 08          	inc    DWORD PTR [esp+0x8]
+     5dd:	ff 4c 24 1c          	dec    DWORD PTR [esp+0x1c]
+     5e1:	83 7c 24 1c 00       	cmp    DWORD PTR [esp+0x1c],0x0
+     5e6:	75 e1                	jne    5c9 <code+0x5c9>
+     5e8:	8b 44 24 14          	mov    eax,DWORD PTR [esp+0x14]
+     5ec:	83 c4 10             	add    esp,0x10
+     5ef:	c3                   	ret    
+     5f0:	83 ec 14             	sub    esp,0x14
+     5f3:	8b 44 24 1c          	mov    eax,DWORD PTR [esp+0x1c]
+     5f7:	88 04 24             	mov    BYTE PTR [esp],al
+     5fa:	8b 44 24 18          	mov    eax,DWORD PTR [esp+0x18]
+     5fe:	89 44 24 10          	mov    DWORD PTR [esp+0x10],eax
+     602:	eb 11                	jmp    615 <code+0x615>
+     604:	8b 44 24 10          	mov    eax,DWORD PTR [esp+0x10]
+     608:	8a 14 24             	mov    dl,BYTE PTR [esp]
+     60b:	88 10                	mov    BYTE PTR [eax],dl
+     60d:	ff 44 24 10          	inc    DWORD PTR [esp+0x10]
+     611:	ff 4c 24 20          	dec    DWORD PTR [esp+0x20]
+     615:	83 7c 24 20 00       	cmp    DWORD PTR [esp+0x20],0x0
+     61a:	75 e8                	jne    604 <code+0x604>
+     61c:	8b 44 24 18          	mov    eax,DWORD PTR [esp+0x18]
+     620:	83 c4 14             	add    esp,0x14
+     623:	c3                   	ret    
+     624:	83 ec 14             	sub    esp,0x14
+     627:	8b 44 24 1c          	mov    eax,DWORD PTR [esp+0x1c]
+     62b:	66 89 04 24          	mov    WORD PTR [esp],ax
+     62f:	8b 44 24 18          	mov    eax,DWORD PTR [esp+0x18]
+     633:	89 44 24 10          	mov    DWORD PTR [esp+0x10],eax
+     637:	eb 13                	jmp    64c <code+0x64c>
+     639:	8b 54 24 10          	mov    edx,DWORD PTR [esp+0x10]
+     63d:	8b 04 24             	mov    eax,DWORD PTR [esp]
+     640:	66 89 02             	mov    WORD PTR [edx],ax
+     643:	83 44 24 10 02       	add    DWORD PTR [esp+0x10],0x2
+     648:	ff 4c 24 20          	dec    DWORD PTR [esp+0x20]
+     64c:	83 7c 24 20 00       	cmp    DWORD PTR [esp+0x20],0x0
+     651:	75 e6                	jne    639 <code+0x639>
+     653:	8b 44 24 18          	mov    eax,DWORD PTR [esp+0x18]
+     657:	83 c4 14             	add    esp,0x14
+     65a:	c3                   	ret    
+     65b:	83 ec 0c             	sub    esp,0xc
+     65e:	83 ec 08             	sub    esp,0x8
+     661:	ff 74 24 18          	push   DWORD PTR [esp+0x18]
+     665:	6a 2d                	push   0x2d
+     667:	e8 4b 00 00 00       	call   6b7 <code+0x6b7>
+     66c:	83 c4 10             	add    esp,0x10
+     66f:	83 c4 0c             	add    esp,0xc
+     672:	c3                   	ret    
+     673:	53                   	push   ebx
+     674:	83 ec 10             	sub    esp,0x10
+     677:	8b 44 24 18          	mov    eax,DWORD PTR [esp+0x18]
+     67b:	8b 5c 24 1c          	mov    ebx,DWORD PTR [esp+0x1c]
+     67f:	8b 4c 24 20          	mov    ecx,DWORD PTR [esp+0x20]
+     683:	8b 54 24 24          	mov    edx,DWORD PTR [esp+0x24]
+     687:	cd 80                	int    0x80
+     689:	89 44 24 0c          	mov    DWORD PTR [esp+0xc],eax
+     68d:	8b 44 24 0c          	mov    eax,DWORD PTR [esp+0xc]
+     691:	83 c4 10             	add    esp,0x10
+     694:	5b                   	pop    ebx
+     695:	c3                   	ret    
+     696:	53                   	push   ebx
+     697:	83 ec 10             	sub    esp,0x10
+     69a:	8b 44 24 18          	mov    eax,DWORD PTR [esp+0x18]
+     69e:	8b 54 24 1c          	mov    edx,DWORD PTR [esp+0x1c]
+     6a2:	8b 4c 24 20          	mov    ecx,DWORD PTR [esp+0x20]
+     6a6:	89 d3                	mov    ebx,edx
+     6a8:	cd 80                	int    0x80
+     6aa:	89 44 24 0c          	mov    DWORD PTR [esp+0xc],eax
+     6ae:	8b 44 24 0c          	mov    eax,DWORD PTR [esp+0xc]
+     6b2:	83 c4 10             	add    esp,0x10
+     6b5:	5b                   	pop    ebx
+     6b6:	c3                   	ret    
+     6b7:	53                   	push   ebx
+     6b8:	83 ec 10             	sub    esp,0x10
+     6bb:	8b 44 24 18          	mov    eax,DWORD PTR [esp+0x18]
+     6bf:	8b 54 24 1c          	mov    edx,DWORD PTR [esp+0x1c]
+     6c3:	89 d3                	mov    ebx,edx
+     6c5:	cd 80                	int    0x80
+     6c7:	89 44 24 0c          	mov    DWORD PTR [esp+0xc],eax
+     6cb:	8b 44 24 0c          	mov    eax,DWORD PTR [esp+0xc]
+     6cf:	83 c4 10             	add    esp,0x10
+     6d2:	5b                   	pop    ebx
+     6d3:	c3                   	ret    
+     6d4:	83 ec 10             	sub    esp,0x10
+     6d7:	8b 44 24 14          	mov    eax,DWORD PTR [esp+0x14]
+     6db:	cd 80                	int    0x80
+     6dd:	89 44 24 0c          	mov    DWORD PTR [esp+0xc],eax
+     6e1:	8b 44 24 0c          	mov    eax,DWORD PTR [esp+0xc]
+     6e5:	83 c4 10             	add    esp,0x10
+     6e8:	c3                   	ret    
+     6e9:	6a 02                	push   0x2
+     6eb:	e8 e4 ff ff ff       	call   6d4 <code+0x6d4>
+     6f0:	83 c4 04             	add    esp,0x4
+     6f3:	c3                   	ret    
+     6f4:	ff 74 24 04          	push   DWORD PTR [esp+0x4]
+     6f8:	6a 01                	push   0x1
+     6fa:	e8 b8 ff ff ff       	call   6b7 <code+0x6b7>
+     6ff:	83 c4 08             	add    esp,0x8
+     702:	c3                   	ret    
+     703:	8b 44 24 08          	mov    eax,DWORD PTR [esp+0x8]
+     707:	ff 74 24 0c          	push   DWORD PTR [esp+0xc]
+     70b:	50                   	push   eax
+     70c:	ff 74 24 0c          	push   DWORD PTR [esp+0xc]
+     710:	6a 07                	push   0x7
+     712:	e8 5c ff ff ff       	call   673 <code+0x673>
+     717:	83 c4 10             	add    esp,0x10
+     71a:	c3                   	ret    
+     71b:	6a 42                	push   0x42
+     71d:	e8 b2 ff ff ff       	call   6d4 <code+0x6d4>
+     722:	83 c4 04             	add    esp,0x4
+     725:	c3                   	ret    
+     726:	6a 15                	push   0x15
+     728:	e8 a7 ff ff ff       	call   6d4 <code+0x6d4>
+     72d:	83 c4 04             	add    esp,0x4
+     730:	c3                   	ret    
+     731:	6a 14                	push   0x14
+     733:	e8 9c ff ff ff       	call   6d4 <code+0x6d4>
+     738:	83 c4 04             	add    esp,0x4
+     73b:	c3                   	ret    
+     73c:	6a 40                	push   0x40
+     73e:	e8 91 ff ff ff       	call   6d4 <code+0x6d4>
+     743:	83 c4 04             	add    esp,0x4
+     746:	c3                   	ret    
+     747:	8b 44 24 08          	mov    eax,DWORD PTR [esp+0x8]
+     74b:	50                   	push   eax
+     74c:	ff 74 24 08          	push   DWORD PTR [esp+0x8]
+     750:	68 f7 01 00 00       	push   0x1f7
+     755:	e8 3c ff ff ff       	call   696 <code+0x696>
+     75a:	83 c4 0c             	add    esp,0xc
+     75d:	c3                   	ret    
+     75e:	8b 44 24 04          	mov    eax,DWORD PTR [esp+0x4]
+     762:	50                   	push   eax
+     763:	68 f8 01 00 00       	push   0x1f8
+     768:	e8 4a ff ff ff       	call   6b7 <code+0x6b7>
+     76d:	83 c4 08             	add    esp,0x8
+     770:	c3                   	ret    
+     771:	8b 54 24 08          	mov    edx,DWORD PTR [esp+0x8]
+     775:	8b 44 24 04          	mov    eax,DWORD PTR [esp+0x4]
+     779:	52                   	push   edx
+     77a:	50                   	push   eax
+     77b:	6a 0b                	push   0xb
+     77d:	e8 14 ff ff ff       	call   696 <code+0x696>
+     782:	83 c4 0c             	add    esp,0xc
+     785:	c3                   	ret    
+     786:	8b 44 24 0c          	mov    eax,DWORD PTR [esp+0xc]
+     78a:	50                   	push   eax
+     78b:	68 fa 01 00 00       	push   0x1fa
+     790:	e8 22 ff ff ff       	call   6b7 <code+0x6b7>
+     795:	83 c4 08             	add    esp,0x8
+     798:	c3                   	ret    
+     799:	68 fb 01 00 00       	push   0x1fb
+     79e:	e8 31 ff ff ff       	call   6d4 <code+0x6d4>
+     7a3:	83 c4 04             	add    esp,0x4
+     7a6:	c3                   	ret    
+     7a7:	68 f9 01 00 00       	push   0x1f9
+     7ac:	e8 23 ff ff ff       	call   6d4 <code+0x6d4>
+     7b1:	83 c4 04             	add    esp,0x4
+     7b4:	c3                   	ret    
+     7b5:	ff 74 24 04          	push   DWORD PTR [esp+0x4]
+     7b9:	68 fc 01 00 00       	push   0x1fc
+     7be:	e8 f4 fe ff ff       	call   6b7 <code+0x6b7>
+     7c3:	83 c4 08             	add    esp,0x8
+     7c6:	c3                   	ret    
+     7c7:	68 fd 01 00 00       	push   0x1fd
+     7cc:	e8 03 ff ff ff       	call   6d4 <code+0x6d4>
+     7d1:	83 c4 04             	add    esp,0x4
+     7d4:	c3                   	ret    
+     7d5:	68 fe 01 00 00       	push   0x1fe
+     7da:	e8 f5 fe ff ff       	call   6d4 <code+0x6d4>
+     7df:	83 c4 04             	add    esp,0x4
+     7e2:	c3                   	ret    
+     7e3:	ff 74 24 04          	push   DWORD PTR [esp+0x4]
+     7e7:	68 ff 01 00 00       	push   0x1ff
+     7ec:	e8 c6 fe ff ff       	call   6b7 <code+0x6b7>
+     7f1:	83 c4 08             	add    esp,0x8
+     7f4:	c3                   	ret    
+     7f5:	68 00 02 00 00       	push   0x200
+     7fa:	e8 d5 fe ff ff       	call   6d4 <code+0x6d4>
+     7ff:	83 c4 04             	add    esp,0x4
+     802:	c3                   	ret    
+     803:	8b 54 24 08          	mov    edx,DWORD PTR [esp+0x8]
+     807:	8b 44 24 04          	mov    eax,DWORD PTR [esp+0x4]
+     80b:	52                   	push   edx
+     80c:	50                   	push   eax
+     80d:	68 01 02 00 00       	push   0x201
+     812:	e8 7f fe ff ff       	call   696 <code+0x696>
+     817:	83 c4 0c             	add    esp,0xc
+     81a:	c3                   	ret    
+     81b:	83 ec 08             	sub    esp,0x8
+     81e:	8b 54 24 0c          	mov    edx,DWORD PTR [esp+0xc]
+     822:	8b 44 24 10          	mov    eax,DWORD PTR [esp+0x10]
+     826:	88 54 24 04          	mov    BYTE PTR [esp+0x4],dl
+     82a:	88 04 24             	mov    BYTE PTR [esp],al
+     82d:	0f be 14 24          	movsx  edx,BYTE PTR [esp]
+     831:	0f be 44 24 04       	movsx  eax,BYTE PTR [esp+0x4]
+     836:	52                   	push   edx
+     837:	50                   	push   eax
+     838:	68 02 02 00 00       	push   0x202
+     83d:	e8 54 fe ff ff       	call   696 <code+0x696>
+     842:	83 c4 0c             	add    esp,0xc
+     845:	83 c4 08             	add    esp,0x8
+     848:	c3                   	ret    
+     849:	8b 44 24 04          	mov    eax,DWORD PTR [esp+0x4]
+     84d:	50                   	push   eax
+     84e:	68 03 02 00 00       	push   0x203
+     853:	e8 5f fe ff ff       	call   6b7 <code+0x6b7>
+     858:	83 c4 08             	add    esp,0x8
+     85b:	c3                   	ret    
+     85c:	8b 44 24 04          	mov    eax,DWORD PTR [esp+0x4]
+     860:	50                   	push   eax
+     861:	68 04 02 00 00       	push   0x204
+     866:	e8 4c fe ff ff       	call   6b7 <code+0x6b7>
+     86b:	83 c4 08             	add    esp,0x8
+     86e:	c3                   	ret    
+     86f:	81 ec b0 0f 00 00    	sub    esp,0xfb0
+     875:	66 c7 84 24 ae 0f 00 	mov    WORD PTR [esp+0xfae],0xf20
+     87c:	00 20 0f 
+     87f:	8d 44 24 0e          	lea    eax,[esp+0xe]
+     883:	50                   	push   eax
+     884:	e8 c0 ff ff ff       	call   849 <code+0x849>
+     889:	83 c4 04             	add    esp,0x4
+     88c:	0f b7 84 24 ae 0f 00 	movzx  eax,WORD PTR [esp+0xfae]
+     893:	00 
+     894:	8d 54 24 0e          	lea    edx,[esp+0xe]
+     898:	81 c2 00 0f 00 00    	add    edx,0xf00
+     89e:	6a 50                	push   0x50
+     8a0:	50                   	push   eax
+     8a1:	52                   	push   edx
+     8a2:	e8 7d fd ff ff       	call   624 <code+0x624>
+     8a7:	83 c4 0c             	add    esp,0xc
+     8aa:	8d 44 24 0e          	lea    eax,[esp+0xe]
+     8ae:	05 a0 00 00 00       	add    eax,0xa0
+     8b3:	50                   	push   eax
+     8b4:	e8 a3 ff ff ff       	call   85c <code+0x85c>
+     8b9:	83 c4 04             	add    esp,0x4
+     8bc:	81 c4 b0 0f 00 00    	add    esp,0xfb0
+     8c2:	c3                   	ret    
+     8c3:	81 ec b0 0f 00 00    	sub    esp,0xfb0
+     8c9:	66 c7 84 24 ae 0f 00 	mov    WORD PTR [esp+0xfae],0xf20
+     8d0:	00 20 0f 
+     8d3:	8d 44 24 0e          	lea    eax,[esp+0xe]
+     8d7:	05 a0 00 00 00       	add    eax,0xa0
+     8dc:	50                   	push   eax
+     8dd:	e8 67 ff ff ff       	call   849 <code+0x849>
+     8e2:	83 c4 04             	add    esp,0x4
+     8e5:	0f b7 94 24 ae 0f 00 	movzx  edx,WORD PTR [esp+0xfae]
+     8ec:	00 
+     8ed:	8d 44 24 0e          	lea    eax,[esp+0xe]
+     8f1:	6a 50                	push   0x50
+     8f3:	52                   	push   edx
+     8f4:	50                   	push   eax
+     8f5:	e8 2a fd ff ff       	call   624 <code+0x624>
+     8fa:	83 c4 0c             	add    esp,0xc
+     8fd:	8d 44 24 0e          	lea    eax,[esp+0xe]
+     901:	50                   	push   eax
+     902:	e8 55 ff ff ff       	call   85c <code+0x85c>
+     907:	83 c4 04             	add    esp,0x4
+     90a:	81 c4 b0 0f 00 00    	add    esp,0xfb0
+     910:	c3                   	ret    
+     911:	8b 54 24 08          	mov    edx,DWORD PTR [esp+0x8]
+     915:	8b 44 24 04          	mov    eax,DWORD PTR [esp+0x4]
+     919:	52                   	push   edx
+     91a:	50                   	push   eax
+     91b:	68 05 02 00 00       	push   0x205
+     920:	e8 71 fd ff ff       	call   696 <code+0x696>
+     925:	83 c4 0c             	add    esp,0xc
+     928:	c3                   	ret    
+     929:	8b 44 24 04          	mov    eax,DWORD PTR [esp+0x4]
+     92d:	50                   	push   eax
+     92e:	68 06 02 00 00       	push   0x206
+     933:	e8 7f fd ff ff       	call   6b7 <code+0x6b7>
+     938:	83 c4 08             	add    esp,0x8
+     93b:	c3                   	ret    
+     93c:	8b 44 24 04          	mov    eax,DWORD PTR [esp+0x4]
+     940:	50                   	push   eax
+     941:	68 07 02 00 00       	push   0x207
+     946:	e8 6c fd ff ff       	call   6b7 <code+0x6b7>
+     94b:	83 c4 08             	add    esp,0x8
+     94e:	c3                   	ret    
+     94f:	8b 44 24 04          	mov    eax,DWORD PTR [esp+0x4]
+     953:	50                   	push   eax
+     954:	68 08 02 00 00       	push   0x208
+     959:	e8 59 fd ff ff       	call   6b7 <code+0x6b7>
+     95e:	83 c4 08             	add    esp,0x8
+     961:	c3                   	ret    
+     962:	8b 44 24 04          	mov    eax,DWORD PTR [esp+0x4]
+     966:	ff 74 24 08          	push   DWORD PTR [esp+0x8]
+     96a:	50                   	push   eax
+     96b:	6a 05                	push   0x5
+     96d:	e8 24 fd ff ff       	call   696 <code+0x696>
+     972:	83 c4 0c             	add    esp,0xc
+     975:	c3                   	ret    
+     976:	8b 54 24 08          	mov    edx,DWORD PTR [esp+0x8]
+     97a:	8b 44 24 04          	mov    eax,DWORD PTR [esp+0x4]
+     97e:	52                   	push   edx
+     97f:	50                   	push   eax
+     980:	6a 6a                	push   0x6a
+     982:	e8 0f fd ff ff       	call   696 <code+0x696>
+     987:	83 c4 0c             	add    esp,0xc
+     98a:	c3                   	ret    
+     98b:	ff 74 24 04          	push   DWORD PTR [esp+0x4]
+     98f:	6a 06                	push   0x6
+     991:	e8 21 fd ff ff       	call   6b7 <code+0x6b7>
+     996:	83 c4 08             	add    esp,0x8
+     999:	c3                   	ret    
+     99a:	8b 44 24 08          	mov    eax,DWORD PTR [esp+0x8]
+     99e:	ff 74 24 0c          	push   DWORD PTR [esp+0xc]
+     9a2:	50                   	push   eax
+     9a3:	ff 74 24 0c          	push   DWORD PTR [esp+0xc]
+     9a7:	6a 03                	push   0x3
+     9a9:	e8 c5 fc ff ff       	call   673 <code+0x673>
+     9ae:	83 c4 10             	add    esp,0x10
+     9b1:	c3                   	ret    
+     9b2:	8b 44 24 08          	mov    eax,DWORD PTR [esp+0x8]
+     9b6:	ff 74 24 0c          	push   DWORD PTR [esp+0xc]
+     9ba:	50                   	push   eax
+     9bb:	ff 74 24 0c          	push   DWORD PTR [esp+0xc]
+     9bf:	6a 04                	push   0x4
+     9c1:	e8 ad fc ff ff       	call   673 <code+0x673>
+     9c6:	83 c4 10             	add    esp,0x10
+     9c9:	c3                   	ret    
+     9ca:	ff 74 24 0c          	push   DWORD PTR [esp+0xc]
+     9ce:	ff 74 24 0c          	push   DWORD PTR [esp+0xc]
+     9d2:	ff 74 24 0c          	push   DWORD PTR [esp+0xc]
+     9d6:	6a 13                	push   0x13
+     9d8:	e8 96 fc ff ff       	call   673 <code+0x673>
+     9dd:	83 c4 10             	add    esp,0x10
+     9e0:	c3                   	ret    
+     9e1:	ff 74 24 04          	push   DWORD PTR [esp+0x4]
+     9e5:	68 09 02 00 00       	push   0x209
+     9ea:	e8 c8 fc ff ff       	call   6b7 <code+0x6b7>
+     9ef:	83 c4 08             	add    esp,0x8
+     9f2:	c3                   	ret    
+     9f3:	8b 44 24 04          	mov    eax,DWORD PTR [esp+0x4]
+     9f7:	ff 74 24 08          	push   DWORD PTR [esp+0x8]
+     9fb:	50                   	push   eax
+     9fc:	6a 27                	push   0x27
+     9fe:	e8 93 fc ff ff       	call   696 <code+0x696>
+     a03:	83 c4 0c             	add    esp,0xc
+     a06:	c3                   	ret    
+     a07:	8b 44 24 04          	mov    eax,DWORD PTR [esp+0x4]
+     a0b:	50                   	push   eax
+     a0c:	6a 28                	push   0x28
+     a0e:	e8 a4 fc ff ff       	call   6b7 <code+0x6b7>
+     a13:	83 c4 08             	add    esp,0x8
+     a16:	c3                   	ret    
+     a17:	8b 54 24 0c          	mov    edx,DWORD PTR [esp+0xc]
+     a1b:	8b 44 24 04          	mov    eax,DWORD PTR [esp+0x4]
+     a1f:	52                   	push   edx
+     a20:	ff 74 24 0c          	push   DWORD PTR [esp+0xc]
+     a24:	50                   	push   eax
+     a25:	6a 59                	push   0x59
+     a27:	e8 47 fc ff ff       	call   673 <code+0x673>
+     a2c:	83 c4 10             	add    esp,0x10
+     a2f:	c3                   	ret    
+     a30:	ff 74 24 08          	push   DWORD PTR [esp+0x8]
+     a34:	ff 74 24 08          	push   DWORD PTR [esp+0x8]
+     a38:	6a 5d                	push   0x5d
+     a3a:	e8 57 fc ff ff       	call   696 <code+0x696>
+     a3f:	83 c4 0c             	add    esp,0xc
+     a42:	c3                   	ret    
+     a43:	8b 44 24 04          	mov    eax,DWORD PTR [esp+0x4]
+     a47:	ff 74 24 08          	push   DWORD PTR [esp+0x8]
+     a4b:	50                   	push   eax
+     a4c:	6a 5c                	push   0x5c
+     a4e:	e8 43 fc ff ff       	call   696 <code+0x696>
+     a53:	83 c4 0c             	add    esp,0xc
+     a56:	c3                   	ret    
+     a57:	8b 54 24 08          	mov    edx,DWORD PTR [esp+0x8]
+     a5b:	8b 44 24 04          	mov    eax,DWORD PTR [esp+0x4]
+     a5f:	52                   	push   edx
+     a60:	50                   	push   eax
+     a61:	6a 09                	push   0x9
+     a63:	e8 2e fc ff ff       	call   696 <code+0x696>
+     a68:	83 c4 0c             	add    esp,0xc
+     a6b:	c3                   	ret    
+     a6c:	8b 44 24 04          	mov    eax,DWORD PTR [esp+0x4]
+     a70:	50                   	push   eax
+     a71:	6a 0a                	push   0xa
+     a73:	e8 3f fc ff ff       	call   6b7 <code+0x6b7>
+     a78:	83 c4 08             	add    esp,0x8
+     a7b:	c3                   	ret    
+     a7c:	8b 54 24 08          	mov    edx,DWORD PTR [esp+0x8]
+     a80:	8b 44 24 04          	mov    eax,DWORD PTR [esp+0x4]
+     a84:	52                   	push   edx
+     a85:	50                   	push   eax
+     a86:	6a 53                	push   0x53
+     a88:	e8 09 fc ff ff       	call   696 <code+0x696>
+     a8d:	83 c4 0c             	add    esp,0xc
+     a90:	c3                   	ret    
+     a91:	8b 54 24 08          	mov    edx,DWORD PTR [esp+0x8]
+     a95:	8b 44 24 04          	mov    eax,DWORD PTR [esp+0x4]
+     a99:	ff 74 24 0c          	push   DWORD PTR [esp+0xc]
+     a9d:	52                   	push   edx
+     a9e:	50                   	push   eax
+     a9f:	6a 55                	push   0x55
+     aa1:	e8 cd fb ff ff       	call   673 <code+0x673>
+     aa6:	83 c4 10             	add    esp,0x10
+     aa9:	c3                   	ret    
+     aaa:	83 ec 2c             	sub    esp,0x2c
+     aad:	8b 44 24 38          	mov    eax,DWORD PTR [esp+0x38]
+     ab1:	88 44 24 0c          	mov    BYTE PTR [esp+0xc],al
+     ab5:	c6 44 24 17 01       	mov    BYTE PTR [esp+0x17],0x1
+     aba:	83 7c 24 34 00       	cmp    DWORD PTR [esp+0x34],0x0
+     abf:	79 09                	jns    aca <code+0xaca>
+     ac1:	c6 44 24 17 00       	mov    BYTE PTR [esp+0x17],0x0
+     ac6:	f7 5c 24 34          	neg    DWORD PTR [esp+0x34]
+     aca:	c7 44 24 18 00 00 00 	mov    DWORD PTR [esp+0x18],0x0
+     ad1:	00 
+     ad2:	eb 04                	jmp    ad8 <code+0xad8>
+     ad4:	90                   	nop
+     ad5:	eb 01                	jmp    ad8 <code+0xad8>
+     ad7:	90                   	nop
+     ad8:	83 7c 24 18 00       	cmp    DWORD PTR [esp+0x18],0x0
+     add:	79 15                	jns    af4 <code+0xaf4>
+     adf:	83 ec 0c             	sub    esp,0xc
+     ae2:	68 3c 19 00 00       	push   0x193c
+     ae7:	e8 5b 0d 00 00       	call   1847 <code+0x1847>
+     aec:	83 c4 10             	add    esp,0x10
+     aef:	e9 80 01 00 00       	jmp    c74 <code+0xc74>
+     af4:	c6 44 24 16 00       	mov    BYTE PTR [esp+0x16],0x0
+     af9:	83 ec 04             	sub    esp,0x4
+     afc:	6a 01                	push   0x1
+     afe:	8d 44 24 1e          	lea    eax,[esp+0x1e]
+     b02:	50                   	push   eax
+     b03:	6a 00                	push   0x0
+     b05:	e8 90 fe ff ff       	call   99a <code+0x99a>
+     b0a:	83 c4 10             	add    esp,0x10
+     b0d:	89 44 24 1c          	mov    DWORD PTR [esp+0x1c],eax
+     b11:	83 7c 24 1c 00       	cmp    DWORD PTR [esp+0x1c],0x0
+     b16:	75 0a                	jne    b22 <code+0xb22>
+     b18:	b8 ff ff ff ff       	mov    eax,0xffffffff
+     b1d:	e9 52 01 00 00       	jmp    c74 <code+0xc74>
+     b22:	8a 44 24 16          	mov    al,BYTE PTR [esp+0x16]
+     b26:	84 c0                	test   al,al
+     b28:	74 ae                	je     ad8 <code+0xad8>
+     b2a:	8a 44 24 16          	mov    al,BYTE PTR [esp+0x16]
+     b2e:	3c 1b                	cmp    al,0x1b
+     b30:	74 a6                	je     ad8 <code+0xad8>
+     b32:	8a 44 24 16          	mov    al,BYTE PTR [esp+0x16]
+     b36:	3c be                	cmp    al,0xbe
+     b38:	77 9e                	ja     ad8 <code+0xad8>
+     b3a:	8a 44 24 16          	mov    al,BYTE PTR [esp+0x16]
+     b3e:	3c 03                	cmp    al,0x3
+     b40:	75 30                	jne    b72 <code+0xb72>
+     b42:	c7 44 24 18 00 00 00 	mov    DWORD PTR [esp+0x18],0x0
+     b49:	00 
+     b4a:	8b 44 24 30          	mov    eax,DWORD PTR [esp+0x30]
+     b4e:	c6 00 00             	mov    BYTE PTR [eax],0x0
+     b51:	80 7c 24 0c 00       	cmp    BYTE PTR [esp+0xc],0x0
+     b56:	74 10                	je     b68 <code+0xb68>
+     b58:	83 ec 0c             	sub    esp,0xc
+     b5b:	68 4c 19 00 00       	push   0x194c
+     b60:	e8 e2 0c 00 00       	call   1847 <code+0x1847>
+     b65:	83 c4 10             	add    esp,0x10
+     b68:	b8 00 00 00 00       	mov    eax,0x0
+     b6d:	e9 02 01 00 00       	jmp    c74 <code+0xc74>
+     b72:	8a 44 24 16          	mov    al,BYTE PTR [esp+0x16]
+     b76:	3c 04                	cmp    al,0x4
+     b78:	75 3e                	jne    bb8 <code+0xbb8>
+     b7a:	83 7c 24 18 00       	cmp    DWORD PTR [esp+0x18],0x0
+     b7f:	75 37                	jne    bb8 <code+0xbb8>
+     b81:	83 ec 04             	sub    esp,0x4
+     b84:	6a 05                	push   0x5
+     b86:	68 4e 19 00 00       	push   0x194e
+     b8b:	ff 74 24 3c          	push   DWORD PTR [esp+0x3c]
+     b8f:	e8 3d f9 ff ff       	call   4d1 <code+0x4d1>
+     b94:	83 c4 10             	add    esp,0x10
+     b97:	80 7c 24 0c 00       	cmp    BYTE PTR [esp+0xc],0x0
+     b9c:	74 10                	je     bae <code+0xbae>
+     b9e:	83 ec 0c             	sub    esp,0xc
+     ba1:	68 53 19 00 00       	push   0x1953
+     ba6:	e8 9c 0c 00 00       	call   1847 <code+0x1847>
+     bab:	83 c4 10             	add    esp,0x10
+     bae:	b8 00 00 00 00       	mov    eax,0x0
+     bb3:	e9 bc 00 00 00       	jmp    c74 <code+0xc74>
+     bb8:	8a 44 24 16          	mov    al,BYTE PTR [esp+0x16]
+     bbc:	3c 08                	cmp    al,0x8
+     bbe:	75 2c                	jne    bec <code+0xbec>
+     bc0:	83 7c 24 18 00       	cmp    DWORD PTR [esp+0x18],0x0
+     bc5:	7e 25                	jle    bec <code+0xbec>
+     bc7:	ff 4c 24 18          	dec    DWORD PTR [esp+0x18]
+     bcb:	80 7c 24 0c 00       	cmp    BYTE PTR [esp+0xc],0x0
+     bd0:	74 14                	je     be6 <code+0xbe6>
+     bd2:	83 ec 04             	sub    esp,0x4
+     bd5:	6a 03                	push   0x3
+     bd7:	68 59 19 00 00       	push   0x1959
+     bdc:	6a 01                	push   0x1
+     bde:	e8 cf fd ff ff       	call   9b2 <code+0x9b2>
+     be3:	83 c4 10             	add    esp,0x10
+     be6:	90                   	nop
+     be7:	e9 ec fe ff ff       	jmp    ad8 <code+0xad8>
+     bec:	8a 44 24 16          	mov    al,BYTE PTR [esp+0x16]
+     bf0:	3c 0a                	cmp    al,0xa
+     bf2:	75 34                	jne    c28 <code+0xc28>
+     bf4:	80 7c 24 17 01       	cmp    BYTE PTR [esp+0x17],0x1
+     bf9:	75 1b                	jne    c16 <code+0xc16>
+     bfb:	80 7c 24 0c 00       	cmp    BYTE PTR [esp+0xc],0x0
+     c00:	74 14                	je     c16 <code+0xc16>
+     c02:	83 ec 04             	sub    esp,0x4
+     c05:	6a 01                	push   0x1
+     c07:	68 4c 19 00 00       	push   0x194c
+     c0c:	6a 01                	push   0x1
+     c0e:	e8 9f fd ff ff       	call   9b2 <code+0x9b2>
+     c13:	83 c4 10             	add    esp,0x10
+     c16:	8b 44 24 18          	mov    eax,DWORD PTR [esp+0x18]
+     c1a:	03 44 24 30          	add    eax,DWORD PTR [esp+0x30]
+     c1e:	c6 00 00             	mov    BYTE PTR [eax],0x0
+     c21:	b8 00 00 00 00       	mov    eax,0x0
+     c26:	eb 4c                	jmp    c74 <code+0xc74>
+     c28:	8a 44 24 16          	mov    al,BYTE PTR [esp+0x16]
+     c2c:	3c 08                	cmp    al,0x8
+     c2e:	0f 84 a0 fe ff ff    	je     ad4 <code+0xad4>
+     c34:	8b 44 24 18          	mov    eax,DWORD PTR [esp+0x18]
+     c38:	3b 44 24 34          	cmp    eax,DWORD PTR [esp+0x34]
+     c3c:	0f 8d 95 fe ff ff    	jge    ad7 <code+0xad7>
+     c42:	80 7c 24 0c 00       	cmp    BYTE PTR [esp+0xc],0x0
+     c47:	74 14                	je     c5d <code+0xc5d>
+     c49:	83 ec 04             	sub    esp,0x4
+     c4c:	6a 01                	push   0x1
+     c4e:	8d 44 24 1e          	lea    eax,[esp+0x1e]
+     c52:	50                   	push   eax
+     c53:	6a 01                	push   0x1
+     c55:	e8 58 fd ff ff       	call   9b2 <code+0x9b2>
+     c5a:	83 c4 10             	add    esp,0x10
+     c5d:	8b 44 24 18          	mov    eax,DWORD PTR [esp+0x18]
+     c61:	03 44 24 30          	add    eax,DWORD PTR [esp+0x30]
+     c65:	8a 54 24 16          	mov    dl,BYTE PTR [esp+0x16]
+     c69:	88 10                	mov    BYTE PTR [eax],dl
+     c6b:	ff 44 24 18          	inc    DWORD PTR [esp+0x18]
+     c6f:	e9 64 fe ff ff       	jmp    ad8 <code+0xad8>
+     c74:	83 c4 2c             	add    esp,0x2c
+     c77:	c3                   	ret    
+     c78:	83 ec 10             	sub    esp,0x10
+     c7b:	6a 01                	push   0x1
+     c7d:	8d 44 24 13          	lea    eax,[esp+0x13]
+     c81:	50                   	push   eax
+     c82:	6a 00                	push   0x0
+     c84:	e8 11 fd ff ff       	call   99a <code+0x99a>
+     c89:	83 c4 0c             	add    esp,0xc
+     c8c:	8a 44 24 0f          	mov    al,BYTE PTR [esp+0xf]
+     c90:	83 c4 10             	add    esp,0x10
+     c93:	c3                   	ret    
+     c94:	8b 44 24 04          	mov    eax,DWORD PTR [esp+0x4]
+     c98:	ff 74 24 08          	push   DWORD PTR [esp+0x8]
+     c9c:	50                   	push   eax
+     c9d:	68 b7 00 00 00       	push   0xb7
+     ca2:	e8 ef f9 ff ff       	call   696 <code+0x696>
+     ca7:	83 c4 0c             	add    esp,0xc
+     caa:	c3                   	ret    
+     cab:	8b 44 24 04          	mov    eax,DWORD PTR [esp+0x4]
+     caf:	50                   	push   eax
+     cb0:	6a 0c                	push   0xc
+     cb2:	e8 00 fa ff ff       	call   6b7 <code+0x6b7>
+     cb7:	83 c4 08             	add    esp,0x8
+     cba:	c3                   	ret    
+     cbb:	8b 44 24 04          	mov    eax,DWORD PTR [esp+0x4]
+     cbf:	50                   	push   eax
+     cc0:	68 0a 02 00 00       	push   0x20a
+     cc5:	e8 ed f9 ff ff       	call   6b7 <code+0x6b7>
+     cca:	83 c4 08             	add    esp,0x8
+     ccd:	c3                   	ret    
+     cce:	6a 24                	push   0x24
+     cd0:	e8 ff f9 ff ff       	call   6d4 <code+0x6d4>
+     cd5:	83 c4 04             	add    esp,0x4
+     cd8:	c3                   	ret    
+     cd9:	ff 74 24 08          	push   DWORD PTR [esp+0x8]
+     cdd:	ff 74 24 08          	push   DWORD PTR [esp+0x8]
+     ce1:	6a 25                	push   0x25
+     ce3:	e8 ae f9 ff ff       	call   696 <code+0x696>
+     ce8:	83 c4 0c             	add    esp,0xc
+     ceb:	c3                   	ret    
+     cec:	e8 40 fa ff ff       	call   731 <code+0x731>
+     cf1:	ff 74 24 04          	push   DWORD PTR [esp+0x4]
+     cf5:	50                   	push   eax
+     cf6:	e8 de ff ff ff       	call   cd9 <code+0xcd9>
+     cfb:	83 c4 08             	add    esp,0x8
+     cfe:	c3                   	ret    
+     cff:	8b 44 24 08          	mov    eax,DWORD PTR [esp+0x8]
+     d03:	50                   	push   eax
+     d04:	ff 74 24 08          	push   DWORD PTR [esp+0x8]
+     d08:	6a 30                	push   0x30
+     d0a:	e8 87 f9 ff ff       	call   696 <code+0x696>
+     d0f:	83 c4 0c             	add    esp,0xc
+     d12:	c3                   	ret    
+     d13:	83 ec 04             	sub    esp,0x4
+     d16:	8b 44 24 08          	mov    eax,DWORD PTR [esp+0x8]
+     d1a:	66 89 04 24          	mov    WORD PTR [esp],ax
+     d1e:	0f b7 04 24          	movzx  eax,WORD PTR [esp]
+     d22:	50                   	push   eax
+     d23:	68 d5 00 00 00       	push   0xd5
+     d28:	e8 8a f9 ff ff       	call   6b7 <code+0x6b7>
+     d2d:	83 c4 08             	add    esp,0x8
+     d30:	83 c4 04             	add    esp,0x4
+     d33:	c3                   	ret    
+     d34:	83 ec 04             	sub    esp,0x4
+     d37:	8b 44 24 08          	mov    eax,DWORD PTR [esp+0x8]
+     d3b:	66 89 04 24          	mov    WORD PTR [esp],ax
+     d3f:	0f b7 04 24          	movzx  eax,WORD PTR [esp]
+     d43:	50                   	push   eax
+     d44:	68 d6 00 00 00       	push   0xd6
+     d49:	e8 69 f9 ff ff       	call   6b7 <code+0x6b7>
+     d4e:	83 c4 08             	add    esp,0x8
+     d51:	83 c4 04             	add    esp,0x4
+     d54:	c3                   	ret    
+     d55:	83 ec 04             	sub    esp,0x4
+     d58:	8b 44 24 08          	mov    eax,DWORD PTR [esp+0x8]
+     d5c:	66 89 04 24          	mov    WORD PTR [esp],ax
+     d60:	0f b7 04 24          	movzx  eax,WORD PTR [esp]
+     d64:	50                   	push   eax
+     d65:	68 cb 00 00 00       	push   0xcb
+     d6a:	e8 48 f9 ff ff       	call   6b7 <code+0x6b7>
+     d6f:	83 c4 08             	add    esp,0x8
+     d72:	83 c4 04             	add    esp,0x4
+     d75:	c3                   	ret    
+     d76:	83 ec 04             	sub    esp,0x4
+     d79:	8b 44 24 08          	mov    eax,DWORD PTR [esp+0x8]
+     d7d:	66 89 04 24          	mov    WORD PTR [esp],ax
+     d81:	0f b7 04 24          	movzx  eax,WORD PTR [esp]
+     d85:	50                   	push   eax
+     d86:	68 cc 00 00 00       	push   0xcc
+     d8b:	e8 27 f9 ff ff       	call   6b7 <code+0x6b7>
+     d90:	83 c4 08             	add    esp,0x8
+     d93:	83 c4 04             	add    esp,0x4
+     d96:	c3                   	ret    
+     d97:	83 ec 04             	sub    esp,0x4
+     d9a:	8b 44 24 08          	mov    eax,DWORD PTR [esp+0x8]
+     d9e:	66 89 04 24          	mov    WORD PTR [esp],ax
+     da2:	8b 54 24 0c          	mov    edx,DWORD PTR [esp+0xc]
+     da6:	0f b7 04 24          	movzx  eax,WORD PTR [esp]
+     daa:	52                   	push   edx
+     dab:	50                   	push   eax
+     dac:	68 0b 02 00 00       	push   0x20b
+     db1:	e8 e0 f8 ff ff       	call   696 <code+0x696>
+     db6:	83 c4 0c             	add    esp,0xc
+     db9:	83 c4 04             	add    esp,0x4
+     dbc:	c3                   	ret    
+     dbd:	57                   	push   edi
+     dbe:	56                   	push   esi
+     dbf:	53                   	push   ebx
+     dc0:	81 ec 20 06 00 00    	sub    esp,0x620
+     dc6:	8d 94 24 0c 02 00 00 	lea    edx,[esp+0x20c]
+     dcd:	bb a6 19 00 00       	mov    ebx,0x19a6
+     dd2:	b8 0a 00 00 00       	mov    eax,0xa
+     dd7:	89 d7                	mov    edi,edx
+     dd9:	89 de                	mov    esi,ebx
+     ddb:	89 c1                	mov    ecx,eax
+     ddd:	f3 a4                	rep movs BYTE PTR es:[edi],BYTE PTR ds:[esi]
+     ddf:	8d 9c 24 16 02 00 00 	lea    ebx,[esp+0x216]
+     de6:	b0 00                	mov    al,0x0
+     de8:	ba f6 03 00 00       	mov    edx,0x3f6
+     ded:	89 df                	mov    edi,ebx
+     def:	89 d1                	mov    ecx,edx
+     df1:	f3 aa                	rep stos BYTE PTR es:[edi],al
+     df3:	6a 00                	push   0x0
+     df5:	68 5d 19 00 00       	push   0x195d
+     dfa:	e8 63 fb ff ff       	call   962 <code+0x962>
+     dff:	83 c4 08             	add    esp,0x8
+     e02:	89 84 24 0c 06 00 00 	mov    DWORD PTR [esp+0x60c],eax
+     e09:	83 bc 24 0c 06 00 00 	cmp    DWORD PTR [esp+0x60c],0xffffffff
+     e10:	ff 
+     e11:	75 1a                	jne    e2d <code+0xe2d>
+     e13:	83 ec 0c             	sub    esp,0xc
+     e16:	68 69 19 00 00       	push   0x1969
+     e1b:	e8 27 0a 00 00       	call   1847 <code+0x1847>
+     e20:	83 c4 10             	add    esp,0x10
+     e23:	b8 ff ff ff ff       	mov    eax,0xffffffff
+     e28:	e9 57 02 00 00       	jmp    1084 <code+0x1084>
+     e2d:	83 ec 04             	sub    esp,0x4
+     e30:	68 00 04 00 00       	push   0x400
+     e35:	8d 84 24 14 02 00 00 	lea    eax,[esp+0x214]
+     e3c:	50                   	push   eax
+     e3d:	ff b4 24 18 06 00 00 	push   DWORD PTR [esp+0x618]
+     e44:	e8 51 fb ff ff       	call   99a <code+0x99a>
+     e49:	83 c4 10             	add    esp,0x10
+     e4c:	89 84 24 10 06 00 00 	mov    DWORD PTR [esp+0x610],eax
+     e53:	83 bc 24 10 06 00 00 	cmp    DWORD PTR [esp+0x610],0xffffffff
+     e5a:	ff 
+     e5b:	75 21                	jne    e7e <code+0xe7e>
+     e5d:	83 ec 08             	sub    esp,0x8
+     e60:	ff b4 24 14 06 00 00 	push   DWORD PTR [esp+0x614]
+     e67:	68 84 19 00 00       	push   0x1984
+     e6c:	e8 d6 09 00 00       	call   1847 <code+0x1847>
+     e71:	83 c4 10             	add    esp,0x10
+     e74:	b8 ff ff ff ff       	mov    eax,0xffffffff
+     e79:	e9 06 02 00 00       	jmp    1084 <code+0x1084>
+     e7e:	83 ec 0c             	sub    esp,0xc
+     e81:	ff b4 24 18 06 00 00 	push   DWORD PTR [esp+0x618]
+     e88:	e8 fe fa ff ff       	call   98b <code+0x98b>
+     e8d:	83 c4 10             	add    esp,0x10
+     e90:	c7 84 24 14 06 00 00 	mov    DWORD PTR [esp+0x614],0x0
+     e97:	00 00 00 00 
+     e9b:	8b 84 24 14 06 00 00 	mov    eax,DWORD PTR [esp+0x614]
+     ea2:	8d 94 24 0c 02 00 00 	lea    edx,[esp+0x20c]
+     ea9:	89 54 84 0c          	mov    DWORD PTR [esp+eax*4+0xc],edx
+     ead:	ff 84 24 14 06 00 00 	inc    DWORD PTR [esp+0x614]
+     eb4:	c7 84 24 18 06 00 00 	mov    DWORD PTR [esp+0x618],0x1
+     ebb:	01 00 00 00 
+     ebf:	eb 5f                	jmp    f20 <code+0xf20>
+     ec1:	8b 84 24 18 06 00 00 	mov    eax,DWORD PTR [esp+0x618]
+     ec8:	8a 84 04 0c 02 00 00 	mov    al,BYTE PTR [esp+eax*1+0x20c]
+     ecf:	3c 3a                	cmp    al,0x3a
+     ed1:	74 12                	je     ee5 <code+0xee5>
+     ed3:	8b 84 24 18 06 00 00 	mov    eax,DWORD PTR [esp+0x618]
+     eda:	8a 84 04 0c 02 00 00 	mov    al,BYTE PTR [esp+eax*1+0x20c]
+     ee1:	3c 0a                	cmp    al,0xa
+     ee3:	75 34                	jne    f19 <code+0xf19>
+     ee5:	8b 84 24 18 06 00 00 	mov    eax,DWORD PTR [esp+0x618]
+     eec:	c6 84 04 0c 02 00 00 	mov    BYTE PTR [esp+eax*1+0x20c],0x0
+     ef3:	00 
+     ef4:	8b 94 24 14 06 00 00 	mov    edx,DWORD PTR [esp+0x614]
+     efb:	8b 84 24 18 06 00 00 	mov    eax,DWORD PTR [esp+0x618]
+     f02:	8d 48 01             	lea    ecx,[eax+0x1]
+     f05:	8d 84 24 0c 02 00 00 	lea    eax,[esp+0x20c]
+     f0c:	01 c8                	add    eax,ecx
+     f0e:	89 44 94 0c          	mov    DWORD PTR [esp+edx*4+0xc],eax
+     f12:	ff 84 24 14 06 00 00 	inc    DWORD PTR [esp+0x614]
+     f19:	ff 84 24 18 06 00 00 	inc    DWORD PTR [esp+0x618]
+     f20:	8b 84 24 18 06 00 00 	mov    eax,DWORD PTR [esp+0x618]
+     f27:	3b 84 24 10 06 00 00 	cmp    eax,DWORD PTR [esp+0x610]
+     f2e:	7c 91                	jl     ec1 <code+0xec1>
+     f30:	c7 84 24 1c 06 00 00 	mov    DWORD PTR [esp+0x61c],0x0
+     f37:	00 00 00 00 
+     f3b:	e9 15 01 00 00       	jmp    1055 <code+0x1055>
+     f40:	8b 94 24 1c 06 00 00 	mov    edx,DWORD PTR [esp+0x61c]
+     f47:	89 d0                	mov    eax,edx
+     f49:	c1 e0 02             	shl    eax,0x2
+     f4c:	01 d0                	add    eax,edx
+     f4e:	8b 44 84 0c          	mov    eax,DWORD PTR [esp+eax*4+0xc]
+     f52:	83 ec 08             	sub    esp,0x8
+     f55:	ff b4 24 38 06 00 00 	push   DWORD PTR [esp+0x638]
+     f5c:	50                   	push   eax
+     f5d:	e8 50 f4 ff ff       	call   3b2 <code+0x3b2>
+     f62:	83 c4 10             	add    esp,0x10
+     f65:	85 c0                	test   eax,eax
+     f67:	0f 85 e1 00 00 00    	jne    104e <code+0x104e>
+     f6d:	8b 94 24 1c 06 00 00 	mov    edx,DWORD PTR [esp+0x61c]
+     f74:	89 d0                	mov    eax,edx
+     f76:	c1 e0 02             	shl    eax,0x2
+     f79:	01 d0                	add    eax,edx
+     f7b:	8b 54 84 0c          	mov    edx,DWORD PTR [esp+eax*4+0xc]
+     f7f:	8b 84 24 34 06 00 00 	mov    eax,DWORD PTR [esp+0x634]
+     f86:	83 ec 04             	sub    esp,0x4
+     f89:	6a 20                	push   0x20
+     f8b:	52                   	push   edx
+     f8c:	50                   	push   eax
+     f8d:	e8 3f f5 ff ff       	call   4d1 <code+0x4d1>
+     f92:	83 c4 10             	add    esp,0x10
+     f95:	8b 94 24 1c 06 00 00 	mov    edx,DWORD PTR [esp+0x61c]
+     f9c:	89 d0                	mov    eax,edx
+     f9e:	c1 e0 02             	shl    eax,0x2
+     fa1:	01 d0                	add    eax,edx
+     fa3:	40                   	inc    eax
+     fa4:	8b 44 84 0c          	mov    eax,DWORD PTR [esp+eax*4+0xc]
+     fa8:	8b 94 24 34 06 00 00 	mov    edx,DWORD PTR [esp+0x634]
+     faf:	83 c2 20             	add    edx,0x20
+     fb2:	83 ec 04             	sub    esp,0x4
+     fb5:	6a 20                	push   0x20
+     fb7:	50                   	push   eax
+     fb8:	52                   	push   edx
+     fb9:	e8 13 f5 ff ff       	call   4d1 <code+0x4d1>
+     fbe:	83 c4 10             	add    esp,0x10
+     fc1:	8b 94 24 1c 06 00 00 	mov    edx,DWORD PTR [esp+0x61c]
+     fc8:	89 d0                	mov    eax,edx
+     fca:	c1 e0 02             	shl    eax,0x2
+     fcd:	01 d0                	add    eax,edx
+     fcf:	83 c0 02             	add    eax,0x2
+     fd2:	8b 44 84 0c          	mov    eax,DWORD PTR [esp+eax*4+0xc]
+     fd6:	83 ec 0c             	sub    esp,0xc
+     fd9:	50                   	push   eax
+     fda:	e8 3b f5 ff ff       	call   51a <code+0x51a>
+     fdf:	83 c4 10             	add    esp,0x10
+     fe2:	8b 94 24 34 06 00 00 	mov    edx,DWORD PTR [esp+0x634]
+     fe9:	66 89 42 40          	mov    WORD PTR [edx+0x40],ax
+     fed:	8b 94 24 1c 06 00 00 	mov    edx,DWORD PTR [esp+0x61c]
+     ff4:	89 d0                	mov    eax,edx
+     ff6:	c1 e0 02             	shl    eax,0x2
+     ff9:	01 d0                	add    eax,edx
+     ffb:	83 c0 03             	add    eax,0x3
+     ffe:	8b 44 84 0c          	mov    eax,DWORD PTR [esp+eax*4+0xc]
+    1002:	83 ec 0c             	sub    esp,0xc
+    1005:	50                   	push   eax
+    1006:	e8 0f f5 ff ff       	call   51a <code+0x51a>
+    100b:	83 c4 10             	add    esp,0x10
+    100e:	8b 94 24 34 06 00 00 	mov    edx,DWORD PTR [esp+0x634]
+    1015:	66 89 42 42          	mov    WORD PTR [edx+0x42],ax
+    1019:	8b 94 24 1c 06 00 00 	mov    edx,DWORD PTR [esp+0x61c]
+    1020:	89 d0                	mov    eax,edx
+    1022:	c1 e0 02             	shl    eax,0x2
+    1025:	01 d0                	add    eax,edx
+    1027:	83 c0 04             	add    eax,0x4
+    102a:	8b 44 84 0c          	mov    eax,DWORD PTR [esp+eax*4+0xc]
+    102e:	8b 94 24 34 06 00 00 	mov    edx,DWORD PTR [esp+0x634]
+    1035:	83 c2 48             	add    edx,0x48
+    1038:	83 ec 04             	sub    esp,0x4
+    103b:	6a 20                	push   0x20
+    103d:	50                   	push   eax
+    103e:	52                   	push   edx
+    103f:	e8 8d f4 ff ff       	call   4d1 <code+0x4d1>
+    1044:	83 c4 10             	add    esp,0x10
+    1047:	b8 00 00 00 00       	mov    eax,0x0
+    104c:	eb 36                	jmp    1084 <code+0x1084>
+    104e:	ff 84 24 1c 06 00 00 	inc    DWORD PTR [esp+0x61c]
+    1055:	8b 8c 24 14 06 00 00 	mov    ecx,DWORD PTR [esp+0x614]
+    105c:	ba 67 66 66 66       	mov    edx,0x66666667
+    1061:	89 c8                	mov    eax,ecx
+    1063:	f7 ea                	imul   edx
+    1065:	d1 fa                	sar    edx,1
+    1067:	89 c8                	mov    eax,ecx
+    1069:	c1 f8 1f             	sar    eax,0x1f
+    106c:	89 d1                	mov    ecx,edx
+    106e:	29 c1                	sub    ecx,eax
+    1070:	89 c8                	mov    eax,ecx
+    1072:	3b 84 24 1c 06 00 00 	cmp    eax,DWORD PTR [esp+0x61c]
+    1079:	0f 8f c1 fe ff ff    	jg     f40 <code+0xf40>
+    107f:	b8 ff ff ff ff       	mov    eax,0xffffffff
+    1084:	81 c4 20 06 00 00    	add    esp,0x620
+    108a:	5b                   	pop    ebx
+    108b:	5e                   	pop    esi
+    108c:	5f                   	pop    edi
+    108d:	c3                   	ret    
+    108e:	57                   	push   edi
+    108f:	56                   	push   esi
+    1090:	53                   	push   ebx
+    1091:	81 ec 30 06 00 00    	sub    esp,0x630
+    1097:	8b 84 24 40 06 00 00 	mov    eax,DWORD PTR [esp+0x640]
+    109e:	66 89 44 24 0c       	mov    WORD PTR [esp+0xc],ax
+    10a3:	8d 94 24 1c 02 00 00 	lea    edx,[esp+0x21c]
+    10aa:	bb a6 19 00 00       	mov    ebx,0x19a6
+    10af:	b8 0a 00 00 00       	mov    eax,0xa
+    10b4:	89 d7                	mov    edi,edx
+    10b6:	89 de                	mov    esi,ebx
+    10b8:	89 c1                	mov    ecx,eax
+    10ba:	f3 a4                	rep movs BYTE PTR es:[edi],BYTE PTR ds:[esi]
+    10bc:	8d 9c 24 26 02 00 00 	lea    ebx,[esp+0x226]
+    10c3:	b0 00                	mov    al,0x0
+    10c5:	ba f6 03 00 00       	mov    edx,0x3f6
+    10ca:	89 df                	mov    edi,ebx
+    10cc:	89 d1                	mov    ecx,edx
+    10ce:	f3 aa                	rep stos BYTE PTR es:[edi],al
+    10d0:	6a 00                	push   0x0
+    10d2:	68 5d 19 00 00       	push   0x195d
+    10d7:	e8 86 f8 ff ff       	call   962 <code+0x962>
+    10dc:	83 c4 08             	add    esp,0x8
+    10df:	89 84 24 1c 06 00 00 	mov    DWORD PTR [esp+0x61c],eax
+    10e6:	83 bc 24 1c 06 00 00 	cmp    DWORD PTR [esp+0x61c],0xffffffff
+    10ed:	ff 
+    10ee:	75 1a                	jne    110a <code+0x110a>
+    10f0:	83 ec 0c             	sub    esp,0xc
+    10f3:	68 69 19 00 00       	push   0x1969
+    10f8:	e8 4a 07 00 00       	call   1847 <code+0x1847>
+    10fd:	83 c4 10             	add    esp,0x10
+    1100:	b8 ff ff ff ff       	mov    eax,0xffffffff
+    1105:	e9 58 02 00 00       	jmp    1362 <code+0x1362>
+    110a:	83 ec 04             	sub    esp,0x4
+    110d:	68 00 04 00 00       	push   0x400
+    1112:	8d 84 24 24 02 00 00 	lea    eax,[esp+0x224]
+    1119:	50                   	push   eax
+    111a:	ff b4 24 28 06 00 00 	push   DWORD PTR [esp+0x628]
+    1121:	e8 74 f8 ff ff       	call   99a <code+0x99a>
+    1126:	83 c4 10             	add    esp,0x10
+    1129:	89 84 24 20 06 00 00 	mov    DWORD PTR [esp+0x620],eax
+    1130:	83 bc 24 20 06 00 00 	cmp    DWORD PTR [esp+0x620],0xffffffff
+    1137:	ff 
+    1138:	75 21                	jne    115b <code+0x115b>
+    113a:	83 ec 08             	sub    esp,0x8
+    113d:	ff b4 24 24 06 00 00 	push   DWORD PTR [esp+0x624]
+    1144:	68 84 19 00 00       	push   0x1984
+    1149:	e8 f9 06 00 00       	call   1847 <code+0x1847>
+    114e:	83 c4 10             	add    esp,0x10
+    1151:	b8 ff ff ff ff       	mov    eax,0xffffffff
+    1156:	e9 07 02 00 00       	jmp    1362 <code+0x1362>
+    115b:	83 ec 0c             	sub    esp,0xc
+    115e:	ff b4 24 28 06 00 00 	push   DWORD PTR [esp+0x628]
+    1165:	e8 21 f8 ff ff       	call   98b <code+0x98b>
+    116a:	83 c4 10             	add    esp,0x10
+    116d:	c7 84 24 24 06 00 00 	mov    DWORD PTR [esp+0x624],0x0
+    1174:	00 00 00 00 
+    1178:	8b 84 24 24 06 00 00 	mov    eax,DWORD PTR [esp+0x624]
+    117f:	8d 94 24 1c 02 00 00 	lea    edx,[esp+0x21c]
+    1186:	89 54 84 1c          	mov    DWORD PTR [esp+eax*4+0x1c],edx
+    118a:	ff 84 24 24 06 00 00 	inc    DWORD PTR [esp+0x624]
+    1191:	c7 84 24 28 06 00 00 	mov    DWORD PTR [esp+0x628],0x1
+    1198:	01 00 00 00 
+    119c:	eb 5f                	jmp    11fd <code+0x11fd>
+    119e:	8b 84 24 28 06 00 00 	mov    eax,DWORD PTR [esp+0x628]
+    11a5:	8a 84 04 1c 02 00 00 	mov    al,BYTE PTR [esp+eax*1+0x21c]
+    11ac:	3c 3a                	cmp    al,0x3a
+    11ae:	74 12                	je     11c2 <code+0x11c2>
+    11b0:	8b 84 24 28 06 00 00 	mov    eax,DWORD PTR [esp+0x628]
+    11b7:	8a 84 04 1c 02 00 00 	mov    al,BYTE PTR [esp+eax*1+0x21c]
+    11be:	3c 0a                	cmp    al,0xa
+    11c0:	75 34                	jne    11f6 <code+0x11f6>
+    11c2:	8b 84 24 28 06 00 00 	mov    eax,DWORD PTR [esp+0x628]
+    11c9:	c6 84 04 1c 02 00 00 	mov    BYTE PTR [esp+eax*1+0x21c],0x0
+    11d0:	00 
+    11d1:	8b 94 24 24 06 00 00 	mov    edx,DWORD PTR [esp+0x624]
+    11d8:	8b 84 24 28 06 00 00 	mov    eax,DWORD PTR [esp+0x628]
+    11df:	8d 48 01             	lea    ecx,[eax+0x1]
+    11e2:	8d 84 24 1c 02 00 00 	lea    eax,[esp+0x21c]
+    11e9:	01 c8                	add    eax,ecx
+    11eb:	89 44 94 1c          	mov    DWORD PTR [esp+edx*4+0x1c],eax
+    11ef:	ff 84 24 24 06 00 00 	inc    DWORD PTR [esp+0x624]
+    11f6:	ff 84 24 28 06 00 00 	inc    DWORD PTR [esp+0x628]
+    11fd:	8b 84 24 28 06 00 00 	mov    eax,DWORD PTR [esp+0x628]
+    1204:	3b 84 24 20 06 00 00 	cmp    eax,DWORD PTR [esp+0x620]
+    120b:	7c 91                	jl     119e <code+0x119e>
+    120d:	c7 84 24 2c 06 00 00 	mov    DWORD PTR [esp+0x62c],0x0
+    1214:	00 00 00 00 
+    1218:	e9 16 01 00 00       	jmp    1333 <code+0x1333>
+    121d:	8b 94 24 2c 06 00 00 	mov    edx,DWORD PTR [esp+0x62c]
+    1224:	89 d0                	mov    eax,edx
+    1226:	c1 e0 02             	shl    eax,0x2
+    1229:	01 d0                	add    eax,edx
+    122b:	83 c0 02             	add    eax,0x2
+    122e:	8b 44 84 1c          	mov    eax,DWORD PTR [esp+eax*4+0x1c]
+    1232:	83 ec 0c             	sub    esp,0xc
+    1235:	50                   	push   eax
+    1236:	e8 df f2 ff ff       	call   51a <code+0x51a>
+    123b:	83 c4 10             	add    esp,0x10
+    123e:	0f b7 54 24 0c       	movzx  edx,WORD PTR [esp+0xc]
+    1243:	39 d0                	cmp    eax,edx
+    1245:	0f 85 e1 00 00 00    	jne    132c <code+0x132c>
+    124b:	8b 94 24 2c 06 00 00 	mov    edx,DWORD PTR [esp+0x62c]
+    1252:	89 d0                	mov    eax,edx
+    1254:	c1 e0 02             	shl    eax,0x2
+    1257:	01 d0                	add    eax,edx
+    1259:	8b 54 84 1c          	mov    edx,DWORD PTR [esp+eax*4+0x1c]
+    125d:	8b 84 24 44 06 00 00 	mov    eax,DWORD PTR [esp+0x644]
+    1264:	83 ec 04             	sub    esp,0x4
+    1267:	6a 20                	push   0x20
+    1269:	52                   	push   edx
+    126a:	50                   	push   eax
+    126b:	e8 61 f2 ff ff       	call   4d1 <code+0x4d1>
+    1270:	83 c4 10             	add    esp,0x10
+    1273:	8b 94 24 2c 06 00 00 	mov    edx,DWORD PTR [esp+0x62c]
+    127a:	89 d0                	mov    eax,edx
+    127c:	c1 e0 02             	shl    eax,0x2
+    127f:	01 d0                	add    eax,edx
+    1281:	40                   	inc    eax
+    1282:	8b 44 84 1c          	mov    eax,DWORD PTR [esp+eax*4+0x1c]
+    1286:	8b 94 24 44 06 00 00 	mov    edx,DWORD PTR [esp+0x644]
+    128d:	83 c2 20             	add    edx,0x20
+    1290:	83 ec 04             	sub    esp,0x4
+    1293:	6a 20                	push   0x20
+    1295:	50                   	push   eax
+    1296:	52                   	push   edx
+    1297:	e8 35 f2 ff ff       	call   4d1 <code+0x4d1>
+    129c:	83 c4 10             	add    esp,0x10
+    129f:	8b 94 24 2c 06 00 00 	mov    edx,DWORD PTR [esp+0x62c]
+    12a6:	89 d0                	mov    eax,edx
+    12a8:	c1 e0 02             	shl    eax,0x2
+    12ab:	01 d0                	add    eax,edx
+    12ad:	83 c0 02             	add    eax,0x2
+    12b0:	8b 44 84 1c          	mov    eax,DWORD PTR [esp+eax*4+0x1c]
+    12b4:	83 ec 0c             	sub    esp,0xc
+    12b7:	50                   	push   eax
+    12b8:	e8 5d f2 ff ff       	call   51a <code+0x51a>
+    12bd:	83 c4 10             	add    esp,0x10
+    12c0:	8b 94 24 44 06 00 00 	mov    edx,DWORD PTR [esp+0x644]
+    12c7:	66 89 42 40          	mov    WORD PTR [edx+0x40],ax
+    12cb:	8b 94 24 2c 06 00 00 	mov    edx,DWORD PTR [esp+0x62c]
+    12d2:	89 d0                	mov    eax,edx
+    12d4:	c1 e0 02             	shl    eax,0x2
+    12d7:	01 d0                	add    eax,edx
+    12d9:	83 c0 03             	add    eax,0x3
+    12dc:	8b 44 84 1c          	mov    eax,DWORD PTR [esp+eax*4+0x1c]
+    12e0:	83 ec 0c             	sub    esp,0xc
+    12e3:	50                   	push   eax
+    12e4:	e8 31 f2 ff ff       	call   51a <code+0x51a>
+    12e9:	83 c4 10             	add    esp,0x10
+    12ec:	8b 94 24 44 06 00 00 	mov    edx,DWORD PTR [esp+0x644]
+    12f3:	66 89 42 42          	mov    WORD PTR [edx+0x42],ax
+    12f7:	8b 94 24 2c 06 00 00 	mov    edx,DWORD PTR [esp+0x62c]
+    12fe:	89 d0                	mov    eax,edx
+    1300:	c1 e0 02             	shl    eax,0x2
+    1303:	01 d0                	add    eax,edx
+    1305:	83 c0 04             	add    eax,0x4
+    1308:	8b 44 84 1c          	mov    eax,DWORD PTR [esp+eax*4+0x1c]
+    130c:	8b 94 24 44 06 00 00 	mov    edx,DWORD PTR [esp+0x644]
+    1313:	83 c2 48             	add    edx,0x48
+    1316:	83 ec 04             	sub    esp,0x4
+    1319:	6a 20                	push   0x20
+    131b:	50                   	push   eax
+    131c:	52                   	push   edx
+    131d:	e8 af f1 ff ff       	call   4d1 <code+0x4d1>
+    1322:	83 c4 10             	add    esp,0x10
+    1325:	b8 00 00 00 00       	mov    eax,0x0
+    132a:	eb 36                	jmp    1362 <code+0x1362>
+    132c:	ff 84 24 2c 06 00 00 	inc    DWORD PTR [esp+0x62c]
+    1333:	8b 8c 24 24 06 00 00 	mov    ecx,DWORD PTR [esp+0x624]
+    133a:	ba 67 66 66 66       	mov    edx,0x66666667
+    133f:	89 c8                	mov    eax,ecx
+    1341:	f7 ea                	imul   edx
+    1343:	d1 fa                	sar    edx,1
+    1345:	89 c8                	mov    eax,ecx
+    1347:	c1 f8 1f             	sar    eax,0x1f
+    134a:	89 d1                	mov    ecx,edx
+    134c:	29 c1                	sub    ecx,eax
+    134e:	89 c8                	mov    eax,ecx
+    1350:	3b 84 24 2c 06 00 00 	cmp    eax,DWORD PTR [esp+0x62c]
+    1357:	0f 8f c0 fe ff ff    	jg     121d <code+0x121d>
+    135d:	b8 ff ff ff ff       	mov    eax,0xffffffff
+    1362:	81 c4 30 06 00 00    	add    esp,0x630
+    1368:	5b                   	pop    ebx
+    1369:	5e                   	pop    esi
+    136a:	5f                   	pop    edi
+    136b:	c3                   	ret    
+    136c:	6a 00                	push   0x0
+    136e:	68 0c 02 00 00       	push   0x20c
+    1373:	e8 3f f3 ff ff       	call   6b7 <code+0x6b7>
+    1378:	83 c4 08             	add    esp,0x8
+    137b:	c3                   	ret    
+    137c:	6a 01                	push   0x1
+    137e:	68 0c 02 00 00       	push   0x20c
+    1383:	e8 2f f3 ff ff       	call   6b7 <code+0x6b7>
+    1388:	83 c4 08             	add    esp,0x8
+    138b:	c3                   	ret    
+    138c:	6a 02                	push   0x2
+    138e:	68 0c 02 00 00       	push   0x20c
+    1393:	e8 1f f3 ff ff       	call   6b7 <code+0x6b7>
+    1398:	83 c4 08             	add    esp,0x8
+    139b:	c3                   	ret    
+    139c:	6a 03                	push   0x3
+    139e:	68 0c 02 00 00       	push   0x20c
+    13a3:	e8 0f f3 ff ff       	call   6b7 <code+0x6b7>
+    13a8:	83 c4 08             	add    esp,0x8
+    13ab:	c3                   	ret    
+    13ac:	83 ec 08             	sub    esp,0x8
+    13af:	8b 54 24 10          	mov    edx,DWORD PTR [esp+0x10]
+    13b3:	8b 44 24 14          	mov    eax,DWORD PTR [esp+0x14]
+    13b7:	66 89 54 24 04       	mov    WORD PTR [esp+0x4],dx
+    13bc:	66 89 04 24          	mov    WORD PTR [esp],ax
+    13c0:	0f bf 0c 24          	movsx  ecx,WORD PTR [esp]
+    13c4:	0f bf 54 24 04       	movsx  edx,WORD PTR [esp+0x4]
+    13c9:	8b 44 24 0c          	mov    eax,DWORD PTR [esp+0xc]
+    13cd:	51                   	push   ecx
+    13ce:	52                   	push   edx
+    13cf:	50                   	push   eax
+    13d0:	68 b6 00 00 00       	push   0xb6
+    13d5:	e8 99 f2 ff ff       	call   673 <code+0x673>
+    13da:	83 c4 10             	add    esp,0x10
+    13dd:	83 c4 08             	add    esp,0x8
+    13e0:	c3                   	ret    
+    13e1:	83 ec 04             	sub    esp,0x4
+    13e4:	8b 44 24 0c          	mov    eax,DWORD PTR [esp+0xc]
+    13e8:	66 89 04 24          	mov    WORD PTR [esp],ax
+    13ec:	0f bf 14 24          	movsx  edx,WORD PTR [esp]
+    13f0:	8b 44 24 08          	mov    eax,DWORD PTR [esp+0x8]
+    13f4:	52                   	push   edx
+    13f5:	50                   	push   eax
+    13f6:	6a 0f                	push   0xf
+    13f8:	e8 99 f2 ff ff       	call   696 <code+0x696>
+    13fd:	83 c4 0c             	add    esp,0xc
+    1400:	83 c4 04             	add    esp,0x4
+    1403:	c3                   	ret    
+    1404:	83 ec 04             	sub    esp,0x4
+    1407:	8b 44 24 08          	mov    eax,DWORD PTR [esp+0x8]
+    140b:	88 04 24             	mov    BYTE PTR [esp],al
+    140e:	6a 01                	push   0x1
+    1410:	8d 44 24 04          	lea    eax,[esp+0x4]
+    1414:	50                   	push   eax
+    1415:	6a 01                	push   0x1
+    1417:	e8 96 f5 ff ff       	call   9b2 <code+0x9b2>
+    141c:	83 c4 0c             	add    esp,0xc
+    141f:	83 c4 04             	add    esp,0x4
+    1422:	c3                   	ret    
+    1423:	83 7c 24 04 00       	cmp    DWORD PTR [esp+0x4],0x0
+    1428:	74 1d                	je     1447 <code+0x1447>
+    142a:	8b 44 24 04          	mov    eax,DWORD PTR [esp+0x4]
+    142e:	8b 00                	mov    eax,DWORD PTR [eax]
+    1430:	8b 54 24 08          	mov    edx,DWORD PTR [esp+0x8]
+    1434:	88 10                	mov    BYTE PTR [eax],dl
+    1436:	8b 44 24 04          	mov    eax,DWORD PTR [esp+0x4]
+    143a:	8b 00                	mov    eax,DWORD PTR [eax]
+    143c:	8d 50 01             	lea    edx,[eax+0x1]
+    143f:	8b 44 24 04          	mov    eax,DWORD PTR [esp+0x4]
+    1443:	89 10                	mov    DWORD PTR [eax],edx
+    1445:	eb 10                	jmp    1457 <code+0x1457>
+    1447:	8b 44 24 08          	mov    eax,DWORD PTR [esp+0x8]
+    144b:	0f b6 c0             	movzx  eax,al
+    144e:	50                   	push   eax
+    144f:	e8 b0 ff ff ff       	call   1404 <code+0x1404>
+    1454:	83 c4 04             	add    esp,0x4
+    1457:	c3                   	ret    
+    1458:	55                   	push   ebp
+    1459:	57                   	push   edi
+    145a:	56                   	push   esi
+    145b:	53                   	push   ebx
+    145c:	bb 00 00 00 00       	mov    ebx,0x0
+    1461:	be 20 00 00 00       	mov    esi,0x20
+    1466:	83 7c 24 1c 00       	cmp    DWORD PTR [esp+0x1c],0x0
+    146b:	7e 38                	jle    14a5 <code+0x14a5>
+    146d:	bf 00 00 00 00       	mov    edi,0x0
+    1472:	8b 6c 24 18          	mov    ebp,DWORD PTR [esp+0x18]
+    1476:	eb 02                	jmp    147a <code+0x147a>
+    1478:	47                   	inc    edi
+    1479:	45                   	inc    ebp
+    147a:	8a 45 00             	mov    al,BYTE PTR [ebp+0x0]
+    147d:	84 c0                	test   al,al
+    147f:	75 f7                	jne    1478 <code+0x1478>
+    1481:	3b 7c 24 1c          	cmp    edi,DWORD PTR [esp+0x1c]
+    1485:	7c 0a                	jl     1491 <code+0x1491>
+    1487:	c7 44 24 1c 00 00 00 	mov    DWORD PTR [esp+0x1c],0x0
+    148e:	00 
+    148f:	eb 04                	jmp    1495 <code+0x1495>
+    1491:	29 7c 24 1c          	sub    DWORD PTR [esp+0x1c],edi
+    1495:	8b 44 24 20          	mov    eax,DWORD PTR [esp+0x20]
+    1499:	83 e0 02             	and    eax,0x2
+    149c:	85 c0                	test   eax,eax
+    149e:	74 05                	je     14a5 <code+0x14a5>
+    14a0:	be 30 00 00 00       	mov    esi,0x30
+    14a5:	8b 44 24 20          	mov    eax,DWORD PTR [esp+0x20]
+    14a9:	83 e0 01             	and    eax,0x1
+    14ac:	85 c0                	test   eax,eax
+    14ae:	75 3a                	jne    14ea <code+0x14ea>
+    14b0:	eb 12                	jmp    14c4 <code+0x14c4>
+    14b2:	56                   	push   esi
+    14b3:	ff 74 24 18          	push   DWORD PTR [esp+0x18]
+    14b7:	e8 67 ff ff ff       	call   1423 <code+0x1423>
+    14bc:	83 c4 08             	add    esp,0x8
+    14bf:	43                   	inc    ebx
+    14c0:	ff 4c 24 1c          	dec    DWORD PTR [esp+0x1c]
+    14c4:	83 7c 24 1c 00       	cmp    DWORD PTR [esp+0x1c],0x0
+    14c9:	7f e7                	jg     14b2 <code+0x14b2>
+    14cb:	eb 1e                	jmp    14eb <code+0x14eb>
+    14cd:	8b 44 24 18          	mov    eax,DWORD PTR [esp+0x18]
+    14d1:	8a 00                	mov    al,BYTE PTR [eax]
+    14d3:	0f be c0             	movsx  eax,al
+    14d6:	50                   	push   eax
+    14d7:	ff 74 24 18          	push   DWORD PTR [esp+0x18]
+    14db:	e8 43 ff ff ff       	call   1423 <code+0x1423>
+    14e0:	83 c4 08             	add    esp,0x8
+    14e3:	43                   	inc    ebx
+    14e4:	ff 44 24 18          	inc    DWORD PTR [esp+0x18]
+    14e8:	eb 01                	jmp    14eb <code+0x14eb>
+    14ea:	90                   	nop
+    14eb:	8b 44 24 18          	mov    eax,DWORD PTR [esp+0x18]
+    14ef:	8a 00                	mov    al,BYTE PTR [eax]
+    14f1:	84 c0                	test   al,al
+    14f3:	75 d8                	jne    14cd <code+0x14cd>
+    14f5:	eb 12                	jmp    1509 <code+0x1509>
+    14f7:	56                   	push   esi
+    14f8:	ff 74 24 18          	push   DWORD PTR [esp+0x18]
+    14fc:	e8 22 ff ff ff       	call   1423 <code+0x1423>
+    1501:	83 c4 08             	add    esp,0x8
+    1504:	43                   	inc    ebx
+    1505:	ff 4c 24 1c          	dec    DWORD PTR [esp+0x1c]
+    1509:	83 7c 24 1c 00       	cmp    DWORD PTR [esp+0x1c],0x0
+    150e:	7f e7                	jg     14f7 <code+0x14f7>
+    1510:	89 d8                	mov    eax,ebx
+    1512:	5b                   	pop    ebx
+    1513:	5e                   	pop    esi
+    1514:	5f                   	pop    edi
+    1515:	5d                   	pop    ebp
+    1516:	c3                   	ret    
+    1517:	55                   	push   ebp
+    1518:	57                   	push   edi
+    1519:	56                   	push   esi
+    151a:	53                   	push   ebx
+    151b:	83 ec 38             	sub    esp,0x38
+    151e:	c7 44 24 04 00 00 00 	mov    DWORD PTR [esp+0x4],0x0
+    1525:	00 
+    1526:	bd 00 00 00 00       	mov    ebp,0x0
+    152b:	8b 74 24 50          	mov    esi,DWORD PTR [esp+0x50]
+    152f:	83 7c 24 50 00       	cmp    DWORD PTR [esp+0x50],0x0
+    1534:	75 28                	jne    155e <code+0x155e>
+    1536:	c6 44 24 16 30       	mov    BYTE PTR [esp+0x16],0x30
+    153b:	c6 44 24 17 00       	mov    BYTE PTR [esp+0x17],0x0
+    1540:	ff 74 24 60          	push   DWORD PTR [esp+0x60]
+    1544:	ff 74 24 60          	push   DWORD PTR [esp+0x60]
+    1548:	8d 44 24 1e          	lea    eax,[esp+0x1e]
+    154c:	50                   	push   eax
+    154d:	ff 74 24 58          	push   DWORD PTR [esp+0x58]
+    1551:	e8 02 ff ff ff       	call   1458 <code+0x1458>
+    1556:	83 c4 10             	add    esp,0x10
+    1559:	e9 b8 00 00 00       	jmp    1616 <code+0x1616>
+    155e:	83 7c 24 58 00       	cmp    DWORD PTR [esp+0x58],0x0
+    1563:	74 1e                	je     1583 <code+0x1583>
+    1565:	83 7c 24 54 0a       	cmp    DWORD PTR [esp+0x54],0xa
+    156a:	75 17                	jne    1583 <code+0x1583>
+    156c:	83 7c 24 50 00       	cmp    DWORD PTR [esp+0x50],0x0
+    1571:	79 10                	jns    1583 <code+0x1583>
+    1573:	c7 44 24 04 01 00 00 	mov    DWORD PTR [esp+0x4],0x1
+    157a:	00 
+    157b:	8b 44 24 50          	mov    eax,DWORD PTR [esp+0x50]
+    157f:	f7 d8                	neg    eax
+    1581:	89 c6                	mov    esi,eax
+    1583:	8d 44 24 16          	lea    eax,[esp+0x16]
+    1587:	8d 58 21             	lea    ebx,[eax+0x21]
+    158a:	c6 03 00             	mov    BYTE PTR [ebx],0x0
+    158d:	eb 3a                	jmp    15c9 <code+0x15c9>
+    158f:	8b 4c 24 54          	mov    ecx,DWORD PTR [esp+0x54]
+    1593:	89 f0                	mov    eax,esi
+    1595:	ba 00 00 00 00       	mov    edx,0x0
+    159a:	f7 f1                	div    ecx
+    159c:	89 d0                	mov    eax,edx
+    159e:	89 c7                	mov    edi,eax
+    15a0:	83 ff 09             	cmp    edi,0x9
+    15a3:	7e 09                	jle    15ae <code+0x15ae>
+    15a5:	8b 44 24 64          	mov    eax,DWORD PTR [esp+0x64]
+    15a9:	83 e8 3a             	sub    eax,0x3a
+    15ac:	01 c7                	add    edi,eax
+    15ae:	4b                   	dec    ebx
+    15af:	89 f8                	mov    eax,edi
+    15b1:	83 c0 30             	add    eax,0x30
+    15b4:	88 03                	mov    BYTE PTR [ebx],al
+    15b6:	8b 44 24 54          	mov    eax,DWORD PTR [esp+0x54]
+    15ba:	89 04 24             	mov    DWORD PTR [esp],eax
+    15bd:	89 f0                	mov    eax,esi
+    15bf:	ba 00 00 00 00       	mov    edx,0x0
+    15c4:	f7 34 24             	div    DWORD PTR [esp]
+    15c7:	89 c6                	mov    esi,eax
+    15c9:	85 f6                	test   esi,esi
+    15cb:	75 c2                	jne    158f <code+0x158f>
+    15cd:	83 7c 24 04 00       	cmp    DWORD PTR [esp+0x4],0x0
+    15d2:	74 2b                	je     15ff <code+0x15ff>
+    15d4:	83 7c 24 5c 00       	cmp    DWORD PTR [esp+0x5c],0x0
+    15d9:	74 20                	je     15fb <code+0x15fb>
+    15db:	8b 44 24 60          	mov    eax,DWORD PTR [esp+0x60]
+    15df:	83 e0 02             	and    eax,0x2
+    15e2:	85 c0                	test   eax,eax
+    15e4:	74 15                	je     15fb <code+0x15fb>
+    15e6:	6a 2d                	push   0x2d
+    15e8:	ff 74 24 50          	push   DWORD PTR [esp+0x50]
+    15ec:	e8 32 fe ff ff       	call   1423 <code+0x1423>
+    15f1:	83 c4 08             	add    esp,0x8
+    15f4:	45                   	inc    ebp
+    15f5:	ff 4c 24 5c          	dec    DWORD PTR [esp+0x5c]
+    15f9:	eb 04                	jmp    15ff <code+0x15ff>
+    15fb:	4b                   	dec    ebx
+    15fc:	c6 03 2d             	mov    BYTE PTR [ebx],0x2d
+    15ff:	ff 74 24 60          	push   DWORD PTR [esp+0x60]
+    1603:	ff 74 24 60          	push   DWORD PTR [esp+0x60]
+    1607:	53                   	push   ebx
+    1608:	ff 74 24 58          	push   DWORD PTR [esp+0x58]
+    160c:	e8 47 fe ff ff       	call   1458 <code+0x1458>
+    1611:	83 c4 10             	add    esp,0x10
+    1614:	01 e8                	add    eax,ebp
+    1616:	83 c4 38             	add    esp,0x38
+    1619:	5b                   	pop    ebx
+    161a:	5e                   	pop    esi
+    161b:	5f                   	pop    edi
+    161c:	5d                   	pop    ebp
+    161d:	c3                   	ret    
+    161e:	55                   	push   ebp
+    161f:	57                   	push   edi
+    1620:	56                   	push   esi
+    1621:	53                   	push   ebx
+    1622:	83 ec 14             	sub    esp,0x14
+    1625:	be 00 00 00 00       	mov    esi,0x0
+    162a:	8b 44 24 2c          	mov    eax,DWORD PTR [esp+0x2c]
+    162e:	8b 00                	mov    eax,DWORD PTR [eax]
+    1630:	89 c3                	mov    ebx,eax
+    1632:	83 44 24 2c 04       	add    DWORD PTR [esp+0x2c],0x4
+    1637:	e9 dd 01 00 00       	jmp    1819 <code+0x1819>
+    163c:	8a 03                	mov    al,BYTE PTR [ebx]
+    163e:	3c 25                	cmp    al,0x25
+    1640:	0f 85 b9 01 00 00    	jne    17ff <code+0x17ff>
+    1646:	43                   	inc    ebx
+    1647:	bd 00 00 00 00       	mov    ebp,0x0
+    164c:	89 ef                	mov    edi,ebp
+    164e:	8a 03                	mov    al,BYTE PTR [ebx]
+    1650:	84 c0                	test   al,al
+    1652:	0f 84 cd 01 00 00    	je     1825 <code+0x1825>
+    1658:	8a 03                	mov    al,BYTE PTR [ebx]
+    165a:	3c 25                	cmp    al,0x25
+    165c:	0f 84 9c 01 00 00    	je     17fe <code+0x17fe>
+    1662:	8a 03                	mov    al,BYTE PTR [ebx]
+    1664:	3c 2d                	cmp    al,0x2d
+    1666:	75 0e                	jne    1676 <code+0x1676>
+    1668:	43                   	inc    ebx
+    1669:	bd 01 00 00 00       	mov    ebp,0x1
+    166e:	eb 07                	jmp    1677 <code+0x1677>
+    1670:	43                   	inc    ebx
+    1671:	83 cd 02             	or     ebp,0x2
+    1674:	eb 01                	jmp    1677 <code+0x1677>
+    1676:	90                   	nop
+    1677:	8a 03                	mov    al,BYTE PTR [ebx]
+    1679:	3c 30                	cmp    al,0x30
+    167b:	74 f3                	je     1670 <code+0x1670>
+    167d:	eb 16                	jmp    1695 <code+0x1695>
+    167f:	89 f8                	mov    eax,edi
+    1681:	c1 e0 02             	shl    eax,0x2
+    1684:	01 f8                	add    eax,edi
+    1686:	d1 e0                	shl    eax,1
+    1688:	89 c7                	mov    edi,eax
+    168a:	8a 03                	mov    al,BYTE PTR [ebx]
+    168c:	0f be c0             	movsx  eax,al
+    168f:	83 e8 30             	sub    eax,0x30
+    1692:	01 c7                	add    edi,eax
+    1694:	43                   	inc    ebx
+    1695:	8a 03                	mov    al,BYTE PTR [ebx]
+    1697:	3c 2f                	cmp    al,0x2f
+    1699:	7e 06                	jle    16a1 <code+0x16a1>
+    169b:	8a 03                	mov    al,BYTE PTR [ebx]
+    169d:	3c 39                	cmp    al,0x39
+    169f:	7e de                	jle    167f <code+0x167f>
+    16a1:	8a 03                	mov    al,BYTE PTR [ebx]
+    16a3:	0f be c0             	movsx  eax,al
+    16a6:	83 e8 58             	sub    eax,0x58
+    16a9:	83 f8 20             	cmp    eax,0x20
+    16ac:	0f 87 62 01 00 00    	ja     1814 <code+0x1814>
+    16b2:	8b 04 85 b0 1d 00 00 	mov    eax,DWORD PTR [eax*4+0x1db0]
+    16b9:	ff e0                	jmp    eax
+    16bb:	8b 44 24 2c          	mov    eax,DWORD PTR [esp+0x2c]
+    16bf:	8b 00                	mov    eax,DWORD PTR [eax]
+    16c1:	89 04 24             	mov    DWORD PTR [esp],eax
+    16c4:	83 44 24 2c 04       	add    DWORD PTR [esp+0x2c],0x4
+    16c9:	83 3c 24 00          	cmp    DWORD PTR [esp],0x0
+    16cd:	74 05                	je     16d4 <code+0x16d4>
+    16cf:	8b 04 24             	mov    eax,DWORD PTR [esp]
+    16d2:	eb 05                	jmp    16d9 <code+0x16d9>
+    16d4:	b8 a6 1d 00 00       	mov    eax,0x1da6
+    16d9:	55                   	push   ebp
+    16da:	57                   	push   edi
+    16db:	50                   	push   eax
+    16dc:	ff 74 24 34          	push   DWORD PTR [esp+0x34]
+    16e0:	e8 73 fd ff ff       	call   1458 <code+0x1458>
+    16e5:	83 c4 10             	add    esp,0x10
+    16e8:	01 c6                	add    esi,eax
+    16ea:	e9 29 01 00 00       	jmp    1818 <code+0x1818>
+    16ef:	8b 44 24 2c          	mov    eax,DWORD PTR [esp+0x2c]
+    16f3:	8b 00                	mov    eax,DWORD PTR [eax]
+    16f5:	83 44 24 2c 04       	add    DWORD PTR [esp+0x2c],0x4
+    16fa:	6a 61                	push   0x61
+    16fc:	55                   	push   ebp
+    16fd:	57                   	push   edi
+    16fe:	6a 01                	push   0x1
+    1700:	6a 0a                	push   0xa
+    1702:	50                   	push   eax
+    1703:	ff 74 24 40          	push   DWORD PTR [esp+0x40]
+    1707:	e8 0b fe ff ff       	call   1517 <code+0x1517>
+    170c:	83 c4 1c             	add    esp,0x1c
+    170f:	01 c6                	add    esi,eax
+    1711:	e9 02 01 00 00       	jmp    1818 <code+0x1818>
+    1716:	8b 44 24 2c          	mov    eax,DWORD PTR [esp+0x2c]
+    171a:	8b 00                	mov    eax,DWORD PTR [eax]
+    171c:	83 44 24 2c 04       	add    DWORD PTR [esp+0x2c],0x4
+    1721:	6a 61                	push   0x61
+    1723:	55                   	push   ebp
+    1724:	57                   	push   edi
+    1725:	6a 00                	push   0x0
+    1727:	6a 08                	push   0x8
+    1729:	50                   	push   eax
+    172a:	ff 74 24 40          	push   DWORD PTR [esp+0x40]
+    172e:	e8 e4 fd ff ff       	call   1517 <code+0x1517>
+    1733:	83 c4 1c             	add    esp,0x1c
+    1736:	01 c6                	add    esi,eax
+    1738:	e9 db 00 00 00       	jmp    1818 <code+0x1818>
+    173d:	8b 44 24 2c          	mov    eax,DWORD PTR [esp+0x2c]
+    1741:	8b 00                	mov    eax,DWORD PTR [eax]
+    1743:	83 44 24 2c 04       	add    DWORD PTR [esp+0x2c],0x4
+    1748:	6a 61                	push   0x61
+    174a:	55                   	push   ebp
+    174b:	57                   	push   edi
+    174c:	6a 00                	push   0x0
+    174e:	6a 02                	push   0x2
+    1750:	50                   	push   eax
+    1751:	ff 74 24 40          	push   DWORD PTR [esp+0x40]
+    1755:	e8 bd fd ff ff       	call   1517 <code+0x1517>
+    175a:	83 c4 1c             	add    esp,0x1c
+    175d:	01 c6                	add    esi,eax
+    175f:	e9 b4 00 00 00       	jmp    1818 <code+0x1818>
+    1764:	8b 44 24 2c          	mov    eax,DWORD PTR [esp+0x2c]
+    1768:	8b 00                	mov    eax,DWORD PTR [eax]
+    176a:	83 44 24 2c 04       	add    DWORD PTR [esp+0x2c],0x4
+    176f:	6a 61                	push   0x61
+    1771:	55                   	push   ebp
+    1772:	57                   	push   edi
+    1773:	6a 00                	push   0x0
+    1775:	6a 10                	push   0x10
+    1777:	50                   	push   eax
+    1778:	ff 74 24 40          	push   DWORD PTR [esp+0x40]
+    177c:	e8 96 fd ff ff       	call   1517 <code+0x1517>
+    1781:	83 c4 1c             	add    esp,0x1c
+    1784:	01 c6                	add    esi,eax
+    1786:	e9 8d 00 00 00       	jmp    1818 <code+0x1818>
+    178b:	8b 44 24 2c          	mov    eax,DWORD PTR [esp+0x2c]
+    178f:	8b 00                	mov    eax,DWORD PTR [eax]
+    1791:	83 44 24 2c 04       	add    DWORD PTR [esp+0x2c],0x4
+    1796:	6a 41                	push   0x41
+    1798:	55                   	push   ebp
+    1799:	57                   	push   edi
+    179a:	6a 00                	push   0x0
+    179c:	6a 10                	push   0x10
+    179e:	50                   	push   eax
+    179f:	ff 74 24 40          	push   DWORD PTR [esp+0x40]
+    17a3:	e8 6f fd ff ff       	call   1517 <code+0x1517>
+    17a8:	83 c4 1c             	add    esp,0x1c
+    17ab:	01 c6                	add    esi,eax
+    17ad:	eb 69                	jmp    1818 <code+0x1818>
+    17af:	8b 44 24 2c          	mov    eax,DWORD PTR [esp+0x2c]
+    17b3:	8b 00                	mov    eax,DWORD PTR [eax]
+    17b5:	83 44 24 2c 04       	add    DWORD PTR [esp+0x2c],0x4
+    17ba:	6a 61                	push   0x61
+    17bc:	55                   	push   ebp
+    17bd:	57                   	push   edi
+    17be:	6a 00                	push   0x0
+    17c0:	6a 0a                	push   0xa
+    17c2:	50                   	push   eax
+    17c3:	ff 74 24 40          	push   DWORD PTR [esp+0x40]
+    17c7:	e8 4b fd ff ff       	call   1517 <code+0x1517>
+    17cc:	83 c4 1c             	add    esp,0x1c
+    17cf:	01 c6                	add    esi,eax
+    17d1:	eb 45                	jmp    1818 <code+0x1818>
+    17d3:	8b 44 24 2c          	mov    eax,DWORD PTR [esp+0x2c]
+    17d7:	8b 00                	mov    eax,DWORD PTR [eax]
+    17d9:	88 44 24 12          	mov    BYTE PTR [esp+0x12],al
+    17dd:	83 44 24 2c 04       	add    DWORD PTR [esp+0x2c],0x4
+    17e2:	c6 44 24 13 00       	mov    BYTE PTR [esp+0x13],0x0
+    17e7:	55                   	push   ebp
+    17e8:	57                   	push   edi
+    17e9:	8d 44 24 1a          	lea    eax,[esp+0x1a]
+    17ed:	50                   	push   eax
+    17ee:	ff 74 24 34          	push   DWORD PTR [esp+0x34]
+    17f2:	e8 61 fc ff ff       	call   1458 <code+0x1458>
+    17f7:	83 c4 10             	add    esp,0x10
+    17fa:	01 c6                	add    esi,eax
+    17fc:	eb 1a                	jmp    1818 <code+0x1818>
+    17fe:	90                   	nop
+    17ff:	8a 03                	mov    al,BYTE PTR [ebx]
+    1801:	0f be c0             	movsx  eax,al
+    1804:	50                   	push   eax
+    1805:	ff 74 24 2c          	push   DWORD PTR [esp+0x2c]
+    1809:	e8 15 fc ff ff       	call   1423 <code+0x1423>
+    180e:	83 c4 08             	add    esp,0x8
+    1811:	46                   	inc    esi
+    1812:	eb 04                	jmp    1818 <code+0x1818>
+    1814:	90                   	nop
+    1815:	eb 01                	jmp    1818 <code+0x1818>
+    1817:	90                   	nop
+    1818:	43                   	inc    ebx
+    1819:	8a 03                	mov    al,BYTE PTR [ebx]
+    181b:	84 c0                	test   al,al
+    181d:	0f 85 19 fe ff ff    	jne    163c <code+0x163c>
+    1823:	eb 01                	jmp    1826 <code+0x1826>
+    1825:	90                   	nop
+    1826:	83 7c 24 28 ff       	cmp    DWORD PTR [esp+0x28],0xffffffff
+    182b:	74 10                	je     183d <code+0x183d>
+    182d:	83 7c 24 28 00       	cmp    DWORD PTR [esp+0x28],0x0
+    1832:	74 09                	je     183d <code+0x183d>
+    1834:	8b 44 24 28          	mov    eax,DWORD PTR [esp+0x28]
+    1838:	8b 00                	mov    eax,DWORD PTR [eax]
+    183a:	c6 00 00             	mov    BYTE PTR [eax],0x0
+    183d:	89 f0                	mov    eax,esi
+    183f:	83 c4 14             	add    esp,0x14
+    1842:	5b                   	pop    ebx
+    1843:	5e                   	pop    esi
+    1844:	5f                   	pop    edi
+    1845:	5d                   	pop    ebp
+    1846:	c3                   	ret    
+    1847:	53                   	push   ebx
+    1848:	8d 5c 24 08          	lea    ebx,[esp+0x8]
+    184c:	53                   	push   ebx
+    184d:	6a 00                	push   0x0
+    184f:	e8 ca fd ff ff       	call   161e <code+0x161e>
+    1854:	83 c4 08             	add    esp,0x8
+    1857:	5b                   	pop    ebx
+    1858:	c3                   	ret    
+    1859:	53                   	push   ebx
+    185a:	8d 5c 24 0c          	lea    ebx,[esp+0xc]
+    185e:	53                   	push   ebx
+    185f:	8d 44 24 0c          	lea    eax,[esp+0xc]
+    1863:	50                   	push   eax
+    1864:	e8 b5 fd ff ff       	call   161e <code+0x161e>
+    1869:	83 c4 08             	add    esp,0x8
+    186c:	5b                   	pop    ebx
+    186d:	c3                   	ret    
+    186e:	73 74                	jae    18e4 <code+0x18e4>
+    1870:	61                   	popa   
+    1871:	74 3a                	je     18ad <code+0x18ad>
+    1873:	20 72 65             	and    BYTE PTR [edx+0x65],dh
+    1876:	71 75                	jno    18ed <code+0x18ed>
+    1878:	69 72 65 73 20 6f 6e 	imul   esi,DWORD PTR [edx+0x65],0x6e6f2073
+    187f:	65 20 61 72          	and    BYTE PTR gs:[ecx+0x72],ah
+    1883:	67 75 6d             	addr16 jne 18f3 <code+0x18f3>
+    1886:	65 6e                	outs   dx,BYTE PTR gs:[esi]
+    1888:	74 0a                	je     1894 <code+0x1894>
+    188a:	00 73 74             	add    BYTE PTR [ebx+0x74],dh
+    188d:	61                   	popa   
+    188e:	74 75                	je     1905 <code+0x1905>
+    1890:	73 20                	jae    18b2 <code+0x18b2>
+    1892:	69 6e 66 6f 72 6d 61 	imul   ebp,DWORD PTR [esi+0x66],0x616d726f
+    1899:	74 69                	je     1904 <code+0x1904>
+    189b:	6f                   	outs   dx,DWORD PTR ds:[esi]
+    189c:	6e                   	outs   dx,BYTE PTR ds:[esi]
+    189d:	20 66 6f             	and    BYTE PTR [esi+0x6f],ah
+    18a0:	72 20                	jb     18c2 <code+0x18c2>
+    18a2:	25 73 0a 00 46       	and    eax,0x46000a73
+    18a7:	61                   	popa   
+    18a8:	69 6c 65 64 0a 00 64 	imul   ebp,DWORD PTR [ebp+eiz*2+0x64],0x6564000a
+    18af:	65 
+    18b0:	76 69                	jbe    191b <code+0x191b>
+    18b2:	63 65 3a             	arpl   WORD PTR [ebp+0x3a],sp
+    18b5:	20 20                	and    BYTE PTR [eax],ah
+    18b7:	5b                   	pop    ebx
+    18b8:	25 64 3a 25 64       	and    eax,0x64253a64
+    18bd:	5d                   	pop    ebp
+    18be:	0a 00                	or     al,BYTE PTR [eax]
+    18c0:	69 6e 6f 64 65 3a 20 	imul   ebp,DWORD PTR [esi+0x6f],0x203a6564
+    18c7:	20 20                	and    BYTE PTR [eax],ah
+    18c9:	25 64 0a 00 6d       	and    eax,0x6d000a64
+    18ce:	6f                   	outs   dx,DWORD PTR ds:[esi]
+    18cf:	64 65 3a 20          	cmp    ah,BYTE PTR fs:gs:[eax]
+    18d3:	20 20                	and    BYTE PTR [eax],ah
+    18d5:	20 25 6f 0a 00 6c    	and    BYTE PTR ds:0x6c000a6f,ah
+    18db:	69 6e 6b 73 3a 20 20 	imul   ebp,DWORD PTR [esi+0x6b],0x20203a73
+    18e2:	20 25 64 0a 00 75    	and    BYTE PTR ds:0x75000a64,ah
+    18e8:	69 64 2f 67 69 64 3a 	imul   esp,DWORD PTR [edi+ebp*1+0x67],0x203a6469
+    18ef:	20 
+    18f0:	25 64 0a 00 72       	and    eax,0x72000a64
+    18f5:	64                   	fs
+    18f6:	65                   	gs
+    18f7:	76 3a                	jbe    1933 <code+0x1933>
+    18f9:	20 20                	and    BYTE PTR [eax],ah
+    18fb:	20 20                	and    BYTE PTR [eax],ah
+    18fd:	25 64 0a 00 73       	and    eax,0x73000a64
+    1902:	69 7a 65 3a 20 20 20 	imul   edi,DWORD PTR [edx+0x65],0x2020203a
+    1909:	20 25 64 0a 00 61    	and    BYTE PTR ds:0x61000a64,ah
+    190f:	74 69                	je     197a <code+0x197a>
+    1911:	6d                   	ins    DWORD PTR es:[edi],dx
+    1912:	65 3a 20             	cmp    ah,BYTE PTR gs:[eax]
+    1915:	20 20                	and    BYTE PTR [eax],ah
+    1917:	25 64 0a 00 6d       	and    eax,0x6d000a64
+    191c:	74 69                	je     1987 <code+0x1987>
+    191e:	6d                   	ins    DWORD PTR es:[edi],dx
+    191f:	65 3a 20             	cmp    ah,BYTE PTR gs:[eax]
+    1922:	20 20                	and    BYTE PTR [eax],ah
+    1924:	25 64 0a 00 63       	and    eax,0x63000a64
+    1929:	74 69                	je     1994 <code+0x1994>
+    192b:	6d                   	ins    DWORD PTR es:[edi],dx
+    192c:	65 3a 20             	cmp    ah,BYTE PTR gs:[eax]
+    192f:	20 20                	and    BYTE PTR [eax],ah
+    1931:	25 64 0a 00 00       	and    eax,0xa64
+    1936:	00 00                	add    BYTE PTR [eax],al
+    1938:	2f                   	das    
+    1939:	00 2e                	add    BYTE PTR [esi],ch
+    193b:	00 45 52             	add    BYTE PTR [ebp+0x52],al
+    193e:	52                   	push   edx
+    193f:	4f                   	dec    edi
+    1940:	52                   	push   edx
+    1941:	3a 20                	cmp    ah,BYTE PTR [eax]
+    1943:	70 6f                	jo     19b4 <code+0x19b4>
+    1945:	73 20                	jae    1967 <code+0x1967>
+    1947:	3c 20                	cmp    al,0x20
+    1949:	30 0a                	xor    BYTE PTR [edx],cl
+    194b:	00 0a                	add    BYTE PTR [edx],cl
+    194d:	00 65 78             	add    BYTE PTR [ebp+0x78],ah
+    1950:	69 74 00 65 78 69 74 	imul   esi,DWORD PTR [eax+eax*1+0x65],0xa746978
+    1957:	0a 
+    1958:	00 08                	add    BYTE PTR [eax],cl
+    195a:	20 08                	and    BYTE PTR [eax],cl
+    195c:	00 2f                	add    BYTE PTR [edi],ch
+    195e:	65                   	gs
+    195f:	74 63                	je     19c4 <code+0x19c4>
+    1961:	2f                   	das    
+    1962:	70 61                	jo     19c5 <code+0x19c5>
+    1964:	73 73                	jae    19d9 <code+0x19d9>
+    1966:	77 64                	ja     19cc <code+0x19cc>
+    1968:	00 43 61             	add    BYTE PTR [ebx+0x61],al
+    196b:	6e                   	outs   dx,BYTE PTR ds:[esi]
+    196c:	6e                   	outs   dx,BYTE PTR ds:[esi]
+    196d:	6f                   	outs   dx,DWORD PTR ds:[esi]
+    196e:	74 20                	je     1990 <code+0x1990>
+    1970:	6f                   	outs   dx,DWORD PTR ds:[esi]
+    1971:	70 65                	jo     19d8 <code+0x19d8>
+    1973:	6e                   	outs   dx,BYTE PTR ds:[esi]
+    1974:	20 2f                	and    BYTE PTR [edi],ch
+    1976:	65                   	gs
+    1977:	74 63                	je     19dc <code+0x19dc>
+    1979:	2f                   	das    
+    197a:	70 61                	jo     19dd <code+0x19dd>
+    197c:	73 73                	jae    19f1 <code+0x19f1>
+    197e:	77 64                	ja     19e4 <code+0x19e4>
+    1980:	0a 00                	or     al,BYTE PTR [eax]
+    1982:	00 00                	add    BYTE PTR [eax],al
+    1984:	43                   	inc    ebx
+    1985:	61                   	popa   
+    1986:	6e                   	outs   dx,BYTE PTR ds:[esi]
+    1987:	6e                   	outs   dx,BYTE PTR ds:[esi]
+    1988:	6f                   	outs   dx,DWORD PTR ds:[esi]
+    1989:	74 20                	je     19ab <code+0x19ab>
+    198b:	72 65                	jb     19f2 <code+0x19f2>
+    198d:	61                   	popa   
+    198e:	64 20 2f             	and    BYTE PTR fs:[edi],ch
+    1991:	65                   	gs
+    1992:	74 63                	je     19f7 <code+0x19f7>
+    1994:	2f                   	das    
+    1995:	70 61                	jo     19f8 <code+0x19f8>
+    1997:	73 73                	jae    1a0c <code+0x1a0c>
+    1999:	77 64                	ja     19ff <code+0x19ff>
+    199b:	2c 20                	sub    al,0x20
+    199d:	66                   	data16
+    199e:	64 20 3d 20 25 64 0a 	and    BYTE PTR fs:0xa642520,bh
+    19a5:	00 70 61             	add    BYTE PTR [eax+0x61],dh
+    19a8:	73 73                	jae    1a1d <code+0x1a1d>
+    19aa:	77 6f                	ja     1a1b <code+0x1a1b>
+    19ac:	72 64                	jb     1a12 <code+0x1a12>
+    19ae:	73 00                	jae    19b0 <code+0x19b0>
+	...
+    1da4:	00 00                	add    BYTE PTR [eax],al
+    1da6:	28 6e 75             	sub    BYTE PTR [esi+0x75],ch
+    1da9:	6c                   	ins    BYTE PTR es:[edi],dx
+    1daa:	6c                   	ins    BYTE PTR es:[edi],dx
+    1dab:	29 00                	sub    DWORD PTR [eax],eax
+    1dad:	00 00                	add    BYTE PTR [eax],al
+    1daf:	00 8b 17 00 00 17    	add    BYTE PTR [ebx+0x17000017],cl
+    1db5:	18 00                	sbb    BYTE PTR [eax],al
+    1db7:	00 17                	add    BYTE PTR [edi],dl
+    1db9:	18 00                	sbb    BYTE PTR [eax],al
+    1dbb:	00 17                	add    BYTE PTR [edi],dl
+    1dbd:	18 00                	sbb    BYTE PTR [eax],al
+    1dbf:	00 17                	add    BYTE PTR [edi],dl
+    1dc1:	18 00                	sbb    BYTE PTR [eax],al
+    1dc3:	00 17                	add    BYTE PTR [edi],dl
+    1dc5:	18 00                	sbb    BYTE PTR [eax],al
+    1dc7:	00 17                	add    BYTE PTR [edi],dl
+    1dc9:	18 00                	sbb    BYTE PTR [eax],al
+    1dcb:	00 17                	add    BYTE PTR [edi],dl
+    1dcd:	18 00                	sbb    BYTE PTR [eax],al
+    1dcf:	00 17                	add    BYTE PTR [edi],dl
+    1dd1:	18 00                	sbb    BYTE PTR [eax],al
+    1dd3:	00 17                	add    BYTE PTR [edi],dl
+    1dd5:	18 00                	sbb    BYTE PTR [eax],al
+    1dd7:	00 3d 17 00 00 d3    	add    BYTE PTR ds:0xd3000017,bh
+    1ddd:	17                   	pop    ss
+    1dde:	00 00                	add    BYTE PTR [eax],al
+    1de0:	ef                   	out    dx,eax
+    1de1:	16                   	push   ss
+    1de2:	00 00                	add    BYTE PTR [eax],al
+    1de4:	17                   	pop    ss
+    1de5:	18 00                	sbb    BYTE PTR [eax],al
+    1de7:	00 17                	add    BYTE PTR [edi],dl
+    1de9:	18 00                	sbb    BYTE PTR [eax],al
+    1deb:	00 17                	add    BYTE PTR [edi],dl
+    1ded:	18 00                	sbb    BYTE PTR [eax],al
+    1def:	00 17                	add    BYTE PTR [edi],dl
+    1df1:	18 00                	sbb    BYTE PTR [eax],al
+    1df3:	00 17                	add    BYTE PTR [edi],dl
+    1df5:	18 00                	sbb    BYTE PTR [eax],al
+    1df7:	00 17                	add    BYTE PTR [edi],dl
+    1df9:	18 00                	sbb    BYTE PTR [eax],al
+    1dfb:	00 17                	add    BYTE PTR [edi],dl
+    1dfd:	18 00                	sbb    BYTE PTR [eax],al
+    1dff:	00 17                	add    BYTE PTR [edi],dl
+    1e01:	18 00                	sbb    BYTE PTR [eax],al
+    1e03:	00 17                	add    BYTE PTR [edi],dl
+    1e05:	18 00                	sbb    BYTE PTR [eax],al
+    1e07:	00 17                	add    BYTE PTR [edi],dl
+    1e09:	18 00                	sbb    BYTE PTR [eax],al
+    1e0b:	00 16                	add    BYTE PTR [esi],dl
+    1e0d:	17                   	pop    ss
+    1e0e:	00 00                	add    BYTE PTR [eax],al
+    1e10:	17                   	pop    ss
+    1e11:	18 00                	sbb    BYTE PTR [eax],al
+    1e13:	00 17                	add    BYTE PTR [edi],dl
+    1e15:	18 00                	sbb    BYTE PTR [eax],al
+    1e17:	00 17                	add    BYTE PTR [edi],dl
+    1e19:	18 00                	sbb    BYTE PTR [eax],al
+    1e1b:	00 bb 16 00 00 17    	add    BYTE PTR [ebx+0x17000016],bh
+    1e21:	18 00                	sbb    BYTE PTR [eax],al
+    1e23:	00 af 17 00 00 17    	add    BYTE PTR [edi+0x17000017],ch
+    1e29:	18 00                	sbb    BYTE PTR [eax],al
+    1e2b:	00 17                	add    BYTE PTR [edi],dl
+    1e2d:	18 00                	sbb    BYTE PTR [eax],al
+    1e2f:	00 64 17 00          	add    BYTE PTR [edi+edx*1+0x0],ah
+	...
+
+Disassembly of section .interp:
+
+00002000 <.interp>:
+    2000:	2f                   	das    
+    2001:	75 73                	jne    2076 <virt+0x2076>
+    2003:	72 2f                	jb     2034 <virt+0x2034>
+    2005:	6c                   	ins    BYTE PTR es:[edi],dx
+    2006:	69 62 2f 6c 69 62 63 	imul   esp,DWORD PTR [edx+0x2f],0x6362696c
+    200d:	2e                   	cs
+    200e:	73 6f                	jae    207f <virt+0x207f>
+    2010:	2e 31 00             	xor    DWORD PTR cs:[eax],eax
+
+Disassembly of section .dynsym:
+
+00002014 <.dynsym>:
+	...
+    2024:	01 00                	add    DWORD PTR [eax],eax
+	...
+    202e:	00 00                	add    BYTE PTR [eax],al
+    2030:	10 00                	adc    BYTE PTR [eax],al
+    2032:	f1                   	icebp  
+    2033:	ff 14 00             	call   DWORD PTR [eax+eax*1]
+    2036:	00 00                	add    BYTE PTR [eax],al
+    2038:	00 40 00             	add    BYTE PTR [eax+0x0],al
+    203b:	00 00                	add    BYTE PTR [eax],al
+    203d:	00 00                	add    BYTE PTR [eax],al
+    203f:	00 10                	add    BYTE PTR [eax],dl
+    2041:	00 f1                	add    cl,dh
+    2043:	ff 10                	call   DWORD PTR [eax]
+    2045:	00 00                	add    BYTE PTR [eax],al
+    2047:	00 a0 30 00 00 00    	add    BYTE PTR [eax+0x30],ah
+    204d:	00 00                	add    BYTE PTR [eax],al
+    204f:	00 10                	add    BYTE PTR [eax],dl
+    2051:	00 0a                	add    BYTE PTR [edx],cl
+    2053:	00 0b                	add    BYTE PTR [ebx],cl
+    2055:	00 00                	add    BYTE PTR [eax],al
+    2057:	00 60 23             	add    BYTE PTR [eax+0x23],ah
+    205a:	00 00                	add    BYTE PTR [eax],al
+    205c:	00 00                	add    BYTE PTR [eax],al
+    205e:	00 00                	add    BYTE PTR [eax],al
+    2060:	10 00                	adc    BYTE PTR [eax],al
+    2062:	07                   	pop    es
+    2063:	00 06                	add    BYTE PTR [esi],al
+	...
+    206d:	00 00                	add    BYTE PTR [eax],al
+    206f:	00 10                	add    BYTE PTR [eax],dl
+    2071:	00 01                	add    BYTE PTR [ecx],al
+	...
+
+Disassembly of section .dynstr:
+
+00002074 <.dynstr>:
+    2074:	00 76 69             	add    BYTE PTR [esi+0x69],dh
+    2077:	72 74                	jb     20ed <virt+0x20ed>
+    2079:	00 63 6f             	add    BYTE PTR [ebx+0x6f],ah
+    207c:	64 65 00 64 61 74    	add    BYTE PTR fs:gs:[ecx+eiz*2+0x74],ah
+    2082:	61                   	popa   
+    2083:	00 62 73             	add    BYTE PTR [edx+0x73],ah
+    2086:	73 00                	jae    2088 <virt+0x2088>
+    2088:	65 6e                	outs   dx,BYTE PTR gs:[esi]
+    208a:	64                   	fs
+	...
+
+Disassembly of section .hash:
+
+0000208c <.hash>:
+    208c:	03 00                	add    eax,DWORD PTR [eax]
+    208e:	00 00                	add    BYTE PTR [eax],al
+    2090:	06                   	push   es
+    2091:	00 00                	add    BYTE PTR [eax],al
+    2093:	00 05 00 00 00 03    	add    BYTE PTR ds:0x3000000,al
+    2099:	00 00                	add    BYTE PTR [eax],al
+    209b:	00 04 00             	add    BYTE PTR [eax+eax*1],al
+	...
+    20ae:	00 00                	add    BYTE PTR [eax],al
+    20b0:	02 00                	add    al,BYTE PTR [eax]
+    20b2:	00 00                	add    BYTE PTR [eax],al
+    20b4:	01 00                	add    DWORD PTR [eax],eax
+	...
+
+Disassembly of section .rel.dyn:
+
+000020b8 <.rel.dyn>:
+    20b8:	1d 00 00 00 08       	sbb    eax,0x8000000
+    20bd:	00 00                	add    BYTE PTR [eax],al
+    20bf:	00 43 00             	add    BYTE PTR [ebx+0x0],al
+    20c2:	00 00                	add    BYTE PTR [eax],al
+    20c4:	08 00                	or     BYTE PTR [eax],al
+    20c6:	00 00                	add    BYTE PTR [eax],al
+    20c8:	5b                   	pop    ebx
+    20c9:	00 00                	add    BYTE PTR [eax],al
+    20cb:	00 08                	add    BYTE PTR [eax],cl
+    20cd:	00 00                	add    BYTE PTR [eax],al
+    20cf:	00 75 00             	add    BYTE PTR [ebp+0x0],dh
+    20d2:	00 00                	add    BYTE PTR [eax],al
+    20d4:	08 00                	or     BYTE PTR [eax],al
+    20d6:	00 00                	add    BYTE PTR [eax],al
+    20d8:	8f 00                	pop    DWORD PTR [eax]
+    20da:	00 00                	add    BYTE PTR [eax],al
+    20dc:	08 00                	or     BYTE PTR [eax],al
+    20de:	00 00                	add    BYTE PTR [eax],al
+    20e0:	97                   	xchg   edi,eax
+    20e1:	00 00                	add    BYTE PTR [eax],al
+    20e3:	00 08                	add    BYTE PTR [eax],cl
+    20e5:	00 00                	add    BYTE PTR [eax],al
+    20e7:	00 a4 00 00 00 08 00 	add    BYTE PTR [eax+eax*1+0x80000],ah
+    20ee:	00 00                	add    BYTE PTR [eax],al
+    20f0:	b1 00                	mov    cl,0x0
+    20f2:	00 00                	add    BYTE PTR [eax],al
+    20f4:	08 00                	or     BYTE PTR [eax],al
+    20f6:	00 00                	add    BYTE PTR [eax],al
+    20f8:	bd 00 00 00 08       	mov    ebp,0x8000000
+    20fd:	00 00                	add    BYTE PTR [eax],al
+    20ff:	00 cb                	add    bl,cl
+    2101:	00 00                	add    BYTE PTR [eax],al
+    2103:	00 08                	add    BYTE PTR [eax],cl
+    2105:	00 00                	add    BYTE PTR [eax],al
+    2107:	00 d7                	add    bh,dl
+    2109:	00 00                	add    BYTE PTR [eax],al
+    210b:	00 08                	add    BYTE PTR [eax],cl
+    210d:	00 00                	add    BYTE PTR [eax],al
+    210f:	00 e4                	add    ah,ah
+    2111:	00 00                	add    BYTE PTR [eax],al
+    2113:	00 08                	add    BYTE PTR [eax],cl
+    2115:	00 00                	add    BYTE PTR [eax],al
+    2117:	00 f0                	add    al,dh
+    2119:	00 00                	add    BYTE PTR [eax],al
+    211b:	00 08                	add    BYTE PTR [eax],cl
+    211d:	00 00                	add    BYTE PTR [eax],al
+    211f:	00 fd                	add    ch,bh
+    2121:	00 00                	add    BYTE PTR [eax],al
+    2123:	00 08                	add    BYTE PTR [eax],cl
+    2125:	00 00                	add    BYTE PTR [eax],al
+    2127:	00 06                	add    BYTE PTR [esi],al
+    2129:	01 00                	add    DWORD PTR [eax],eax
+    212b:	00 08                	add    BYTE PTR [eax],cl
+    212d:	00 00                	add    BYTE PTR [eax],al
+    212f:	00 13                	add    BYTE PTR [ebx],dl
+    2131:	01 00                	add    DWORD PTR [eax],eax
+    2133:	00 08                	add    BYTE PTR [eax],cl
+    2135:	00 00                	add    BYTE PTR [eax],al
+    2137:	00 21                	add    BYTE PTR [ecx],ah
+    2139:	01 00                	add    DWORD PTR [eax],eax
+    213b:	00 08                	add    BYTE PTR [eax],cl
+    213d:	00 00                	add    BYTE PTR [eax],al
+    213f:	00 2d 01 00 00 08    	add    BYTE PTR ds:0x8000001,ch
+    2145:	00 00                	add    BYTE PTR [eax],al
+    2147:	00 3a                	add    BYTE PTR [edx],bh
+    2149:	01 00                	add    DWORD PTR [eax],eax
+    214b:	00 08                	add    BYTE PTR [eax],cl
+    214d:	00 00                	add    BYTE PTR [eax],al
+    214f:	00 43 01             	add    BYTE PTR [ebx+0x1],al
+    2152:	00 00                	add    BYTE PTR [eax],al
+    2154:	08 00                	or     BYTE PTR [eax],al
+    2156:	00 00                	add    BYTE PTR [eax],al
+    2158:	50                   	push   eax
+    2159:	01 00                	add    DWORD PTR [eax],eax
+    215b:	00 08                	add    BYTE PTR [eax],cl
+    215d:	00 00                	add    BYTE PTR [eax],al
+    215f:	00 59 01             	add    BYTE PTR [ecx+0x1],bl
+    2162:	00 00                	add    BYTE PTR [eax],al
+    2164:	08 00                	or     BYTE PTR [eax],al
+    2166:	00 00                	add    BYTE PTR [eax],al
+    2168:	66 01 00             	add    WORD PTR [eax],ax
+    216b:	00 08                	add    BYTE PTR [eax],cl
+    216d:	00 00                	add    BYTE PTR [eax],al
+    216f:	00 6f 01             	add    BYTE PTR [edi+0x1],ch
+    2172:	00 00                	add    BYTE PTR [eax],al
+    2174:	08 00                	or     BYTE PTR [eax],al
+    2176:	00 00                	add    BYTE PTR [eax],al
+    2178:	7c 01                	jl     217b <virt+0x217b>
+    217a:	00 00                	add    BYTE PTR [eax],al
+    217c:	08 00                	or     BYTE PTR [eax],al
+    217e:	00 00                	add    BYTE PTR [eax],al
+    2180:	85 01                	test   DWORD PTR [ecx],eax
+    2182:	00 00                	add    BYTE PTR [eax],al
+    2184:	08 00                	or     BYTE PTR [eax],al
+    2186:	00 00                	add    BYTE PTR [eax],al
+    2188:	dc 01                	fadd   QWORD PTR [ecx]
+    218a:	00 00                	add    BYTE PTR [eax],al
+    218c:	08 00                	or     BYTE PTR [eax],al
+    218e:	00 00                	add    BYTE PTR [eax],al
+    2190:	f5                   	cmc    
+    2191:	01 00                	add    DWORD PTR [eax],eax
+    2193:	00 08                	add    BYTE PTR [eax],cl
+    2195:	00 00                	add    BYTE PTR [eax],al
+    2197:	00 7d 02             	add    BYTE PTR [ebp+0x2],bh
+    219a:	00 00                	add    BYTE PTR [eax],al
+    219c:	08 00                	or     BYTE PTR [eax],al
+    219e:	00 00                	add    BYTE PTR [eax],al
+    21a0:	d0 02                	rol    BYTE PTR [edx],1
+    21a2:	00 00                	add    BYTE PTR [eax],al
+    21a4:	08 00                	or     BYTE PTR [eax],al
+    21a6:	00 00                	add    BYTE PTR [eax],al
+    21a8:	48                   	dec    eax
+    21a9:	03 00                	add    eax,DWORD PTR [eax]
+    21ab:	00 08                	add    BYTE PTR [eax],cl
+    21ad:	00 00                	add    BYTE PTR [eax],al
+    21af:	00 4d 03             	add    BYTE PTR [ebp+0x3],cl
+    21b2:	00 00                	add    BYTE PTR [eax],al
+    21b4:	08 00                	or     BYTE PTR [eax],al
+    21b6:	00 00                	add    BYTE PTR [eax],al
+    21b8:	5e                   	pop    esi
+    21b9:	03 00                	add    eax,DWORD PTR [eax]
+    21bb:	00 08                	add    BYTE PTR [eax],cl
+    21bd:	00 00                	add    BYTE PTR [eax],al
+    21bf:	00 6d 03             	add    BYTE PTR [ebp+0x3],ch
+    21c2:	00 00                	add    BYTE PTR [eax],al
+    21c4:	08 00                	or     BYTE PTR [eax],al
+    21c6:	00 00                	add    BYTE PTR [eax],al
+    21c8:	72 03                	jb     21cd <virt+0x21cd>
+    21ca:	00 00                	add    BYTE PTR [eax],al
+    21cc:	08 00                	or     BYTE PTR [eax],al
+    21ce:	00 00                	add    BYTE PTR [eax],al
+    21d0:	83 03 00             	add    DWORD PTR [ebx],0x0
+    21d3:	00 08                	add    BYTE PTR [eax],cl
+    21d5:	00 00                	add    BYTE PTR [eax],al
+    21d7:	00 e3                	add    bl,ah
+    21d9:	0a 00                	or     al,BYTE PTR [eax]
+    21db:	00 08                	add    BYTE PTR [eax],cl
+    21dd:	00 00                	add    BYTE PTR [eax],al
+    21df:	00 5c 0b 00          	add    BYTE PTR [ebx+ecx*1+0x0],bl
+    21e3:	00 08                	add    BYTE PTR [eax],cl
+    21e5:	00 00                	add    BYTE PTR [eax],al
+    21e7:	00 87 0b 00 00 08    	add    BYTE PTR [edi+0x800000b],al
+    21ed:	00 00                	add    BYTE PTR [eax],al
+    21ef:	00 a2 0b 00 00 08    	add    BYTE PTR [edx+0x800000b],ah
+    21f5:	00 00                	add    BYTE PTR [eax],al
+    21f7:	00 d8                	add    al,bl
+    21f9:	0b 00                	or     eax,DWORD PTR [eax]
+    21fb:	00 08                	add    BYTE PTR [eax],cl
+    21fd:	00 00                	add    BYTE PTR [eax],al
+    21ff:	00 08                	add    BYTE PTR [eax],cl
+    2201:	0c 00                	or     al,0x0
+    2203:	00 08                	add    BYTE PTR [eax],cl
+    2205:	00 00                	add    BYTE PTR [eax],al
+    2207:	00 ce                	add    dh,cl
+    2209:	0d 00 00 08 00       	or     eax,0x80000
+    220e:	00 00                	add    BYTE PTR [eax],al
+    2210:	f6                   	(bad)  
+    2211:	0d 00 00 08 00       	or     eax,0x80000
+    2216:	00 00                	add    BYTE PTR [eax],al
+    2218:	17                   	pop    ss
+    2219:	0e                   	push   cs
+    221a:	00 00                	add    BYTE PTR [eax],al
+    221c:	08 00                	or     BYTE PTR [eax],al
+    221e:	00 00                	add    BYTE PTR [eax],al
+    2220:	68 0e 00 00 08       	push   0x800000e
+    2225:	00 00                	add    BYTE PTR [eax],al
+    2227:	00 ab 10 00 00 08    	add    BYTE PTR [ebx+0x8000010],ch
+    222d:	00 00                	add    BYTE PTR [eax],al
+    222f:	00 d3                	add    bl,dl
+    2231:	10 00                	adc    BYTE PTR [eax],al
+    2233:	00 08                	add    BYTE PTR [eax],cl
+    2235:	00 00                	add    BYTE PTR [eax],al
+    2237:	00 f4                	add    ah,dh
+    2239:	10 00                	adc    BYTE PTR [eax],al
+    223b:	00 08                	add    BYTE PTR [eax],cl
+    223d:	00 00                	add    BYTE PTR [eax],al
+    223f:	00 45 11             	add    BYTE PTR [ebp+0x11],al
+    2242:	00 00                	add    BYTE PTR [eax],al
+    2244:	08 00                	or     BYTE PTR [eax],al
+    2246:	00 00                	add    BYTE PTR [eax],al
+    2248:	b5 16                	mov    ch,0x16
+    224a:	00 00                	add    BYTE PTR [eax],al
+    224c:	08 00                	or     BYTE PTR [eax],al
+    224e:	00 00                	add    BYTE PTR [eax],al
+    2250:	d5 16                	aad    0x16
+    2252:	00 00                	add    BYTE PTR [eax],al
+    2254:	08 00                	or     BYTE PTR [eax],al
+    2256:	00 00                	add    BYTE PTR [eax],al
+    2258:	b0 1d                	mov    al,0x1d
+    225a:	00 00                	add    BYTE PTR [eax],al
+    225c:	08 00                	or     BYTE PTR [eax],al
+    225e:	00 00                	add    BYTE PTR [eax],al
+    2260:	b4 1d                	mov    ah,0x1d
+    2262:	00 00                	add    BYTE PTR [eax],al
+    2264:	08 00                	or     BYTE PTR [eax],al
+    2266:	00 00                	add    BYTE PTR [eax],al
+    2268:	b8 1d 00 00 08       	mov    eax,0x800001d
+    226d:	00 00                	add    BYTE PTR [eax],al
+    226f:	00 bc 1d 00 00 08 00 	add    BYTE PTR [ebp+ebx*1+0x80000],bh
+    2276:	00 00                	add    BYTE PTR [eax],al
+    2278:	c0 1d 00 00 08 00 00 	rcr    BYTE PTR ds:0x80000,0x0
+    227f:	00 c4                	add    ah,al
+    2281:	1d 00 00 08 00       	sbb    eax,0x80000
+    2286:	00 00                	add    BYTE PTR [eax],al
+    2288:	c8 1d 00 00          	enter  0x1d,0x0
+    228c:	08 00                	or     BYTE PTR [eax],al
+    228e:	00 00                	add    BYTE PTR [eax],al
+    2290:	cc                   	int3   
+    2291:	1d 00 00 08 00       	sbb    eax,0x80000
+    2296:	00 00                	add    BYTE PTR [eax],al
+    2298:	d0 1d 00 00 08 00    	rcr    BYTE PTR ds:0x80000,1
+    229e:	00 00                	add    BYTE PTR [eax],al
+    22a0:	d4 1d                	aam    0x1d
+    22a2:	00 00                	add    BYTE PTR [eax],al
+    22a4:	08 00                	or     BYTE PTR [eax],al
+    22a6:	00 00                	add    BYTE PTR [eax],al
+    22a8:	d8 1d 00 00 08 00    	fcomp  DWORD PTR ds:0x80000
+    22ae:	00 00                	add    BYTE PTR [eax],al
+    22b0:	dc 1d 00 00 08 00    	fcomp  QWORD PTR ds:0x80000
+    22b6:	00 00                	add    BYTE PTR [eax],al
+    22b8:	e0 1d                	loopne 22d7 <virt+0x22d7>
+    22ba:	00 00                	add    BYTE PTR [eax],al
+    22bc:	08 00                	or     BYTE PTR [eax],al
+    22be:	00 00                	add    BYTE PTR [eax],al
+    22c0:	e4 1d                	in     al,0x1d
+    22c2:	00 00                	add    BYTE PTR [eax],al
+    22c4:	08 00                	or     BYTE PTR [eax],al
+    22c6:	00 00                	add    BYTE PTR [eax],al
+    22c8:	e8 1d 00 00 08       	call   80022ea <end+0x7ffe2ea>
+    22cd:	00 00                	add    BYTE PTR [eax],al
+    22cf:	00 ec                	add    ah,ch
+    22d1:	1d 00 00 08 00       	sbb    eax,0x80000
+    22d6:	00 00                	add    BYTE PTR [eax],al
+    22d8:	f0 1d 00 00 08 00    	lock sbb eax,0x80000
+    22de:	00 00                	add    BYTE PTR [eax],al
+    22e0:	f4                   	hlt    
+    22e1:	1d 00 00 08 00       	sbb    eax,0x80000
+    22e6:	00 00                	add    BYTE PTR [eax],al
+    22e8:	f8                   	clc    
+    22e9:	1d 00 00 08 00       	sbb    eax,0x80000
+    22ee:	00 00                	add    BYTE PTR [eax],al
+    22f0:	fc                   	cld    
+    22f1:	1d 00 00 08 00       	sbb    eax,0x80000
+    22f6:	00 00                	add    BYTE PTR [eax],al
+    22f8:	00 1e                	add    BYTE PTR [esi],bl
+    22fa:	00 00                	add    BYTE PTR [eax],al
+    22fc:	08 00                	or     BYTE PTR [eax],al
+    22fe:	00 00                	add    BYTE PTR [eax],al
+    2300:	04 1e                	add    al,0x1e
+    2302:	00 00                	add    BYTE PTR [eax],al
+    2304:	08 00                	or     BYTE PTR [eax],al
+    2306:	00 00                	add    BYTE PTR [eax],al
+    2308:	08 1e                	or     BYTE PTR [esi],bl
+    230a:	00 00                	add    BYTE PTR [eax],al
+    230c:	08 00                	or     BYTE PTR [eax],al
+    230e:	00 00                	add    BYTE PTR [eax],al
+    2310:	0c 1e                	or     al,0x1e
+    2312:	00 00                	add    BYTE PTR [eax],al
+    2314:	08 00                	or     BYTE PTR [eax],al
+    2316:	00 00                	add    BYTE PTR [eax],al
+    2318:	10 1e                	adc    BYTE PTR [esi],bl
+    231a:	00 00                	add    BYTE PTR [eax],al
+    231c:	08 00                	or     BYTE PTR [eax],al
+    231e:	00 00                	add    BYTE PTR [eax],al
+    2320:	14 1e                	adc    al,0x1e
+    2322:	00 00                	add    BYTE PTR [eax],al
+    2324:	08 00                	or     BYTE PTR [eax],al
+    2326:	00 00                	add    BYTE PTR [eax],al
+    2328:	18 1e                	sbb    BYTE PTR [esi],bl
+    232a:	00 00                	add    BYTE PTR [eax],al
+    232c:	08 00                	or     BYTE PTR [eax],al
+    232e:	00 00                	add    BYTE PTR [eax],al
+    2330:	1c 1e                	sbb    al,0x1e
+    2332:	00 00                	add    BYTE PTR [eax],al
+    2334:	08 00                	or     BYTE PTR [eax],al
+    2336:	00 00                	add    BYTE PTR [eax],al
+    2338:	20 1e                	and    BYTE PTR [esi],bl
+    233a:	00 00                	add    BYTE PTR [eax],al
+    233c:	08 00                	or     BYTE PTR [eax],al
+    233e:	00 00                	add    BYTE PTR [eax],al
+    2340:	24 1e                	and    al,0x1e
+    2342:	00 00                	add    BYTE PTR [eax],al
+    2344:	08 00                	or     BYTE PTR [eax],al
+    2346:	00 00                	add    BYTE PTR [eax],al
+    2348:	28 1e                	sub    BYTE PTR [esi],bl
+    234a:	00 00                	add    BYTE PTR [eax],al
+    234c:	08 00                	or     BYTE PTR [eax],al
+    234e:	00 00                	add    BYTE PTR [eax],al
+    2350:	2c 1e                	sub    al,0x1e
+    2352:	00 00                	add    BYTE PTR [eax],al
+    2354:	08 00                	or     BYTE PTR [eax],al
+    2356:	00 00                	add    BYTE PTR [eax],al
+    2358:	30 1e                	xor    BYTE PTR [esi],bl
+    235a:	00 00                	add    BYTE PTR [eax],al
+    235c:	08 00                	or     BYTE PTR [eax],al
+	...
+
+Disassembly of section .data:
+
+00002360 <data>:
+	...
+
+Disassembly of section .dynamic:
+
+00003000 <.dynamic>:
+    3000:	04 00                	add    al,0x0
+    3002:	00 00                	add    BYTE PTR [eax],al
+    3004:	8c 20                	mov    WORD PTR [eax],fs
+    3006:	00 00                	add    BYTE PTR [eax],al
+    3008:	05 00 00 00 74       	add    eax,0x74000000
+    300d:	20 00                	and    BYTE PTR [eax],al
+    300f:	00 06                	add    BYTE PTR [esi],al
+    3011:	00 00                	add    BYTE PTR [eax],al
+    3013:	00 14 20             	add    BYTE PTR [eax+eiz*1],dl
+    3016:	00 00                	add    BYTE PTR [eax],al
+    3018:	0a 00                	or     al,BYTE PTR [eax]
+    301a:	00 00                	add    BYTE PTR [eax],al
+    301c:	18 00                	sbb    BYTE PTR [eax],al
+    301e:	00 00                	add    BYTE PTR [eax],al
+    3020:	0b 00                	or     eax,DWORD PTR [eax]
+    3022:	00 00                	add    BYTE PTR [eax],al
+    3024:	10 00                	adc    BYTE PTR [eax],al
+    3026:	00 00                	add    BYTE PTR [eax],al
+    3028:	15 00 00 00 00       	adc    eax,0x0
+    302d:	00 00                	add    BYTE PTR [eax],al
+    302f:	00 11                	add    BYTE PTR [ecx],dl
+    3031:	00 00                	add    BYTE PTR [eax],al
+    3033:	00 b8 20 00 00 12    	add    BYTE PTR [eax+0x12000020],bh
+    3039:	00 00                	add    BYTE PTR [eax],al
+    303b:	00 a8 02 00 00 13    	add    BYTE PTR [eax+0x13000002],ch
+    3041:	00 00                	add    BYTE PTR [eax],al
+    3043:	00 08                	add    BYTE PTR [eax],cl
+    3045:	00 00                	add    BYTE PTR [eax],al
+    3047:	00 16                	add    BYTE PTR [esi],dl
+    3049:	00 00                	add    BYTE PTR [eax],al
+    304b:	00 00                	add    BYTE PTR [eax],al
+    304d:	00 00                	add    BYTE PTR [eax],al
+    304f:	00 fa                	add    dl,bh
+    3051:	ff                   	(bad)  
+    3052:	ff 6f 55             	jmp    FWORD PTR [edi+0x55]
+	...
+
+Disassembly of section .got.plt:
+
+00003080 <.got.plt>:
+    3080:	00 30                	add    BYTE PTR [eax],dh
+	...
+
+Disassembly of section .bss:
+
+000030a0 <bss>:
+	...
+
+Disassembly of section .comment:
+
+00000000 <.comment>:
+   0:	47                   	inc    edi
+   1:	43                   	inc    ebx
+   2:	43                   	inc    ebx
+   3:	3a 20                	cmp    ah,BYTE PTR [eax]
+   5:	28 47 4e             	sub    BYTE PTR [edi+0x4e],al
+   8:	55                   	push   ebp
+   9:	29 20                	sub    DWORD PTR [eax],esp
+   b:	34 2e                	xor    al,0x2e
+   d:	34 2e                	xor    al,0x2e
+   f:	33 00                	xor    eax,DWORD PTR [eax]

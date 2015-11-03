@@ -1,0 +1,28 @@
+Kernel page directory set up.
+Ulix-i386 0.13                           Build: Do  3 Sep 2015 15:41:31 CEST
+Current time: 2015/11/02 21:06:13
+RAM: 64 MByte, mapped to 0xD0000000-0xD3FFFFFF
+VT:  Initialized ten terminals (press [Alt-1] to [Alt-0])
+FDC: fd0 (1440 KByte), fd1 (1440 KByte)
+ATA: hda (1440 KByte), hdb (100000 KByte)
+mount: dev[03:00] = /dev/hda on /     type minix (options 0)
+mount: dev[02:01] = /dev/fd1 on /mnt/ type minix (options 0)
+mount: dev[03:40] = /dev/hdb on /tmp/ type minix (options 0)
+mount: none                  on /dev/ type dev   (options 0)
+swapon: enabling /tmp/swap (64 MByte)
+Starting five shells on tty0..tty4. Press [Ctrl-L] for de/en keyboard.
+swapper launched in background. output at console 10
+
+ulix login: ulix login: ulix login: ulix login: esser
+Password: (auto login)
+[2.0] swapper: 15159 free frames. threshold = 14684.
+ulix login: root
+Password: (auto login)
+[2.1] swapper: 15134 free frames. threshold = 14684.
+esser@ulix[8]:/home/esser$ root@ulix[9]:/root# ls -l
+[2.2] swapper: 15109 free frames. threshold = 14684.
+ 69 drwxr-xr-x  3 1000 1000       96 15 Aug  2:24 .
+ 68 drwxr-xr-x  4 1000 1000      128 29 Apr 20:05 ..
+ 70 drwxr-xr-x  2 1000 1000     1024 15 Aug  2:33 testdir
+[2.3] swapper: 15134 free frames. threshold = 14684.
+esser@ulix[8]:/home/esser$ 

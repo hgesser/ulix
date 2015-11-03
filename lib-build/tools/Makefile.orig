@@ -1,0 +1,35 @@
+ifeq ($(HOME),/home/esser)
+  OS=Linux
+  LD=ld
+  CC=/usr/bin/gcc-4.4
+  OBJDUMP=objdump
+endif
+
+ifeq ($(HOME),/Users/esser)
+  OS=MacOS
+  LD=/usr/cross/bin/i586-elf-ld
+  CC=/usr/cross/bin/i586-elf-gcc
+  OBJDUMP=/usr/cross/bin/i586-elf-objdump
+endif
+
+CCOPTIONS=-nostdlib -ffreestanding -fforce-addr -fomit-frame-pointer -fno-function-cse -nostartfiles -mtune=i386 -momit-leaf-frame-pointer
+CCASMOPTIONS=-fverbose-asm -masm=intel
+
+LDOPTIONS=-static -s --pie
+
+all: build copy
+
+build: compile
+
+compile:
+	$(CC) $(CCOPTIONS) $(CCTESTOPTIONS) -c hello.c
+	$(CC) $(CCOPTIONS) $(CCTESTOPTIONS) -c hexdump.c
+	# link it with linked script "linked.ld"
+	$(LD) $(LDOPTIONS) -T process.ld --entry 0 -o hello hello.o ../ulixlib.o
+	$(LD) $(LDOPTIONS) -T process.ld --entry 0 -o hexdump hexdump.o ../ulixlib.o
+
+copy:
+	cp hello hexdump ../diskfiles/bin/
+clean:
+	rm -f ./*.o
+

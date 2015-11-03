@@ -1,0 +1,57 @@
+% THIS FILE WAS AUTOMATICALLY GENERATED -- DO NOT EDIT
+
+%%AutoEnc_lq6ctyqho53d7mbegz3mqtaakg
+% Encoding created by otftotfm on Sat Aug  9 15:37:51 2014
+% Command line follows encoding
+/AutoEnc_lq6ctyqho53d7mbegz3mqtaakg [
+%00
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+%10
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+%20
+  /space /exclam /quotedbl /numbersign /dollar /percent /ampersand /quoteright
+  /parenleft /parenright /asterisk /plus /comma /hyphen /period /slash
+%30
+  /zero /one /two /three /four /five /six /seven
+  /eight /nine /colon /semicolon /less /equal /greater /question
+%40
+  /at /A /B /C /D /E /F /G
+  /H /I /J /K /L /M /N /O
+%50
+  /P /Q /R /S /T /U /V /W
+  /X /Y /Z /bracketleft /backslash /bracketright /asciicircum /underscore
+%60
+  /quoteleft /a /b /c /d /e /f /g
+  /h /i /j /k /l /m /n /o
+%70
+  /p /q /r /s /t /u /v /w
+  /x /y /z /braceleft /bar /braceright /asciitilde /.notdef
+%80
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+%90
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+%A0
+  /.notdef /exclamdown /cent /sterling /fraction /yen /florin /section
+  /currency /quotesingle /quotedblleft /guillemotleft /guilsinglleft /guilsinglright /f_i /f_l
+%B0
+  /.notdef /endash /dagger /daggerdbl /periodcentered /.notdef /pilcrow /bullet
+  /quotesinglbase /quotedblbase /quotedblright /guillemotright /ellipsis /perthousand /.notdef /questiondown
+%C0
+  /.notdef /grave /acute /circumflex /tilde /macron /breve /dotaccent
+  /dieresis /.notdef /ring /cedilla /.notdef /hungarumlaut /ogonek /caron
+%D0
+  /emdash /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+%E0
+  /.notdef /AE /.notdef /ordfeminine /.notdef /.notdef /.notdef /.notdef
+  /Lslash /Oslash /OE /ordmasculine /.notdef /.notdef /.notdef /.notdef
+%F0
+  /.notdef /ae /.notdef /.notdef /.notdef /dotlessi /.notdef /.notdef
+  /lslash /oslash /oe /germandbls /.notdef /.notdef /.notdef /.notdef
+] def
+% Command line: 'otftotfm
+% /Users/esser/Downloads/Libertine/LinLibertine_R.otf'

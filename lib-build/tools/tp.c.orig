@@ -1,0 +1,26 @@
+#include "../ulixlib.h"
+
+char test[1000*8192] __attribute__ ((aligned (4096)));
+
+int main () {
+  printf ("Testing paging\n");
+
+  test[5] = 'X';
+  test[4100] = 'Y';
+
+for (;;) {
+  unsigned int address = (unsigned int)(&test[5]);
+  printf ("test[5] = '%c', address = 0x%x\n", test[5], address);
+  lib_page_out (address >> 12);
+  sync ();
+  printf ("test[5] = '%c', address = 0x%x\n", test[5], address);
+
+  address = (unsigned int)(&test[4100]);
+  printf ("test[4100] = '%c', address = 0x%x\n", test[4100], address);
+  sync ();
+  lib_page_out (address >> 12);
+  printf ("test[4100] = '%c', address = 0x%x\n", test[4100], address);
+}
+
+  exit (0);
+}

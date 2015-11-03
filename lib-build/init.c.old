@@ -1,0 +1,60 @@
+#include "ulixlib.h"
+
+// program breaks when I put global variables in here
+// (BSS segment)
+
+//unsigned char username[64];
+//unsigned char password[64];
+
+void create_login (int terminal);
+
+#define LOGIN_PROCESSES 5
+
+void umain() {
+  int i;
+  for (i=0; i<LOGIN_PROCESSES; i++)
+    create_login (i);
+  
+  // logins spawned; now become the idle process
+  setpsname ("idle");
+  for (;;) idle ();
+  // if we don't call idle, qemu will have 100% CPU usage
+};
+
+
+void create_login (int terminal) {
+  unsigned char username[64];
+  unsigned char password[64];
+  if (fork() != 0) return;
+  
+  setterm (terminal);
+  setpsname ("login");
+  for (;;) {
+    // / *
+    printf ("ulix login: ");
+    ureadline ((char*)&username,sizeof(username)-1);
+    printf ("Password: ");
+    ureadline ((char*)&password,sizeof(password)-1);
+
+    //printf ("debug: &strcmp = 0x%08x, &username = 0x%08x, "
+    //        "&password = 0x%08x\n", strcmp, &username, &password);
+
+    // check if login is OK
+    if ( !strcmp ((char*)&username, "") ) {
+      printf ("Authentication failed.\n");
+      printf ("(user = '%s', pass = '%s')\n", username, password);
+      continue;
+    }
+    // * /
+    
+    // launch shell
+    int pid = fork();
+    if (pid == 0) {
+      // child
+      char *args[] = { "/bin/sh", 0 };
+      execve (args[0], args, 0);
+    } else {
+      waitpid (pid, 0, 0);
+    }
+  }
+} 

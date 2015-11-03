@@ -1,0 +1,38 @@
+megs: 64
+romimage: file=/usr/share/bochs/BIOS-bochs-latest
+vgaromimage: file=/usr/share/bochs/VGABIOS-lgpl-latest
+
+
+# floppya: 1_44=ulixboot-bochs.img, status=inserted
+floppya: 1_44=ulixboot.img, status=inserted
+# floppyb: 1_44=ulixdata.img, status=inserted
+# floppyb: 1_44=minixdata.img, status=inserted
+floppyb: 1_44=minixdata-old.img, status=inserted
+
+boot: a
+
+# ata0-master: type=disk, mode=flat, path="testhd.img"
+ata0-master: type=disk, mode=flat, path="minixdata.img"
+ata0-slave: type=disk, mode=flat, path="bigdisk.img"
+
+
+# load32bitOSImage: os=nullkernel, path=src/kernel, iolog=vga_io.log
+
+log: bochsout.txt
+mouse: enabled=0
+clock: sync=realtime
+cpu: ips=500000
+
+#config_interface: wx
+#display_library: wx
+
+display_library: x, options="gui_debug"
+
+port_e9_hack: enabled=1
+
+info: action=report
+
+magic_break: enabled=1
+
+debug_symbols: file="ulix.sym"
+

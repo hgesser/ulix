@@ -1,0 +1,197 @@
+
+Discarded input sections
+
+ .stab          0x0000000000000000     0x357c ulixlib.o
+ .stabstr       0x0000000000000000     0x1cca ulixlib.o
+ .stab          0x0000000000000000      0x7e0 login.o
+ .stabstr       0x0000000000000000      0xdee login.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+LOAD ulixlib.o
+LOAD login.o
+                0x0000000000000000                virt = 0x0
+                0x0000000000000000                . = virt
+
+.setup
+ *(.setup)
+
+.text           0x0000000000000000     0x2000
+                0x0000000000000000                code = .
+ *(.text)
+ .text          0x0000000000000000     0x13e9 ulixlib.o
+                0x0000000000000000                strlen
+                0x0000000000000027                BAD_strcmp
+                0x00000000000000a3                strcmp
+                0x0000000000000101                strncmp
+                0x000000000000018c                atoi
+                0x00000000000001db                atoi8
+                0x0000000000000226                strncpy
+                0x000000000000026f                strcpy
+                0x00000000000002aa                memcpy
+                0x00000000000002e6                memset
+                0x000000000000031a                memsetw
+                0x0000000000000351                sbrk
+                0x0000000000000369                syscall4
+                0x000000000000038c                syscall3
+                0x00000000000003ad                syscall2
+                0x00000000000003ca                syscall1
+                0x00000000000003df                fork
+                0x00000000000003f9                pthread_create
+                0x000000000000040c                pthread_exit
+                0x000000000000041a                execve
+                0x0000000000000434                idle
+                0x0000000000000442                lib_page_out
+                0x0000000000000454                get_free_frames
+                0x0000000000000462                free_a_frame
+                0x0000000000000470                waitpid
+                0x0000000000000488                exit
+                0x0000000000000497                yield
+                0x00000000000004a2                getpid
+                0x00000000000004ad                getppid
+                0x00000000000004b8                getpsinfo
+                0x00000000000004cf                setpsname
+                0x00000000000004e2                setterm
+                0x00000000000004f4                clrscr
+                0x0000000000000502                get_xy
+                0x000000000000051a                set_xy
+                0x0000000000000548                read_screen
+                0x000000000000055b                write_screen
+                0x000000000000056e                pthread_mutex_init
+                0x0000000000000586                pthread_mutex_lock
+                0x0000000000000599                pthread_mutex_unlock
+                0x00000000000005ac                isatty
+                0x00000000000005be                open
+                0x00000000000005d2                stat
+                0x00000000000005e7                close
+                0x00000000000005f6                read
+                0x000000000000060e                write
+                0x0000000000000626                lseek
+                0x000000000000063d                getdent
+                0x0000000000000656                mkdir
+                0x000000000000066a                rmdir
+                0x000000000000067a                getcwd
+                0x0000000000000691                chdir
+                0x00000000000006a1                link
+                0x00000000000006b6                unlink
+                0x00000000000006c6                symlink
+                0x00000000000006db                readlink
+                0x00000000000006f4                diskfree
+                0x0000000000000707                sync
+                0x0000000000000712                kill
+                0x0000000000000725                signal
+                0x0000000000000739                setuid
+                0x000000000000075a                setgid
+                0x000000000000077b                seteuid
+                0x000000000000079c                setegid
+                0x00000000000007bd                login
+                0x00000000000007e3                getpwnam_r
+                0x0000000000000a2e                getpwuid_r
+                0x0000000000000c84                getuid
+                0x0000000000000c94                geteuid
+                0x0000000000000ca4                getgid
+                0x0000000000000cb4                getegid
+                0x0000000000000cc4                chown
+                0x0000000000000cf9                chmod
+                0x0000000000000d1c                scroll_up
+                0x0000000000000d70                scroll_down
+                0x0000000000000dbe                ulixlib_printchar
+                0x00000000000011e0                printf
+                0x00000000000011f2                sprintf
+                0x0000000000001207                readline
+                0x000000000000121e                ureadline
+                0x00000000000013d1                ureadchar
+ *fill*         0x00000000000013e9        0x3 00
+ .text          0x00000000000013ec      0x385 login.o
+                0x00000000000013ec                main
+                0x0000000000001482                create_login
+                0x0000000000001653                create_auto_login
+ *(.rodata*)
+ .rodata        0x0000000000001771       0x34 ulixlib.o
+ *fill*         0x00000000000017a5        0x3 00
+ .rodata        0x00000000000017a8       0xc8 login.o
+                0x0000000000002000                . = ALIGN (0x1000)
+ *fill*         0x0000000000001870      0x790 00
+
+.plt            0x0000000000002000        0x0
+ .plt           0x0000000000000000        0x0 ulixlib.o
+
+.interp         0x0000000000002000       0x13
+ .interp        0x0000000000002000       0x13 ulixlib.o
+
+.gnu.version_d  0x0000000000002014        0x0 load address 0x0000000000002013
+ .gnu.version_d
+                0x0000000000000000        0x0 ulixlib.o
+
+.gnu.version    0x0000000000002014        0x0 load address 0x0000000000002013
+ .gnu.version   0x0000000000000000        0x0 ulixlib.o
+
+.gnu.version_r  0x0000000000002014        0x0 load address 0x0000000000002013
+ .gnu.version_r
+                0x0000000000000000        0x0 ulixlib.o
+
+.dynsym         0x0000000000002014       0x60
+ .dynsym        0x0000000000002014       0x60 ulixlib.o
+
+.dynstr         0x0000000000002074       0x18
+ .dynstr        0x0000000000002074       0x18 ulixlib.o
+
+.hash           0x000000000000208c       0x2c
+ .hash          0x000000000000208c       0x2c ulixlib.o
+
+.rel.dyn        0x00000000000020b8       0xc8
+ .rel.plt       0x0000000000000000        0x0 ulixlib.o
+ .rel.got       0x0000000000000000        0x0 ulixlib.o
+ .rel.ifunc     0x0000000000000000        0x0 ulixlib.o
+ .rel.text      0x00000000000020b8       0xc8 ulixlib.o
+
+.data           0x0000000000002180      0xe80
+                0x0000000000002180                data = .
+ *(.data)
+ .data          0x0000000000002180        0x0 ulixlib.o
+ .data          0x0000000000002180        0x0 login.o
+                0x0000000000003000                . = ALIGN (0x1000)
+ *fill*         0x0000000000002180      0xe80 00
+
+.dynamic        0x0000000000003000       0x80
+ .dynamic       0x0000000000003000       0x80 ulixlib.o
+                0x0000000000003000                _DYNAMIC
+
+.got            0x0000000000003080        0x0
+ .got           0x0000000000000000        0x0 ulixlib.o
+
+.got.plt        0x0000000000003080        0xc
+ .got.plt       0x0000000000003080        0xc ulixlib.o
+                0x0000000000003080                _GLOBAL_OFFSET_TABLE_
+
+.bss            0x000000000000308c      0xf74
+                0x000000000000308c                bss = .
+ *(COMMON*)
+ *(.bss*)
+ .bss           0x000000000000308c        0x0 ulixlib.o
+ .bss           0x000000000000308c        0x0 login.o
+                0x0000000000004000                . = ALIGN (0x1000)
+ *fill*         0x000000000000308c      0xf74 00
+                0x0000000000004000                end = .
+OUTPUT(login elf32-i386)
+
+.dynbss         0x0000000000004000        0x0
+ .dynbss        0x0000000000000000        0x0 ulixlib.o
+
+.stab
+
+.stabstr
+
+.comment        0x0000000000000000       0x11
+ .comment       0x0000000000000000       0x11 ulixlib.o
+                                         0x12 (size before relaxing)
+ .comment       0x0000000000000000       0x12 login.o
+
+.stab
+
+.stabstr

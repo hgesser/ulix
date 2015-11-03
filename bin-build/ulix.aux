@@ -1,0 +1,696 @@
+/* compiled from: . */
+/* ulix.c:944:OC */ extern void initialize_module (/* ??? */);
+/* ulix.c:946:NC */ extern void fill_gdt_entry (int, ulong, ulong, byte, byte);
+/* ulix.c:947:OC */ extern void gdt_flush (/* ??? */);
+/* ulix.c:949:NC */ extern unsigned int pageno_to_frameno (unsigned int);
+/* ulix.c:951:OC */ extern void *request_new_page (/* ??? */);
+/* ulix.c:952:NC */ extern void *request_new_pages (int);
+/* ulix.c:954:NC */ extern byte inportb (word);
+/* ulix.c:955:NC */ extern word inportw (word);
+/* ulix.c:956:NC */ extern void outportb (word, byte);
+/* ulix.c:957:NC */ extern void outportw (word, word);
+/* ulix.c:959:NC */ extern void fill_idt_entry (byte, long unsigned int, word, byte, byte);
+/* ulix.c:962:OC */ extern void irq0 (/* ??? */);
+/* ulix.c:962:OC */ extern void irq1 (/* ??? */);
+/* ulix.c:962:OC */ extern void irq2 (/* ??? */);
+/* ulix.c:962:OC */ extern void irq3 (/* ??? */);
+/* ulix.c:962:OC */ extern void irq4 (/* ??? */);
+/* ulix.c:962:OC */ extern void irq5 (/* ??? */);
+/* ulix.c:962:OC */ extern void irq6 (/* ??? */);
+/* ulix.c:962:OC */ extern void irq7 (/* ??? */);
+/* ulix.c:963:OC */ extern void irq8 (/* ??? */);
+/* ulix.c:963:OC */ extern void irq9 (/* ??? */);
+/* ulix.c:963:OC */ extern void irq10 (/* ??? */);
+/* ulix.c:963:OC */ extern void irq11 (/* ??? */);
+/* ulix.c:963:OC */ extern void irq12 (/* ??? */);
+/* ulix.c:963:OC */ extern void irq13 (/* ??? */);
+/* ulix.c:963:OC */ extern void irq14 (/* ??? */);
+/* ulix.c:963:OC */ extern void irq15 (/* ??? */);
+/* ulix.c:965:NC */ static void set_irqmask (word);
+/* ulix.c:967:NC */ static void enable_interrupt (int);
+/* ulix.c:969:OC */ extern word get_irqmask (/* ??? */);
+/* ulix.c:971:NC */ extern void install_interrupt_handler (int, void (*) (context_t *));
+/* ulix.c:973:OC */ extern void idt_load (/* ??? */);
+/* ulix.c:976:OC */ extern void fault0 (/* ??? */);
+/* ulix.c:976:OC */ extern void fault1 (/* ??? */);
+/* ulix.c:976:OC */ extern void fault2 (/* ??? */);
+/* ulix.c:976:OC */ extern void fault3 (/* ??? */);
+/* ulix.c:976:OC */ extern void fault4 (/* ??? */);
+/* ulix.c:976:OC */ extern void fault5 (/* ??? */);
+/* ulix.c:976:OC */ extern void fault6 (/* ??? */);
+/* ulix.c:977:OC */ extern void fault7 (/* ??? */);
+/* ulix.c:977:OC */ extern void fault8 (/* ??? */);
+/* ulix.c:977:OC */ extern void fault9 (/* ??? */);
+/* ulix.c:977:OC */ extern void fault10 (/* ??? */);
+/* ulix.c:977:OC */ extern void fault11 (/* ??? */);
+/* ulix.c:977:OC */ extern void fault12 (/* ??? */);
+/* ulix.c:977:OC */ extern void fault13 (/* ??? */);
+/* ulix.c:978:OC */ extern void fault14 (/* ??? */);
+/* ulix.c:978:OC */ extern void fault15 (/* ??? */);
+/* ulix.c:978:OC */ extern void fault16 (/* ??? */);
+/* ulix.c:978:OC */ extern void fault17 (/* ??? */);
+/* ulix.c:978:OC */ extern void fault18 (/* ??? */);
+/* ulix.c:978:OC */ extern void fault19 (/* ??? */);
+/* ulix.c:978:OC */ extern void fault20 (/* ??? */);
+/* ulix.c:979:OC */ extern void fault21 (/* ??? */);
+/* ulix.c:979:OC */ extern void fault22 (/* ??? */);
+/* ulix.c:979:OC */ extern void fault23 (/* ??? */);
+/* ulix.c:979:OC */ extern void fault24 (/* ??? */);
+/* ulix.c:979:OC */ extern void fault25 (/* ??? */);
+/* ulix.c:979:OC */ extern void fault26 (/* ??? */);
+/* ulix.c:979:OC */ extern void fault27 (/* ??? */);
+/* ulix.c:980:OC */ extern void fault28 (/* ??? */);
+/* ulix.c:980:OC */ extern void fault29 (/* ??? */);
+/* ulix.c:980:OC */ extern void fault30 (/* ??? */);
+/* ulix.c:980:OC */ extern void fault31 (/* ??? */);
+/* ulix.c:982:NC */ extern void fault_handler (context_t *);
+/* ulix.c:984:OC */ extern int get_free_address_space (/* ??? */);
+/* ulix.c:986:NC */ extern int create_new_address_space (int, int);
+/* ulix.c:988:NC */ extern int as_map_page_to_frame (int, unsigned int, unsigned int);
+/* ulix.c:990:NC */ extern void destroy_address_space (addr_space_id);
+/* ulix.c:992:NC */ extern void add_to_kstack_delete_list (addr_space_id);
+/* ulix.c:994:NC */ extern void activate_address_space (addr_space_id);
+/* ulix.c:996:OC */ extern void list_address_spaces (/* ??? */);
+/* ulix.c:998:NC */ extern unsigned int mmu_p (addr_space_id, unsigned int);
+/* ulix.c:999:NC */ extern memaddress mmu (addr_space_id, memaddress);
+/* ulix.c:1001:NC */ extern void *u_sbrk (int);
+/* ulix.c:1003:NC */ extern void add (thread_id);
+/* ulix.c:1004:NC */ extern void block (blocked_queue *, int);
+/* ulix.c:1005:NC */ extern void deblock (thread_id, blocked_queue *);
+/* ulix.c:1006:NC */ extern void retire (thread_id);
+/* ulix.c:1008:NC */ extern void initialize_blocked_queue (blocked_queue *);
+/* ulix.c:1010:NC */ extern void add_to_ready_queue (thread_id);
+/* ulix.c:1011:NC */ extern void remove_from_ready_queue (thread_id);
+/* ulix.c:1013:NC */ extern void add_to_blocked_queue (thread_id, blocked_queue *);
+/* ulix.c:1014:NC */ extern void remove_from_blocked_queue (thread_id, blocked_queue *);
+/* ulix.c:1015:NC */ extern thread_id front_of_blocked_queue (blocked_queue);
+/* ulix.c:1017:NC */ extern int register_new_tcb (addr_space_id);
+/* ulix.c:1019:NC */ static void write_tss (int, word, void *);
+/* ulix.c:1021:OC */ extern void tss_flush (/* ??? */);
+/* ulix.c:1023:NC */ extern void cpu_usermode (memaddress, memaddress);
+/* ulix.c:1025:NC */ extern void install_syscall_handler (int, void *);
+/* ulix.c:1027:NC */ extern void syscall_sbrk (context_t *);
+/* ulix.c:1029:NC */ extern void syscall_get_errno (context_t *);
+/* ulix.c:1030:NC */ extern void syscall_set_errno (context_t *);
+/* ulix.c:1032:NC */ extern void syscall_fork (context_t *);
+/* ulix.c:1034:NC */ extern void syscall_exit (context_t *);
+/* ulix.c:1036:NC */ extern void syscall_waitpid (context_t *);
+/* ulix.c:1038:NC */ extern void syscall_resign (context_t *);
+/* ulix.c:1040:NC */ extern void syscall_gettid (context_t *);
+/* ulix.c:1041:NC */ extern void syscall_getpid (context_t *);
+/* ulix.c:1042:NC */ extern void syscall_getppid (context_t *);
+/* ulix.c:1044:NC */ extern void syscall_getpsinfo (context_t *);
+/* ulix.c:1046:NC */ extern void syscall_setpsname (context_t *);
+/* ulix.c:1048:NC */ extern void syscall_execv (context_t *);
+/* ulix.c:1050:NC */ extern void syscall_pthread_create (context_t *);
+/* ulix.c:1052:NC */ extern void syscall_idle (context_t *);
+/* ulix.c:1054:NC */ extern void syscall_page_out (context_t *);
+/* ulix.c:1056:NC */ extern void syscall_get_free_frames (context_t *);
+/* ulix.c:1057:NC */ extern void syscall_free_a_frame (context_t *);
+/* ulix.c:1059:NC */ extern void syscall_clrscr (context_t *);
+/* ulix.c:1060:NC */ extern void syscall_get_xy (context_t *);
+/* ulix.c:1061:NC */ extern void syscall_set_xy (context_t *);
+/* ulix.c:1063:NC */ extern void syscall_pthread_mutex_init (context_t *);
+/* ulix.c:1065:NC */ extern void syscall_pthread_mutex_lock (context_t *);
+/* ulix.c:1066:NC */ extern void syscall_pthread_mutex_trylock (context_t *);
+/* ulix.c:1067:NC */ extern void syscall_pthread_mutex_unlock (context_t *);
+/* ulix.c:1069:NC */ extern void syscall_pthread_mutex_destroy (context_t *);
+/* ulix.c:1071:NC */ extern void syscall_readchar (context_t *);
+/* ulix.c:1073:NC */ extern void syscall_open (context_t *);
+/* ulix.c:1074:NC */ extern void syscall_stat (context_t *);
+/* ulix.c:1075:NC */ extern void syscall_close (context_t *);
+/* ulix.c:1076:NC */ extern void syscall_read (context_t *);
+/* ulix.c:1077:NC */ extern void syscall_write (context_t *);
+/* ulix.c:1078:NC */ extern void syscall_lseek (context_t *);
+/* ulix.c:1079:NC */ extern void syscall_isatty (context_t *);
+/* ulix.c:1080:NC */ extern void syscall_mkdir (context_t *);
+/* ulix.c:1081:NC */ extern void syscall_rmdir (context_t *);
+/* ulix.c:1082:NC */ extern void syscall_getdent (context_t *);
+/* ulix.c:1083:NC */ extern void syscall_truncate (context_t *);
+/* ulix.c:1084:NC */ extern void syscall_ftruncate (context_t *);
+/* ulix.c:1085:NC */ extern void syscall_link (context_t *);
+/* ulix.c:1086:NC */ extern void syscall_unlink (context_t *);
+/* ulix.c:1087:NC */ extern void syscall_symlink (context_t *);
+/* ulix.c:1088:NC */ extern void syscall_readlink (context_t *);
+/* ulix.c:1090:NC */ extern void syscall_getcwd (context_t *);
+/* ulix.c:1091:NC */ extern void syscall_chdir (context_t *);
+/* ulix.c:1093:NC */ extern void syscall_diskfree (context_t *);
+/* ulix.c:1095:NC */ extern void syscall_sync (context_t *);
+/* ulix.c:1097:NC */ extern void syscall_kill (context_t *);
+/* ulix.c:1099:NC */ extern void syscall_signal (context_t *);
+/* ulix.c:1101:NC */ extern void syscall_setuid (context_t *);
+/* ulix.c:1102:NC */ extern void syscall_setgid (context_t *);
+/* ulix.c:1103:NC */ extern void syscall_seteuid (context_t *);
+/* ulix.c:1104:NC */ extern void syscall_setegid (context_t *);
+/* ulix.c:1105:NC */ extern void syscall_login (context_t *);
+/* ulix.c:1107:NC */ extern void syscall_query_ids (context_t *);
+/* ulix.c:1109:NC */ extern void syscall_chown (context_t *);
+/* ulix.c:1110:NC */ extern void syscall_chmod (context_t *);
+/* ulix.c:1112:NC */ extern void syscall_print_inode (context_t *);
+/* ulix.c:1114:OC */ extern void syscallh (/* ??? */);
+/* ulix.c:1116:OC */ extern int get_errno (/* ??? */);
+/* ulix.c:1117:NC */ extern void set_errno (int);
+/* ulix.c:1119:NC */ extern int u_fork (context_t *);
+/* ulix.c:1121:OC */ extern memaddress get_eip (/* ??? */);
+/* ulix.c:1123:NC */ extern void wake_waiting_parent_process (int);
+/* ulix.c:1125:NC */ extern int u_execv (char *, char *const *, memaddress *);
+/* ulix.c:1127:NC */ extern int u_pthread_create (pthread_t *, const pthread_attr_t *, memaddress, void *);
+/* ulix.c:1130:NC */ extern void syscall_pthread_exit (context_t *);
+/* ulix.c:1132:NC */ extern void scheduler (context_t *, int);
+/* ulix.c:1134:NC */ extern void page_fault_handler (context_t *);
+/* ulix.c:1136:NC */ extern int write_swap_page (int, int, int);
+/* ulix.c:1137:NC */ extern int read_swap_page (int, int, int);
+/* ulix.c:1139:NC */ extern int page_out (int, int);
+/* ulix.c:1140:NC */ extern int page_in (int, int);
+/* ulix.c:1142:NC */ extern int hash (int, int);
+/* ulix.c:1144:NF */ extern int hash (int val, int maxval); /* (val, maxval) int val; int maxval; */
+/* ulix.c:1149:NC */ extern void keyboard_handler (context_t *);
+/* ulix.c:1151:OC */ extern void keyboard_install (/* ??? */);
+/* ulix.c:1153:NC */ extern void kgetch (char *);
+/* ulix.c:1154:NC */ extern void kreadline (char *, int);
+/* ulix.c:1156:NC */ extern int vt_activate (int);
+/* ulix.c:1158:OC */ extern void vt_move_cursor (/* ??? */);
+/* ulix.c:1160:OC */ extern void vt_clrscr (/* ??? */);
+/* ulix.c:1161:NC */ extern void vt_get_xy (char *, char *);
+/* ulix.c:1162:NC */ extern void vt_set_xy (char, char);
+/* ulix.c:1164:NC */ extern void read_write_screen (char *, boolean);
+/* ulix.c:1165:NC */ extern void read_screen (char *);
+/* ulix.c:1166:NC */ extern void write_screen (char *);
+/* ulix.c:1168:NC */ extern void kputch (byte);
+/* ulix.c:1169:NC */ extern void kputs (char *);
+/* ulix.c:1171:NC */ extern void uartputc (int);
+/* ulix.c:1173:NC */ extern void set_statusline (char *);
+/* ulix.c:1174:NC */ extern void _set_statusline (char *, int);
+/* ulix.c:1176:NC */ extern void timer_phase (int);
+/* ulix.c:1178:NC */ extern ulong unixtime (int, int, int, int, int, int);
+/* ulix.c:1179:NC */ extern void rev_unixtime (ulong, short int *, char *, char *, char *, char *, char *);
+/* ulix.c:1182:NC */ extern void timer_handler (context_t *);
+/* ulix.c:1184:NC */ extern void uart2putc (int);
+/* ulix.c:1186:NC */ extern kl_semaphore_id get_new_semaphore (int);
+/* ulix.c:1187:NC */ extern void release_semaphore (kl_semaphore_id);
+/* ulix.c:1189:NC */ extern void wait_semaphore (kl_semaphore_id);
+/* ulix.c:1190:NC */ extern void signal_semaphore (kl_semaphore_id);
+/* ulix.c:1192:NC */ extern void mutex_lock (lock);
+/* ulix.c:1193:NC */ extern boolean mutex_try_lock (lock);
+/* ulix.c:1194:NC */ extern void mutex_unlock (lock);
+/* ulix.c:1196:NC */ extern lock get_new_lock (char *);
+/* ulix.c:1197:NC */ extern void release_lock (lock);
+/* ulix.c:1199:NC */ extern int u_pthread_mutex_init (pthread_mutex_t *, const pthread_mutexattr_t *);
+/* ulix.c:1202:NC */ extern int u_pthread_mutex_lock (pthread_mutex_t *);
+/* ulix.c:1203:NC */ extern int u_pthread_mutex_trylock (pthread_mutex_t *);
+/* ulix.c:1204:NC */ extern int u_pthread_mutex_unlock (pthread_mutex_t *);
+/* ulix.c:1206:NC */ extern int u_pthread_mutex_destroy (pthread_mutex_t *);
+/* ulix.c:1208:OC */ extern void print_mount_table (/* ??? */);
+/* ulix.c:1210:NC */ extern int get_dev_and_path (char *, short int *, short int *, char *);
+/* ulix.c:1212:NC */ extern int string_starts_with (char *, char *);
+/* ulix.c:1213:NC */ extern void split_mountpoint (char *, char *, char *);
+/* ulix.c:1215:NC */ extern int u_open (char *, int, int);
+/* ulix.c:1217:NC */ extern void relpath_to_abspath (const char *, char *);
+/* ulix.c:1219:NC */ extern int u_read (int, void *, int);
+/* ulix.c:1220:NC */ extern int u_write (int, void *, int);
+/* ulix.c:1221:NC */ extern int u_close (int);
+/* ulix.c:1222:NC */ extern int u_lseek (int, int, int);
+/* ulix.c:1223:NC */ extern int u_unlink (const char *);
+/* ulix.c:1224:NC */ extern int u_link (const char *, const char *);
+/* ulix.c:1225:NC */ extern int u_symlink (const char *, const char *);
+/* ulix.c:1226:NC */ extern int u_truncate (const char *, int);
+/* ulix.c:1227:NC */ extern int u_ftruncate (int, int);
+/* ulix.c:1228:NC */ extern int u_readlink (char *, char *, size_t);
+/* ulix.c:1230:NC */ extern boolean u_isatty (int);
+/* ulix.c:1232:NC */ extern int u_stat (const char *, struct stat *);
+/* ulix.c:1234:NC */ extern int u_mkdir (const char *, int);
+/* ulix.c:1235:NC */ extern int u_rmdir (const char *);
+/* ulix.c:1237:NC */ extern int u_getdent (const char *, int, struct dir_entry *);
+/* ulix.c:1239:NC */ extern int gfd2pfd (int);
+/* ulix.c:1240:NC */ extern int pfd2gfd (int);
+/* ulix.c:1242:NC */ extern int u_reopen (int);
+/* ulix.c:1244:NC */ extern char *u_getcwd (char *, int);
+/* ulix.c:1245:NC */ extern int u_chdir (const char *);
+/* ulix.c:1247:NC */ extern int mx_query_superblock (int, char);
+/* ulix.c:1249:NC */ extern int findZeroBitAndSet (byte *, int);
+/* ulix.c:1251:NC */ extern int mx_read_inode (int, int, struct minix2_inode *);
+/* ulix.c:1252:NC */ extern int mx_write_inode (int, int, struct minix2_inode *);
+/* ulix.c:1254:NC */ extern int mx_read_write_inode (int, int, struct minix2_inode *, int);
+/* ulix.c:1257:NC */ extern int mx_read_dir_entry (int, int, int, struct minix_dir_entry *);
+/* ulix.c:1259:NC */ extern int mx_write_dir_entry (int, int, int, struct minix_dir_entry *);
+/* ulix.c:1262:NC */ extern void mx_write_link (int, int, const char *);
+/* ulix.c:1264:NC */ extern int mx_increase_link_count (int, int);
+/* ulix.c:1266:NC */ extern int mx_pathname_to_ino (int, const char *);
+/* ulix.c:1268:OC */ extern int mx_get_free_inodes_entry (/* ??? */);
+/* ulix.c:1269:OC */ extern int mx_get_free_status_entry (/* ??? */);
+/* ulix.c:1271:NC */ extern int mx_open (int, const char *, int);
+/* ulix.c:1273:NC */ extern int mx_close (int);
+/* ulix.c:1275:NC */ extern int mx_reopen (int);
+/* ulix.c:1277:NC */ extern int mx_lseek (int, int, int);
+/* ulix.c:1279:NC */ extern int mx_read (int, void *, int);
+/* ulix.c:1281:NC */ extern int fileblocktozone (int, int, struct int_minix2_inode *);
+/* ulix.c:1283:NC */ extern int mx_write (int, void *, int);
+/* ulix.c:1285:NC */ extern int mx_create_new_zone (int, int, struct int_minix2_inode *);
+/* ulix.c:1287:NC */ extern int mx_creat_empty_file (int, const char *, int);
+/* ulix.c:1289:NC */ extern boolean mx_file_exists (int, const char *);
+/* ulix.c:1290:NC */ extern boolean mx_file_is_directory (int, const char *);
+/* ulix.c:1291:NC */ extern int mx_link (int, const char *, const char *);
+/* ulix.c:1293:NC */ extern int mx_unlink (int, const char *);
+/* ulix.c:1295:NC */ extern int mx_symlink (int, char *, char *);
+/* ulix.c:1297:NC */ extern int mx_ftruncate (int, int);
+/* ulix.c:1299:NC */ extern int mx_mkdir (int, const char *, int);
+/* ulix.c:1301:NC */ extern int mx_rmdir (int, const char *, const char *);
+/* ulix.c:1303:NC */ extern boolean mx_directory_is_empty (int, const char *);
+/* ulix.c:1305:NC */ extern int mx_stat (int, const char *, struct stat *);
+/* ulix.c:1307:NC */ extern int mx_getdent (int, const char *, int, struct dir_entry *);
+/* ulix.c:1309:NC */ extern void mx_diskfree (struct diskfree_query *);
+/* ulix.c:1311:NC */ extern int dev_open (const char *, int);
+/* ulix.c:1313:NC */ extern int dev_close (int);
+/* ulix.c:1315:NC */ extern int dev_read (int, char *, int);
+/* ulix.c:1316:NC */ extern int dev_write (int, char *, int);
+/* ulix.c:1317:NC */ extern int dev_lseek (int, int, int);
+/* ulix.c:1319:NC */ extern long int dev_size (int);
+/* ulix.c:1321:NC */ extern int dev_stat (const char *, struct stat *);
+/* ulix.c:1322:NC */ extern int dev_getdent (const char *, int, struct dir_entry *);
+/* ulix.c:1324:NC */ extern void readblock (int, int, char *);
+/* ulix.c:1325:NC */ extern void writeblock (int, int, char *);
+/* ulix.c:1327:NC */ extern word makedev (byte, byte);
+/* ulix.c:1328:NC */ extern byte devmajor (word);
+/* ulix.c:1329:NC */ extern byte devminor (word);
+/* ulix.c:1331:NC */ extern int buffer_write (int, int, char *, char);
+/* ulix.c:1332:NC */ extern int buffer_read (int, int, char *);
+/* ulix.c:1333:NC */ extern boolean buffer_contains (int, int);
+/* ulix.c:1335:NC */ extern void buffer_sync (boolean);
+/* ulix.c:1337:NC */ extern void readblock_nb_serial (int, char *);
+/* ulix.c:1338:NC */ extern void writeblock_nb_serial (int, char *);
+/* ulix.c:1340:OC */ extern int serial_disk_blocking_rw (/* ??? */);
+/* ulix.c:1342:NC */ extern void readblock_serial (int, char *);
+/* ulix.c:1343:NC */ extern void writeblock_serial (int, char *);
+/* ulix.c:1345:NC */ static void repeat_inportsl (int, void *, int);
+/* ulix.c:1347:NC */ static void repeat_outportsl (int, void *, int);
+/* ulix.c:1349:NC */ extern void readblock_hd (int, int, char *);
+/* ulix.c:1350:NC */ extern void writeblock_hd (int, int, char *);
+/* ulix.c:1352:NC */ extern void ide_handler (context_t *);
+/* ulix.c:1354:NC */ extern int idewait (int);
+/* ulix.c:1356:NC */ extern void fdc_out (byte);
+/* ulix.c:1357:OC */ extern int fdc_getresults (/* ??? */);
+/* ulix.c:1359:NC */ extern void outb_delay (word, byte);
+/* ulix.c:1360:NC */ extern byte inb_delay (word);
+/* ulix.c:1362:NC */ extern int fdc_command (int, int, int, int);
+/* ulix.c:1364:OC */ extern void fdc_mode (/* ??? */);
+/* ulix.c:1366:OC */ extern void fdc_sleep (/* ??? */);
+/* ulix.c:1368:OC */ extern void fdc_wakeup (/* ??? */);
+/* ulix.c:1370:OC */ extern void fdc_timer (/* ??? */);
+/* ulix.c:1372:OC */ extern int wait_fdc_interrupt (/* ??? */);
+/* ulix.c:1374:OC */ extern int fdc_seek (/* ??? */);
+/* ulix.c:1376:NC */ extern int fdc_read_sector (int, int, char *);
+/* ulix.c:1377:NC */ extern int fdc_write_sector (int, int, char *);
+/* ulix.c:1379:NC */ extern void readblock_fd (int, int, char *);
+/* ulix.c:1380:NC */ extern void writeblock_fd (int, int, char *);
+/* ulix.c:1382:OC */ extern void fdc_reset (/* ??? */);
+/* ulix.c:1383:OC */ extern int fdc_recalibrate (/* ??? */);
+/* ulix.c:1385:OC */ extern void fdc_init (/* ??? */);
+/* ulix.c:1387:NC */ extern int fdc_map_type (int);
+/* ulix.c:1389:NC */ extern int u_kill (int, int);
+/* ulix.c:1391:NC */ extern sighandler_t u_signal (int, sighandler_t);
+/* ulix.c:1393:NC */ extern boolean fileexists (char *);
+/* ulix.c:1395:NC */ extern boolean check_access (char *, word, word, word);
+/* ulix.c:1397:NC */ extern boolean check_perms (short int, word, word);
+/* ulix.c:1399:NC */ extern int u_setuid (word);
+/* ulix.c:1400:NC */ extern int u_setgid (word);
+/* ulix.c:1401:NC */ extern int u_seteuid (word);
+/* ulix.c:1402:NC */ extern int u_setegid (word);
+/* ulix.c:1403:NC */ extern int u_login (word, char *);
+/* ulix.c:1405:NC */ extern int u_chown (const char *, short int, short int);
+/* ulix.c:1406:NC */ extern int u_chmod (const char *, word);
+/* ulix.c:1408:NC */ extern int mx_chown (int, const char *, short int, short int);
+/* ulix.c:1409:NC */ extern int mx_chmod (int, const char *, word);
+/* ulix.c:1411:NC */ extern int mx_chinode (int, const char *, short int, short int, short int);
+/* ulix.c:1414:NC */ extern int debug_printf (const char *, ...);
+/* ulix.c:1416:OC */ extern void kernel_shell (/* ??? */);
+/* ulix.c:1418:NC */ extern void printbitsandhex (uint);
+/* ulix.c:1420:NC */ extern void hexdump (uint, uint);
+/* ulix.c:1422:OC */ extern void ksh_print_page_table (/* ??? */);
+/* ulix.c:1426:NC */ extern void splitpath (const char *, char *, char *);
+/* ulix.c:1427:NC */ extern char *basename (char *);
+/* ulix.c:1428:NC */ extern char *dirname (char *);
+/* ulix.c:1430:NC */ extern size_t strlen (const char *);
+/* ulix.c:1431:NC */ extern int strcmp (const char *, const char *);
+/* ulix.c:1432:NC */ extern int strncmp (const char *, const char *, uint);
+/* ulix.c:1433:NC */ extern char *strncpy (char *, const char *, size_t);
+/* ulix.c:1434:NC */ extern char *strcpy (char *, const char *);
+/* ulix.c:1435:NC */ extern int atoi (char *);
+/* ulix.c:1436:NC */ extern int atoi8 (char *);
+/* ulix.c:1438:NC */ extern void *memcpy (void *, const void *, size_t);
+/* ulix.c:1439:NC */ extern void *memset (void *, char, size_t);
+/* ulix.c:1440:NC */ extern word *memsetw (word *, word, size_t);
+/* ulix.c:1442:NC */ extern int printf (const char *, ...);
+/* ulix.c:1443:NC */ extern int sprintf (char *, const char *, ...);
+/* ulix.c:1734:NF */ extern memaddress page_desc_2_frame_address (page_desc pd); /* (pd) page_desc pd; */
+/* ulix.c:1741:NF */ extern page_desc *fill_page_desc (page_desc *pd, unsigned int present, unsigned int writeable, unsigned int user_accessible, unsigned int dirty, memaddress frame_addr); /* (pd, present, writeable, user_accessible, dirty, frame_addr) page_desc *pd; unsigned int present; unsigned int writeable; unsigned int user_accessible; unsigned int dirty; memaddress frame_addr; */
+/* ulix.c:1755:NF */ extern memaddress page_table_desc_2_frame_address (page_table_desc ptd); /* (ptd) page_table_desc ptd; */
+/* ulix.c:1760:NF */ extern page_table_desc *fill_page_table_desc (page_table_desc *ptd, unsigned int present, unsigned int writeable, unsigned int user_accessible, memaddress frame_addr); /* (ptd, present, writeable, user_accessible, frame_addr) page_table_desc *ptd; unsigned int present; unsigned int writeable; unsigned int user_accessible; memaddress frame_addr; */
+/* ulix.c:1773:NF */ extern void fill_gdt_entry (int num, ulong base, ulong limit, byte access, byte gran); /* (num, base, limit, access, gran) int num; ulong base; ulong limit; byte access; byte gran; */
+/* ulix.c:1788:NF */ static void set_frame (memaddress frame_addr); /* (frame_addr) memaddress frame_addr; */
+/* ulix.c:1795:NF */ static void clear_frame (memaddress frame_addr); /* (frame_addr) memaddress frame_addr; */
+/* ulix.c:1802:NF */ static boolean test_frame (unsigned int frame); /* (frame) unsigned int frame; */
+/* ulix.c:1809:NF */ extern unsigned int pageno_to_frameno (unsigned int pageno); /* (pageno) unsigned int pageno; */
+/* ulix.c:1826:OF */ extern int request_new_frame (void); /* () */
+/* ulix.c:1917:NF */ extern void release_frame (int frame); /* (frame) int frame; */
+/* ulix.c:1925:OF */ extern void *request_new_page (void); /* () */
+/* ulix.c:1927:NF */ extern void *request_new_pages (int number_of_pages); /* (number_of_pages) int number_of_pages; */
+/* ulix.c:2001:NF */ extern void release_page (unsigned int pageno); /* (pageno) unsigned int pageno; */
+/* ulix.c:2025:NF */ extern void release_page_range (unsigned int start_pageno, unsigned int end_pageno); /* (start_pageno, end_pageno) unsigned int start_pageno; unsigned int end_pageno; */
+/* ulix.c:2029:NF */ extern byte inportb (word port); /* (port) word port; */
+/* ulix.c:2034:NF */ extern word inportw (word port); /* (port) word port; */
+/* ulix.c:2039:NF */ extern void outportb (word port, byte data); /* (port, data) word port; byte data; */
+/* ulix.c:2043:NF */ extern void outportw (word port, word data); /* (port, data) word port; word data; */
+/* ulix.c:2047:NF */ extern void fill_idt_entry (byte num, long unsigned int address, word gdtsel, byte flags, byte type); /* (num, address, gdtsel, flags, type) byte num; long unsigned int address; word gdtsel; byte flags; byte type; */
+/* ulix.c:2059:NF */ static void set_irqmask (word mask); /* (mask) word mask; */
+/* ulix.c:2064:OF */ extern word get_irqmask (void); /* () */
+/* ulix.c:2069:NF */ static void enable_interrupt (int number); /* (number) int number; */
+/* ulix.c:2076:NF */ extern void irq_handler (context_t *r); /* (r) context_t *r; */
+/* ulix.c:2091:NF */ extern void install_interrupt_handler (int irq, void (*handler) (context_t *)); /* (irq, handler) int irq; void (*handler)(); */
+/* ulix.c:2096:NF */ extern void fault_handler (context_t *r); /* (r) context_t *r; */
+/* ulix.c:2143:OF */ extern int get_free_address_space (void); /* () */
+/* ulix.c:2150:NF */ extern int create_new_address_space (int initial_ram, int initial_stack); /* (initial_ram, initial_stack) int initial_ram; int initial_stack; */
+/* ulix.c:2211:NF */ extern int as_map_page_to_frame (int as, unsigned int pageno, unsigned int frameno); /* (as, pageno, frameno) int as; unsigned int pageno; unsigned int frameno; */
+/* ulix.c:2242:NF */ extern void destroy_address_space (addr_space_id id); /* (id) addr_space_id id; */
+/* ulix.c:2283:NF */ extern void add_to_kstack_delete_list (addr_space_id id); /* (id) addr_space_id id; */
+/* ulix.c:2304:NF */ extern void activate_address_space (addr_space_id id); /* (id) addr_space_id id; */
+/* ulix.c:2313:NF */ extern void list_address_space (addr_space_id id); /* (id) addr_space_id id; */
+/* ulix.c:2323:OF */ extern void list_address_spaces (void); /* () */
+/* ulix.c:2332:NF */ extern unsigned int mmu_p (addr_space_id id, unsigned int pageno); /* (id, pageno) addr_space_id id; unsigned int pageno; */
+/* ulix.c:2348:NF */ extern memaddress mmu (addr_space_id id, memaddress vaddress); /* (id, vaddress) addr_space_id id; memaddress vaddress; */
+/* ulix.c:2356:NF */ extern void *u_sbrk (int incr); /* (incr) int incr; */
+/* ulix.c:2370:NF */ extern void initialize_blocked_queue (blocked_queue *q); /* (q) blocked_queue *q; */
+/* ulix.c:2375:NF */ extern void add_to_ready_queue (thread_id t); /* (t) thread_id t; */
+/* ulix.c:2392:NF */ extern void remove_from_ready_queue (thread_id t); /* (t) thread_id t; */
+/* ulix.c:2407:NF */ extern thread_id front_of_blocked_queue (blocked_queue bq); /* (bq) blocked_queue bq; */
+/* ulix.c:2411:NF */ extern void add_to_blocked_queue (thread_id t, blocked_queue *bq); /* (t, bq) thread_id t; blocked_queue *bq; */
+/* ulix.c:2431:NF */ extern void remove_from_blocked_queue (thread_id t, blocked_queue *bq); /* (t, bq) thread_id t; blocked_queue *bq; */
+/* ulix.c:2454:NF */ extern void add (thread_id t); /* (t) thread_id t; */
+/* ulix.c:2458:NF */ extern void retire (thread_id t); /* (t) thread_id t; */
+/* ulix.c:2462:NF */ extern void deblock (thread_id t, blocked_queue *q); /* (t, q) thread_id t; blocked_queue *q; */
+/* ulix.c:2476:NF */ extern void block (blocked_queue *q, int new_state); /* (q, new_state) blocked_queue *q; int new_state; */
+/* ulix.c:2493:NF */ extern int register_new_tcb (addr_space_id as_id); /* (as_id) addr_space_id as_id; */
+/* ulix.c:2524:NF */ extern void start_program_from_disk (char *progname); /* (progname) char *progname; */
+/* ulix.c:2582:NF */ static void write_tss (int num, word ss0, void *esp0); /* (num, ss0, esp0) int num; word ss0; void *esp0; */
+/* ulix.c:2590:NF */ extern void install_syscall_handler (int syscallno, void *syscall_handler); /* (syscallno, syscall_handler) int syscallno; void *syscall_handler; */
+/* ulix.c:2595:NF */ extern void syscall_handler (context_t *r); /* (r) context_t *r; */
+/* ulix.c:2611:NF */ extern void syscall_sbrk (context_t *r); /* (r) context_t *r; */
+/* ulix.c:2616:NF */ extern void syscall_get_errno (context_t *r); /* (r) context_t *r; */
+/* ulix.c:2617:NF */ extern void syscall_set_errno (context_t *r); /* (r) context_t *r; */
+/* ulix.c:2619:NF */ extern void syscall_fork (context_t *r); /* (r) context_t *r; */
+/* ulix.c:2621:NF */ extern void syscall_exit (context_t *r); /* (r) context_t *r; */
+/* ulix.c:2662:NF */ extern void syscall_waitpid (context_t *r); /* (r) context_t *r; */
+/* ulix.c:2709:NF */ extern void syscall_resign (context_t *r); /* (r) context_t *r; */
+/* ulix.c:2721:NF */ extern void syscall_gettid (context_t *r); /* (r) context_t *r; */
+/* ulix.c:2722:NF */ extern void syscall_getpid (context_t *r); /* (r) context_t *r; */
+/* ulix.c:2723:NF */ extern void syscall_getppid (context_t *r); /* (r) context_t *r; */
+/* ulix.c:2725:NF */ extern void syscall_getpsinfo (context_t *r); /* (r) context_t *r; */
+/* ulix.c:2744:NF */ extern void syscall_setpsname (context_t *r); /* (r) context_t *r; */
+/* ulix.c:2748:NF */ extern void syscall_execv (context_t *r); /* (r) context_t *r; */
+/* ulix.c:2773:NF */ extern void syscall_pthread_create (context_t *r); /* (r) context_t *r; */
+/* ulix.c:2782:NF */ extern void syscall_idle (context_t *r); /* (r) context_t *r; */
+/* ulix.c:2794:NF */ extern void syscall_page_out (context_t *r); /* (r) context_t *r; */
+/* ulix.c:2799:NF */ extern void syscall_get_free_frames (context_t *r); /* (r) context_t *r; */
+/* ulix.c:2805:NF */ extern void syscall_free_a_frame (context_t *r); /* (r) context_t *r; */
+/* ulix.c:2867:NF */ extern void syscall_clrscr (context_t *r); /* (r) context_t *r; */
+/* ulix.c:2872:NF */ extern void syscall_get_xy (context_t *r); /* (r) context_t *r; */
+/* ulix.c:2878:NF */ extern void syscall_set_xy (context_t *r); /* (r) context_t *r; */
+/* ulix.c:2884:NF */ extern void syscall_read_screen (context_t *r); /* (r) context_t *r; */
+/* ulix.c:2889:NF */ extern void syscall_write_screen (context_t *r); /* (r) context_t *r; */
+/* ulix.c:2894:NF */ extern void syscall_pthread_mutex_init (context_t *r); /* (r) context_t *r; */
+/* ulix.c:2901:NF */ extern void syscall_pthread_mutex_lock (context_t *r); /* (r) context_t *r; */
+/* ulix.c:2906:NF */ extern void syscall_pthread_mutex_trylock (context_t *r); /* (r) context_t *r; */
+/* ulix.c:2911:NF */ extern void syscall_pthread_mutex_unlock (context_t *r); /* (r) context_t *r; */
+/* ulix.c:2916:NF */ extern void syscall_pthread_mutex_destroy (context_t *r); /* (r) context_t *r; */
+/* ulix.c:2921:NF */ extern void syscall_readchar (context_t *r); /* (r) context_t *r; */
+/* ulix.c:2960:NF */ extern void syscall_open (context_t *r); /* (r) context_t *r; */
+/* ulix.c:2963:NF */ extern void syscall_stat (context_t *r); /* (r) context_t *r; */
+/* ulix.c:2966:NF */ extern void syscall_getdent (context_t *r); /* (r) context_t *r; */
+/* ulix.c:2970:NF */ extern void syscall_close (context_t *r); /* (r) context_t *r; */
+/* ulix.c:2978:NF */ extern void syscall_read (context_t *r); /* (r) context_t *r; */
+/* ulix.c:2982:NF */ extern void syscall_write (context_t *r); /* (r) context_t *r; */
+/* ulix.c:2985:NF */ extern void syscall_lseek (context_t *r); /* (r) context_t *r; */
+/* ulix.c:2989:NF */ extern void syscall_isatty (context_t *r); /* (r) context_t *r; */
+/* ulix.c:2993:NF */ extern void syscall_mkdir (context_t *r); /* (r) context_t *r; */
+/* ulix.c:2997:NF */ extern void syscall_rmdir (context_t *r); /* (r) context_t *r; */
+/* ulix.c:3001:NF */ extern void syscall_truncate (context_t *r); /* (r) context_t *r; */
+/* ulix.c:3005:NF */ extern void syscall_ftruncate (context_t *r); /* (r) context_t *r; */
+/* ulix.c:3009:NF */ extern void syscall_link (context_t *r); /* (r) context_t *r; */
+/* ulix.c:3014:NF */ extern void syscall_unlink (context_t *r); /* (r) context_t *r; */
+/* ulix.c:3019:NF */ extern void syscall_symlink (context_t *r); /* (r) context_t *r; */
+/* ulix.c:3024:NF */ extern void syscall_readlink (context_t *r); /* (r) context_t *r; */
+/* ulix.c:3031:NF */ extern void syscall_getcwd (context_t *r); /* (r) context_t *r; */
+/* ulix.c:3037:NF */ extern void syscall_chdir (context_t *r); /* (r) context_t *r; */
+/* ulix.c:3042:NF */ extern void syscall_diskfree (context_t *r); /* (r) context_t *r; */
+/* ulix.c:3047:NF */ extern void syscall_sync (context_t *r); /* (r) context_t *r; */
+/* ulix.c:3052:NF */ extern void syscall_kill (context_t *r); /* (r) context_t *r; */
+/* ulix.c:3088:NF */ extern void syscall_signal (context_t *r); /* (r) context_t *r; */
+/* ulix.c:3097:NF */ extern void syscall_setuid (context_t *r); /* (r) context_t *r; */
+/* ulix.c:3102:NF */ extern void syscall_setgid (context_t *r); /* (r) context_t *r; */
+/* ulix.c:3107:NF */ extern void syscall_seteuid (context_t *r); /* (r) context_t *r; */
+/* ulix.c:3112:NF */ extern void syscall_setegid (context_t *r); /* (r) context_t *r; */
+/* ulix.c:3117:NF */ extern void syscall_login (context_t *r); /* (r) context_t *r; */
+/* ulix.c:3122:NF */ extern void syscall_query_ids (context_t *r); /* (r) context_t *r; */
+/* ulix.c:3133:NF */ extern void syscall_chown (context_t *r); /* (r) context_t *r; */
+/* ulix.c:3138:NF */ extern void syscall_chmod (context_t *r); /* (r) context_t *r; */
+/* ulix.c:3143:NF */ extern void syscall_print_inode (context_t *r); /* (r) context_t *r; */
+/* ulix.c:3156:OF */ extern int get_errno (void); /* () */
+/* ulix.c:3161:NF */ extern void set_errno (int err); /* (err) int err; */
+/* ulix.c:3166:NF */ extern int u_fork (context_t *r); /* (r) context_t *r; */
+/* ulix.c:3280:NF */ extern void wake_waiting_parent_process (int pid); /* (pid) int pid; */
+/* ulix.c:3298:NF */ extern int u_execv (char *filename, char *const *argv, memaddress *newstack); /* (filename, argv, newstack) char *filename; char *const *argv; memaddress *newstack; */
+/* ulix.c:3380:NF */ extern int u_pthread_create (pthread_t *thread, const pthread_attr_t *attr, memaddress start_address, void *arg); /* (thread, attr, start_address, arg) pthread_t *thread; const pthread_attr_t *attr; memaddress start_address; void *arg; */
+/* ulix.c:3447:NF */ extern void syscall_pthread_exit (context_t *r); /* (r) context_t *r; */
+/* ulix.c:3476:NF */ extern void scheduler (context_t *r, int source); /* (r, source) context_t *r; int source; */
+/* ulix.c:3687:NF */ extern void page_fault_handler (context_t *r); /* (r) context_t *r; */
+/* ulix.c:3778:NF */ extern int write_swap_page (int as, int pageno, int frameno); /* (as, pageno, frameno) int as; int pageno; int frameno; */
+/* ulix.c:3812:NF */ extern int read_swap_page (int as, int pageno, int frameno); /* (as, pageno, frameno) int as; int pageno; int frameno; */
+/* ulix.c:3830:NF */ extern int page_out (int as, int pageno); /* (as, pageno) int as; int pageno; */
+/* ulix.c:3856:NF */ extern int page_in (int as, int pageno); /* (as, pageno) int as; int pageno; */
+/* ulix.c:3890:NF */ extern void keyboard_handler (context_t *r); /* (r) context_t *r; */
+/* ulix.c:4009:OF */ extern void keyboard_install (void); /* () */
+/* ulix.c:4014:NF */ extern void kgetch (char *c); /* (c) char *c; */
+/* ulix.c:4033:NF */ extern void kreadline (char *s, int maxlength); /* (s, maxlength) char *s; int maxlength; */
+/* ulix.c:4056:NF */ extern int vt_activate (int new_vt); /* (new_vt) int new_vt; */
+/* ulix.c:4069:OF */ extern void vt_move_cursor (void); /* () */
+/* ulix.c:4079:NF */ extern void syscall_setterm (context_t *r); /* (r) context_t *r; */
+/* ulix.c:4088:OF */ extern void vt_clrscr (void); /* () */
+/* ulix.c:4111:NF */ extern void vt_get_xy (char *x, char *y); /* (x, y) char *x; char *y; */
+/* ulix.c:4117:NF */ extern void vt_set_xy (char x, char y); /* (x, y) char x; char y; */
+/* ulix.c:4129:NF */ extern void read_write_screen (char *buf, boolean read_flag); /* (buf, read_flag) char *buf; boolean read_flag; */
+/* ulix.c:4144:NF */ extern void read_screen (char *buf); /* (buf) char *buf; */
+/* ulix.c:4145:NF */ extern void write_screen (char *buf); /* (buf) char *buf; */
+/* ulix.c:4147:NF */ extern void vt_scroll_mem (word *address); /* (address) word *address; */
+/* ulix.c:4153:OF */ extern void vt_scroll (void); /* () */
+/* ulix.c:4174:NF */ extern void kputch (byte c); /* (c) byte c; */
+/* ulix.c:4231:NF */ extern void kputs (char *text); /* (text) char *text; */
+/* ulix.c:4236:NF */ extern void uartputc (int c); /* (c) int c; */
+/* ulix.c:4244:NF */ extern void set_statusline (char *text); /* (text) char *text; */
+/* ulix.c:4246:NF */ extern void _set_statusline (char *text, int offset); /* (text, offset) char *text; int offset; */
+/* ulix.c:4255:NF */ extern void timer_phase (int hz); /* (hz) int hz; */
+/* ulix.c:4263:NF */ extern ulong unixtime (int year, int month, int day, int hour, int minute, int second); /* (year, month, day, hour, minute, second) int year; int month; int day; int hour; int minute; int second; */
+/* ulix.c:4279:NF */ extern short int yearlength (short int year); /* (year) short int year; */
+/* ulix.c:4285:NF */ extern void rev_unixtime (ulong utime, short int *year, char *month, char *day, char *hour, char *minute, char *second); /* (utime, year, month, day, hour, minute, second) ulong utime; short int *year; char *month; char *day; char *hour; char *minute; char *second; */
+/* ulix.c:4320:NF */ extern void timer_handler (context_t *r); /* (r) context_t *r; */
+/* ulix.c:4424:NF */ extern void uartinit (int serport); /* (serport) int serport; */
+/* ulix.c:4452:NF */ extern void uart2putc (int c); /* (c) int c; */
+/* ulix.c:4460:NF */ extern void wait_semaphore (kl_semaphore_id sid); /* (sid) kl_semaphore_id sid; */
+/* ulix.c:4488:NF */ extern void signal_semaphore (kl_semaphore_id sid); /* (sid) kl_semaphore_id sid; */
+/* ulix.c:4512:NF */ extern kl_semaphore_id get_new_semaphore (int k); /* (k) int k; */
+/* ulix.c:4525:NF */ extern void release_semaphore (kl_semaphore_id s); /* (s) kl_semaphore_id s; */
+/* ulix.c:4534:NF */ extern void mutex_lock (lock lockvar); /* (lockvar) lock lockvar; */
+/* ulix.c:4564:NF */ extern boolean mutex_try_lock (lock lockvar); /* (lockvar) lock lockvar; */
+/* ulix.c:4583:NF */ extern void mutex_unlock (lock lockvar); /* (lockvar) lock lockvar; */
+/* ulix.c:4607:NF */ extern lock get_new_lock (char *name); /* (name) char *name; */
+/* ulix.c:4622:NF */ extern void release_lock (lock l); /* (l) lock l; */
+/* ulix.c:4635:NF */ extern int u_pthread_mutex_init (pthread_mutex_t *mutex, const pthread_mutexattr_t *attr); /* (mutex, attr) pthread_mutex_t *mutex; const pthread_mutexattr_t *attr; */
+/* ulix.c:4650:NF */ extern int u_pthread_mutex_lock (pthread_mutex_t *mutex); /* (mutex) pthread_mutex_t *mutex; */
+/* ulix.c:4656:NF */ extern int u_pthread_mutex_trylock (pthread_mutex_t *mutex); /* (mutex) pthread_mutex_t *mutex; */
+/* ulix.c:4666:NF */ extern int u_pthread_mutex_unlock (pthread_mutex_t *mutex); /* (mutex) pthread_mutex_t *mutex; */
+/* ulix.c:4672:NF */ extern int u_pthread_mutex_destroy (pthread_mutex_t *mutex); /* (mutex) pthread_mutex_t *mutex; */
+/* ulix.c:4678:OF */ extern void print_mount_table (void); /* () */
+/* ulix.c:4700:NF */ extern int get_dev_and_path (char *path, short int *dev, short int *fs, char *localpath); /* (path, dev, fs, localpath) char *path; short int *dev; short int *fs; char *localpath; */
+/* ulix.c:4724:NF */ extern int string_starts_with (char *str, char *prefix); /* (str, prefix) char *str; char *prefix; */
+/* ulix.c:4732:NF */ extern void split_mountpoint (char *mountpoint, char *path, char *localpath); /* (mountpoint, path, localpath) char *mountpoint; char *path; char *localpath; */
+/* ulix.c:4740:NF */ extern void relpath_to_abspath (const char *relpath, char *abspath); /* (relpath, abspath) const char *relpath; char *abspath; */
+/* ulix.c:4752:NF */ extern int u_open (char *path, int oflag, int open_link); /* (path, oflag, open_link) char *path; int oflag; int open_link; */
+/* ulix.c:4841:NF */ extern int u_read (int fd, void *buf, int nbyte); /* (fd, buf, nbyte) int fd; void *buf; int nbyte; */
+/* ulix.c:4889:NF */ extern int u_write (int fd, void *buf, int nbyte); /* (fd, buf, nbyte) int fd; void *buf; int nbyte; */
+/* ulix.c:4929:NF */ extern int u_close (int fd); /* (fd) int fd; */
+/* ulix.c:4946:NF */ extern int u_lseek (int fd, int offset, int whence); /* (fd, offset, whence) int fd; int offset; int whence; */
+/* ulix.c:4963:NF */ extern int u_unlink (const char *path); /* (path) const char *path; */
+/* ulix.c:4987:NF */ extern int u_link (const char *path, const char *path2); /* (path, path2) const char *path; const char *path2; */
+/* ulix.c:5015:NF */ extern int u_symlink (const char *path, const char *path2); /* (path, path2) const char *path; const char *path2; */
+/* ulix.c:5024:NF */ extern int u_truncate (const char *path, int length); /* (path, length) const char *path; int length; */
+/* ulix.c:5032:NF */ extern int u_ftruncate (int fd, int length); /* (fd, length) int fd; int length; */
+/* ulix.c:5050:NF */ extern boolean u_isatty (int fd); /* (fd) int fd; */
+/* ulix.c:5054:NF */ extern int u_stat (const char *path, struct stat *buf); /* (path, buf) const char *path; struct stat *buf; */
+/* ulix.c:5077:NF */ extern int u_mkdir (const char *path, int mode); /* (path, mode) const char *path; int mode; */
+/* ulix.c:5100:NF */ extern int u_rmdir (const char *path); /* (path) const char *path; */
+/* ulix.c:5123:NF */ extern int u_getdent (const char *path, int index, struct dir_entry *buf); /* (path, index, buf) const char *path; int index; struct dir_entry *buf; */
+/* ulix.c:5146:NF */ extern int pfd2gfd (int pfd); /* (pfd) int pfd; */
+/* ulix.c:5154:NF */ extern int gfd2pfd (int gfd); /* (gfd) int gfd; */
+/* ulix.c:5173:NF */ extern int u_reopen (int fd); /* (fd) int fd; */
+/* ulix.c:5189:NF */ extern char *u_getcwd (char *buf, int size); /* (buf, size) char *buf; int size; */
+/* ulix.c:5194:NF */ extern int u_chdir (const char *path); /* (path) const char *path; */
+/* ulix.c:5224:NF */ extern int u_readlink (char *path, char *buf, size_t bufsize); /* (path, buf, bufsize) char *path; char *buf; size_t bufsize; */
+/* ulix.c:5236:NF */ extern int mx_query_superblock (int device, char index); /* (device, index) int device; char index; */
+/* ulix.c:5256:NF */ extern byte mx_get_imap_bit (int device, int i); /* (device, i) int device; int i; */
+/* ulix.c:5264:NF */ extern byte mx_get_zmap_bit (int device, int i); /* (device, i) int device; int i; */
+/* ulix.c:5273:NF */ extern void mx_set_clear_imap_bit (int device, int i, int value); /* (device, i, value) int device; int i; int value; */
+/* ulix.c:5290:NF */ extern void mx_set_clear_zmap_bit (int device, int i, int value); /* (device, i, value) int device; int i; int value; */
+/* ulix.c:5308:NF */ extern void mx_set_imap_bit (int device, int i); /* (device, i) int device; int i; */
+/* ulix.c:5309:NF */ extern void mx_clear_imap_bit (int device, int i); /* (device, i) int device; int i; */
+/* ulix.c:5310:NF */ extern void mx_set_zmap_bit (int device, int i); /* (device, i) int device; int i; */
+/* ulix.c:5311:NF */ extern void mx_clear_zmap_bit (int device, int i); /* (device, i) int device; int i; */
+/* ulix.c:5313:NF */ extern int findZeroBitAndSet (byte *block, int maxindex); /* (block, maxindex) byte *block; int maxindex; */
+/* ulix.c:5333:NF */ extern int mx_request_inode (int device); /* (device) int device; */
+/* ulix.c:5354:NF */ extern int mx_request_block (int device); /* (device) int device; */
+/* ulix.c:5376:NF */ extern int mx_read_write_inode (int device, int i, struct minix2_inode *inodeptr, int wr_flag); /* (device, i, inodeptr, wr_flag) int device; int i; struct minix2_inode *inodeptr; int wr_flag; */
+/* ulix.c:5412:NF */ extern int mx_read_inode (int device, int i, struct minix2_inode *inodeptr); /* (device, i, inodeptr) int device; int i; struct minix2_inode *inodeptr; */
+/* ulix.c:5416:NF */ extern int mx_write_inode (int device, int i, struct minix2_inode *inodeptr); /* (device, i, inodeptr) int device; int i; struct minix2_inode *inodeptr; */
+/* ulix.c:5420:NF */ extern int mx_read_write_dir_entry (int device, int inodenr, int entrynr, struct minix_dir_entry *entry, int wr_flag); /* (device, inodenr, entrynr, entry, wr_flag) int device; int inodenr; int entrynr; struct minix_dir_entry *entry; int wr_flag; */
+/* ulix.c:5470:NF */ extern int mx_read_dir_entry (int device, int inodenr, int entrynr, struct minix_dir_entry *entry); /* (device, inodenr, entrynr, entry) int device; int inodenr; int entrynr; struct minix_dir_entry *entry; */
+/* ulix.c:5475:NF */ extern int mx_write_dir_entry (int device, int inodenr, int entrynr, struct minix_dir_entry *entry); /* (device, inodenr, entrynr, entry) int device; int inodenr; int entrynr; struct minix_dir_entry *entry; */
+/* ulix.c:5480:NF */ extern void mx_write_link (int device, int inodenr, const char *path); /* (device, inodenr, path) int device; int inodenr; const char *path; */
+/* ulix.c:5512:NF */ extern int mx_increase_link_count (int device, int inodenr); /* (device, inodenr) int device; int inodenr; */
+/* ulix.c:5520:NF */ extern int mx_pathname_to_ino (int device, const char *path); /* (device, path) int device; const char *path; */
+/* ulix.c:5583:OF */ extern int mx_get_free_inodes_entry (void); /* () */
+/* ulix.c:5590:OF */ extern int mx_get_free_status_entry (void); /* () */
+/* ulix.c:5597:NF */ extern int mx_open (int device, const char *path, int oflag); /* (device, path, oflag) int device; const char *path; int oflag; */
+/* ulix.c:5670:NF */ extern int mx_close (int mfd); /* (mfd) int mfd; */
+/* ulix.c:5698:NF */ extern int mx_reopen (int mfd); /* (mfd) int mfd; */
+/* ulix.c:5712:NF */ extern int mx_sync (int device, int mfd); /* (device, mfd) int device; int mfd; */
+/* ulix.c:5726:NF */ extern int mx_lseek (int mfd, int offset, int whence); /* (mfd, offset, whence) int mfd; int offset; int whence; */
+/* ulix.c:5744:NF */ extern int mx_read (int mfd, void *buf, int nbyte); /* (mfd, buf, nbyte) int mfd; void *buf; int nbyte; */
+/* ulix.c:5798:NF */ extern int fileblocktozone (int device, int blockno, struct int_minix2_inode *inode); /* (device, blockno, inode) int device; int blockno; struct int_minix2_inode *inode; */
+/* ulix.c:5849:NF */ extern int mx_write (int mfd, void *buf, int nbyte); /* (mfd, buf, nbyte) int mfd; void *buf; int nbyte; */
+/* ulix.c:5904:NF */ extern int mx_create_new_zone (int device, int blockno, struct int_minix2_inode *inode); /* (device, blockno, inode) int device; int blockno; struct int_minix2_inode *inode; */
+/* ulix.c:6006:NF */ extern int mx_creat_empty_file (int device, const char *path, int mode); /* (device, path, mode) int device; const char *path; int mode; */
+/* ulix.c:6020:NF */ extern boolean mx_file_exists (int device, const char *path); /* (device, path) int device; const char *path; */
+/* ulix.c:6025:NF */ extern boolean mx_file_is_directory (int device, const char *path); /* (device, path) int device; const char *path; */
+/* ulix.c:6034:NF */ extern int mx_link (int device, const char *path1, const char *path2); /* (device, path1, path2) int device; const char *path1; const char *path2; */
+/* ulix.c:6054:NF */ extern int mx_unlink (int device, const char *path); /* (device, path) int device; const char *path; */
+/* ulix.c:6147:NF */ extern int mx_symlink (int device, char *path1, char *path2); /* (device, path1, path2) int device; char *path1; char *path2; */
+/* ulix.c:6161:NF */ extern int mx_ftruncate (int mfd, int length); /* (mfd, length) int mfd; int length; */
+/* ulix.c:6203:NF */ extern int mx_mkdir (int device, const char *path, int mode); /* (device, path, mode) int device; const char *path; int mode; */
+/* ulix.c:6239:NF */ extern int mx_rmdir (int device, const char *fullpath, const char *path); /* (device, fullpath, path) int device; const char *fullpath; const char *path; */
+/* ulix.c:6273:NF */ extern boolean mx_directory_is_empty (int device, const char *path); /* (device, path) int device; const char *path; */
+/* ulix.c:6282:NF */ extern int mx_stat (int device, const char *path, struct stat *buf); /* (device, path, buf) int device; const char *path; struct stat *buf; */
+/* ulix.c:6296:NF */ extern int mx_getdent (int device, const char *path, int index, struct dir_entry *buf); /* (device, path, index, buf) int device; const char *path; int index; struct dir_entry *buf; */
+/* ulix.c:6316:NF */ extern int count_zeros (byte *block, int maxcount); /* (block, maxcount) byte *block; int maxcount; */
+/* ulix.c:6329:NF */ extern void mx_diskfree (struct diskfree_query *query); /* (query) struct diskfree_query *query; */
+/* ulix.c:6372:NF */ extern int dev_open (const char *path, int oflag); /* (path, oflag) const char *path; int oflag; */
+/* ulix.c:6407:NF */ extern int dev_close (int fd); /* (fd) int fd; */
+/* ulix.c:6416:NF */ extern int dev_read (int fd, char *buf, int nbyte); /* (fd, buf, nbyte) int fd; char *buf; int nbyte; */
+/* ulix.c:6456:NF */ extern int dev_write (int fd, char *buf, int nbyte); /* (fd, buf, nbyte) int fd; char *buf; int nbyte; */
+/* ulix.c:6501:NF */ extern int dev_lseek (int fd, int offset, int whence); /* (fd, offset, whence) int fd; int offset; int whence; */
+/* ulix.c:6519:NF */ extern long int dev_size (int dev); /* (dev) int dev; */
+/* ulix.c:6530:NF */ extern int dev_stat (const char *path, struct stat *buf); /* (path, buf) const char *path; struct stat *buf; */
+/* ulix.c:6558:NF */ extern int dev_getdent (const char *path, int index, struct dir_entry *buf); /* (path, index, buf) const char *path; int index; struct dir_entry *buf; */
+/* ulix.c:6566:NF */ extern word makedev (byte major, byte minor); /* (major, minor) byte major; byte minor; */
+/* ulix.c:6567:NF */ extern byte devmajor (word device); /* (device) word device; */
+/* ulix.c:6568:NF */ extern byte devminor (word device); /* (device) word device; */
+/* ulix.c:6570:NF */ extern void readblock (int device, int blockno, char *buffer); /* (device, blockno, buffer) int device; int blockno; char *buffer; */
+/* ulix.c:6588:NF */ extern void writeblock_raw (int device, int blockno, char *buffer, char flag); /* (device, blockno, buffer, flag) int device; int blockno; char *buffer; char flag; */
+/* ulix.c:6603:NF */ extern void writeblock (int device, int blockno, char *buffer); /* (device, blockno, buffer) int device; int blockno; char *buffer; */
+/* ulix.c:6607:NF */ extern int buffer_read (int dev, int blockno, char *block); /* (dev, blockno, block) int dev; int blockno; char *block; */
+/* ulix.c:6633:NF */ extern int buffer_write (int dev, int blockno, char *block, char dirtyflag); /* (dev, blockno, block, dirtyflag) int dev; int blockno; char *block; char dirtyflag; */
+/* ulix.c:6709:NF */ extern void buffer_sync (boolean lock_buffer); /* (lock_buffer) boolean lock_buffer; */
+/* ulix.c:6723:NF */ extern boolean buffer_contains (int dev, int blockno); /* (dev, blockno) int dev; int blockno; */
+/* ulix.c:6736:NF */ extern int serial_disk_enter (int pid, short int direction, uint secno, uint address); /* (pid, direction, secno, address) int pid; short int direction; uint secno; uint address; */
+/* ulix.c:6754:NF */ extern void serial_disk_send_sector_number (uint secno); /* (secno) uint secno; */
+/* ulix.c:6761:OF */ extern int serial_disk_non_blocking_rw (void); /* () */
+/* ulix.c:6801:NF */ extern void readblock_nb_serial (int secno, char *buf); /* (secno, buf) int secno; char *buf; */
+/* ulix.c:6807:NF */ extern void writeblock_nb_serial (int secno, char *buf); /* (secno, buf) int secno; char *buf; */
+/* ulix.c:6813:OF */ static int uart2getc (void); /* () */
+/* ulix.c:6819:NF */ extern void serial_hard_disk_handler (context_t *r); /* (r) context_t *r; */
+/* ulix.c:6840:OF */ extern int serial_disk_blocking_rw (void); /* () */
+/* ulix.c:6907:NF */ extern void readblock_serial (int secno, char *buf); /* (secno, buf) int secno; char *buf; */
+/* ulix.c:6913:NF */ extern void writeblock_serial (int secno, char *buf); /* (secno, buf) int secno; char *buf; */
+/* ulix.c:6919:NF */ static void repeat_inportsl (int port, void *addr, int cnt); /* (port, addr, cnt) int port; void *addr; int cnt; */
+/* ulix.c:6927:NF */ static void repeat_outportsl (int port, void *addr, int cnt); /* (port, addr, cnt) int port; void *addr; int cnt; */
+/* ulix.c:6935:NF */ extern void readsector_hd (int hd, int sector, char *buffer); /* (hd, sector, buffer) int hd; int sector; char *buffer; */
+/* ulix.c:6997:NF */ extern void writesector_hd (int hd, int sector, char *buffer); /* (hd, sector, buffer) int hd; int sector; char *buffer; */
+/* ulix.c:7059:NF */ extern void readblock_hd (int hd, int blockno, char *buffer); /* (hd, blockno, buffer) int hd; int blockno; char *buffer; */
+/* ulix.c:7064:NF */ extern void writeblock_hd (int hd, int blockno, char *buffer); /* (hd, blockno, buffer) int hd; int blockno; char *buffer; */
+/* ulix.c:7069:NF */ extern void ide_handler (context_t *r); /* (r) context_t *r; */
+/* ulix.c:7092:NF */ extern int idewait (int checkerr); /* (checkerr) int checkerr; */
+/* ulix.c:7121:OF */ extern void ata_init (void); /* () */
+/* ulix.c:7150:NF */ extern void fdc_out (byte data); /* (data) byte data; */
+/* ulix.c:7160:OF */ extern int fdc_getresults (void); /* () */
+/* ulix.c:7177:NF */ extern void outb_delay (word __port, byte __value); /* (__port, __value) word __port; byte __value; */
+/* ulix.c:7186:NF */ extern byte inb_delay (word __port); /* (__port) word __port; */
+/* ulix.c:7196:NF */ extern int fdc_command (int cmd, int drive, int track, int sector); /* (cmd, drive, track, sector) int cmd; int drive; int track; int sector; */
+/* ulix.c:7294:OF */ extern void fdc_mode (void); /* () */
+/* ulix.c:7301:OF */ extern void fdc_sleep (void); /* () */
+/* ulix.c:7327:OF */ extern void fdc_wakeup (void); /* () */
+/* ulix.c:7332:NF */ extern void floppy_handler (context_t *r); /* (r) context_t *r; */
+/* ulix.c:7341:OF */ extern void fdc_timer (void); /* () */
+/* ulix.c:7357:OF */ extern int wait_fdc_interrupt (void); /* () */
+/* ulix.c:7368:OF */ extern int fdc_seek (void); /* () */
+/* ulix.c:7395:NF */ extern int fdc_read_sector (int device, int block, char *buffer); /* (device, block, buffer) int device; int block; char *buffer; */
+/* ulix.c:7427:NF */ extern int fdc_write_sector (int device, int block, char *buffer); /* (device, block, buffer) int device; int block; char *buffer; */
+/* ulix.c:7454:NF */ extern void readblock_fd (int device, int blockno, char *buffer); /* (device, blockno, buffer) int device; int blockno; char *buffer; */
+/* ulix.c:7459:NF */ extern void writeblock_fd (int device, int blockno, char *buffer); /* (device, blockno, buffer) int device; int blockno; char *buffer; */
+/* ulix.c:7464:OF */ extern void fdc_reset (void); /* () */
+/* ulix.c:7483:OF */ extern int fdc_recalibrate (void); /* () */
+/* ulix.c:7516:OF */ extern void fdc_init (void); /* () */
+/* ulix.c:7540:NF */ extern int fdc_map_type (int t); /* (t) int t; */
+/* ulix.c:7549:NF */ extern int u_kill (int pid, int signo); /* (pid, signo) int pid; int signo; */
+/* ulix.c:7655:NF */ extern sighandler_t u_signal (int sig, sighandler_t func); /* (sig, func) int sig; sighandler_t func; */
+/* ulix.c:7667:NF */ extern boolean fileexists (char *abspath); /* (abspath) char *abspath; */
+/* ulix.c:7672:NF */ extern boolean check_access (char *path, word euid, word egid, word mode); /* (path, euid, egid, mode) char *path; word euid; word egid; word mode; */
+/* ulix.c:7719:NF */ extern boolean check_perms (short int what, word req_mode, word perms); /* (what, req_mode, perms) short int what; word req_mode; word perms; */
+/* ulix.c:7730:NF */ extern int u_setuid (word uid); /* (uid) word uid; */
+/* ulix.c:7754:NF */ extern int u_setgid (word gid); /* (gid) word gid; */
+/* ulix.c:7778:NF */ extern int u_seteuid (word uid); /* (uid) word uid; */
+/* ulix.c:7801:NF */ extern int u_setegid (word gid); /* (gid) word gid; */
+/* ulix.c:7824:NF */ extern int u_login (word uid, char *pass); /* (uid, pass) word uid; char *pass; */
+/* ulix.c:7858:NF */ extern int u_chown (const char *path, short int owner, short int group); /* (path, owner, group) const char *path; short int owner; short int group; */
+/* ulix.c:7878:NF */ extern int u_chmod (const char *path, word mode); /* (path, mode) const char *path; word mode; */
+/* ulix.c:7904:NF */ extern int mx_chown (int device, const char *path, short int owner, short int group); /* (device, path, owner, group) int device; const char *path; short int owner; short int group; */
+/* ulix.c:7908:NF */ extern int mx_chmod (int device, const char *path, word mode); /* (device, path, mode) int device; const char *path; word mode; */
+/* ulix.c:7912:NF */ extern int mx_chinode (int device, const char *path, short int owner, short int group, short int mode); /* (device, path, owner, group, mode) int device; const char *path; short int owner; short int group; short int mode; */
+/* ulix.c:7933:NF */ static void printchar (char **str, int c); /* (str, c) char **str; int c; */
+/* ulix.c:7951:NF */ static int prints (char **out, const char *string, int width, int pad); /* (out, string, width, pad) char **out; const char *string; int width; int pad; */
+/* ulix.c:7970:NF */ static int printi (char **out, int i, int b, int sg, int width, int pad, int letbase); /* (out, i, b, sg, width, pad, letbase) char **out; int i; int b; int sg; int width; int pad; int letbase; */
+/* ulix.c:7990:NF */ static int print (char **out, int *varg); /* (out, varg) char **out; int *varg; */
+/* ulix.c:8025:NF */ extern int printf (const char *format, ...); /* (format) const char *format; */
+/* ulix.c:8029:NF */ extern int sprintf (char *out, const char *format, ...); /* (out, format) char *out; const char *format; */
+/* ulix.c:8038:NF */ extern int debug_printf (const char *format, ...); /* (format) const char *format; */
+/* ulix.c:8041:OF */ extern void ksh_command_test (void); /* () */
+/* ulix.c:8059:OF */ extern void ksh_command_mem (void); /* () */
+/* ulix.c:8087:OF */ extern void ksh_command_time (void); /* () */
+/* ulix.c:8093:OF */ extern void ksh_command_uname (void); /* () */
+/* ulix.c:8095:OF */ extern void ksh_command_div0 (void); /* () */
+/* ulix.c:8099:OF */ extern void ksh_command_hexdump (void); /* () */
+/* ulix.c:8106:OF */ extern void ksh_command_ps (void); /* () */
+/* ulix.c:8123:NF */ extern void ksh_print_queue (char *name, blocked_queue *bq); /* (name, bq) char *name; blocked_queue *bq; */
+/* ulix.c:8133:OF */ extern void ksh_command_queues (void); /* () */
+/* ulix.c:8146:OF */ extern void ksh_command_locks (void); /* () */
+/* ulix.c:8154:OF */ extern void ksh_command_inode (void); /* () */
+/* ulix.c:8167:OF */ extern void ksh_command_lsof (void); /* () */
+/* ulix.c:8177:OF */ extern void ksh_command_longhelp (void); /* () */
+/* ulix.c:8199:NF */ extern void ksh_run_command (char *s); /* (s) char *s; */
+/* ulix.c:8253:OF */ extern void statusline_red (void); /* () */
+/* ulix.c:8258:OF */ extern void statusline_blue (void); /* () */
+/* ulix.c:8264:OF */ extern void kernel_shell (void); /* () */
+/* ulix.c:8294:OF */ extern void print_page_directory (void); /* () */
+/* ulix.c:8310:NF */ extern void printbitsandhex (uint i); /* (i) uint i; */
+/* ulix.c:8312:NF */ extern void hexdump (uint startval, uint endval); /* (startval, endval) uint startval; uint endval; */
+/* ulix.c:8332:NF */ extern void ksh_print_page_table_helper (unsigned int sta, unsigned int end, unsigned int used); /* (sta, end, used) unsigned int sta; unsigned int end; unsigned int used; */
+/* ulix.c:8339:OF */ extern void ksh_print_page_table (void); /* () */
+/* ulix.c:8415:NF */ extern void splitpath (const char *path, char *dirname, char *basename); /* (path, dirname, basename) const char *path; char *dirname; char *basename; */
+/* ulix.c:8441:NF */ extern char *basename (char *path); /* (path) char *path; */
+/* ulix.c:8446:NF */ extern char *dirname (char *path); /* (path) char *path; */
+/* ulix.c:8451:NF */ extern size_t strlen (const char *str); /* (str) const char *str; */
+/* ulix.c:8457:NF */ extern int strcmp (const char *s1, const char *s2); /* (s1, s2) const char *s1; const char *s2; */
+/* ulix.c:8467:NF */ extern int strncmp (const char *s1, const char *s2, uint n); /* (s1, s2, n) const char *s1; const char *s2; uint n; */
+/* ulix.c:8479:NF */ extern char *strcpy (char *dest, const char *src); /* (dest, src) char *dest; const char *src; */
+/* ulix.c:8485:NF */ extern char *strncpy (char *dest, const char *src, size_t count); /* (dest, src, count) char *dest; const char *src; size_t count; */
+/* ulix.c:8497:NF */ extern int atoi (char *s); /* (s) char *s; */
+/* ulix.c:8506:NF */ extern int atoi8 (char *s); /* (s) char *s; */
+/* ulix.c:8515:NF */ extern void *memcpy (void *dest, const void *src, size_t count); /* (dest, src, count) void *dest; const void *src; size_t count; */
+/* ulix.c:8524:NF */ extern void *memset (void *dest, char val, size_t count); /* (dest, val, count) void *dest; char val; size_t count; */
+/* ulix.c:8530:NF */ extern word *memsetw (word *dest, word val, size_t count); /* (dest, val, count) word *dest; word val; size_t count; */
+/* ulix.c:8536:OF */ extern void main (void); /* () */

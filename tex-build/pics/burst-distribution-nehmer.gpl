@@ -1,0 +1,19 @@
+unset key
+set ytics 20
+set xtics 2
+set tics scale 0.75
+
+# set terminal pdf font "/Users/esser/Downloads/Libertine/LinLibertine_R.otf,9"
+# set terminal pdf font "/Users/esser/ulix/tex-build/pics/LinLibertineO.pfa,9"
+# set terminal pdf enh font "LinLibertineO,14"
+set terminal epslatex
+set o "burst-distribution-nehmer.tex"
+
+set xlabel "Length of CPU burst (ms)"
+set ylabel "Frequency"
+
+set border linewidth 1.5
+set style line 1 lc rgb '#0060ad' lt 1 lw 2 pt 7 pi -1 ps 1.5
+set pointintervalbox 3
+plot 'burst-distribution-nehmer.dat' with linespoints ls 1
+

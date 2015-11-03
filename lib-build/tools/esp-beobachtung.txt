@@ -1,0 +1,16 @@
+
+
+ENTRY: ESP = n
+Peek (ESP)   = Ret-Adresse
+Peek (ESP+4) = Signo
+
+
+sub esp, 0xc                    ESP = n - 12
+mov eax, DWORD PTR [esp+0x10]   EAX = Peek (n + 4)
+sub esp, 0x8                    ESP = n - 20
+push eax                        ESP = n - 24
+push 0x2c0                      ESP = n - 28
+call printf
+add esp,0x10                    ESP = n - 12
+add esp,0xc                     ESP = n
+ret
