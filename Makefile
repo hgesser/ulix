@@ -1,14 +1,9 @@
 all: tools bin
 
-pdf: diss-hgesser-ulix.tex
+pdf: ulix-book-0.13.nw
 	make -C tex-build
 
-#pdf2: ulixlib.nw
-#	make -C libtex-build
-
-#pdf: pdf1 pdf2
-
-bin: diss-hgesser-ulix.tex
+bin: ulix-book-0.13.nw
 	make -C bin-build
 
 run:
@@ -17,11 +12,8 @@ run:
 runs:
 	make -C bin-build runs
 
-tools: diss-hgesser-ulix.tex
+tools: ulix-book-0.13.nw
 	make -C lib-build
-
-test:
-	echo Hallo
 
 clean:
 	make -C lib-build clean
@@ -30,5 +22,5 @@ clean:
 	make -C libtex-build clean
 
 mkfs:
-	ssh -p 2222 localhost "/sbin/mkfs.minix -2 ~/ulix/bin-build/minixdata.img; sync"
+	ssh -p 2222 localhost "/sbin/mkfs.minix -2 bin-build/minixdata.img; sync"
 
