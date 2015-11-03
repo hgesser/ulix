@@ -1,6 +1,6 @@
 Kernel page directory set up.
 Ulix-i386 0.13                           Build: Do  3 Sep 2015 15:41:31 CEST
-Current time: 2015/11/02 21:06:13
+Current time: 2015/11/03 22:51:27
 RAM: 64 MByte, mapped to 0xD0000000-0xD3FFFFFF
 VT:  Initialized ten terminals (press [Alt-1] to [Alt-0])
 FDC: fd0 (1440 KByte), fd1 (1440 KByte)
@@ -19,10 +19,56 @@ Password: (auto login)
 ulix login: root
 Password: (auto login)
 [2.1] swapper: 15134 free frames. threshold = 14684.
-esser@ulix[8]:/home/esser$ root@ulix[9]:/root# ls -l
+esser@ulix[8]:/home/esser$ root@ulix[9]:/root# 
+esser@ulix[8]:/home/esser$ ls
 [2.2] swapper: 15109 free frames. threshold = 14684.
+ 69 ./               68 ../              70 testdir/        
+[2.3] swapper: 15134 free frames. threshold = 14684.
+esser@ulix[8]:/home/esser$ ls -l
  69 drwxr-xr-x  3 1000 1000       96 15 Aug  2:24 .
  68 drwxr-xr-x  4 1000 1000      128 29 Apr 20:05 ..
  70 drwxr-xr-x  2 1000 1000     1024 15 Aug  2:33 testdir
-[2.3] swapper: 15134 free frames. threshold = 14684.
-esser@ulix[8]:/home/esser$ 
+esser@ulix[8]:/home/esser$ cd /
+esser@ulix[8]:/$ +ls -l
+Error in execv: /bin/+ls not found
+esser@ulix[8]:/$ ls -l
+  1 drwxr-xr-x 10 1000 1000      544 15 Aug  2:33 .
+  1 drwxr-xr-x 10 1000 1000      544 15 Aug  2:33 ..
+  2 -rwxr-xr-x  1 1000 1000     8192 10 Jun  2015 init
+  3 -rw-------  1 1000 1000      231  3 Nov  2013 ascii.txt
+  4 drwxr-xr-x  2 1000 1000     2016 15 Aug 21:52 bin
+ 63 drw-------  1    0    0       -1  1 Jan  1970 dev
+ 64 drwxr-xr-x  2 1000 1000      128 29 Apr 20:05 etc
+[2.4] swapper: 15109 free frames. threshold = 14684.
+ 67 -rw-r--r--  1 1000 1000      316  2 Nov  2013 hello.c
+ 68 drwxr-xr-x  4 1000 1000      128 29 Apr 20:05 home
+102 drwxr-xr-x  2 1000 1000      160 17 Aug 13:00 mnt
+103 -r--r--r--  1 1000 1000        0 29 Apr 10:32 none
+104 drwxr-xr-x  2 1000 1000       96 29 Apr 20:05 root
+105 -rw-r--r--  1 1000 1000     1680  2 Nov  2013 test.txt
+106 drwxr-xr-x  2    0    0      256  6 Jul 20:10 tmp
+107 drwxr-xr-x  3 1000 1000       96  7 Jun 10:57 usr
+115 -rw-r--r--  1 1000  100     1680 14 Aug  2015 t2.txt
+esser@ulix[8]:/$ [2.5] swapper: 15134 free frames. threshold = 14684.
+
+esser@ulix[8]:/$ 
+esser@ulix[8]:/$ clear
+[2.6] swapper: 15109 free frames. threshold = 14684.
+esser@ulix[8]:/$ [2.7] swapper: 15134 free frames. threshold = 14684.
+ps
+[2.8] swapper: 15109 free frames. threshold = 14684.
+ PID  PPID  UID  GID TERM STATE  CWD             CMD
+   1     0    0    0 tty0 READY  /               [idle]                      
+   2     1    0    0 tty9 W_LCK  /               [swapper]                   
+   3     1 1000  100 tty0 WAIT4  /home/esser     login                       
+   4     1    0    0 tty1 WAIT4  /root           login                       
+   5     1    0    0 tty2 W_KEY  /               login                       
+   6     1    0    0 tty3 W_KEY  /               login                       
+   7     1    0    0 tty4 W_KEY  /               login                       
+   8     3 1000  100 tty0 WAIT4  /               /bin/sh                     
+   9     4    0    0 tty1 W_KEY  /root           /bin/sh                     
+  15     8 1000  100 tty0 READY  /               ps                          
+esser@ulix[8]:/$ [2.9] swapper: 15134 free frames. threshold = 14684.
+
+esser@ulix[8]:/$ 
+esser@ulix[8]:/$ 

@@ -1,28 +1,24 @@
-ifeq ($(HOME),/home/esser)
+UNAME_S := $(shell uname -s)
+
+ifeq ($(UNAME_S),Linux)
   OS=Linux
   LD=ld
   CC=/usr/bin/gcc-4.4
   OBJDUMP=objdump
 endif
 
-ifeq ($(HOME),/Users/esser)
+ifeq ($(UNAME_S),Darwin)
   OS=MacOS
   LD=/usr/cross/bin/i586-elf-ld
   CC=/usr/cross/bin/i586-elf-gcc
   OBJDUMP=/usr/cross/bin/i586-elf-objdump
 endif
 
-NOWEBFILE=../ulix-book.tex
+NOWEBFILE=../ulix-book-0.13.nw
 
 CCOPTIONS=-nostdlib -ffreestanding -fforce-addr -fomit-frame-pointer -fno-function-cse -nostartfiles -mtune=i386 -momit-leaf-frame-pointer -O0
 CCASMOPTIONS=-fverbose-asm -masm=intel
-
-# CCTESTOPTIONS="-mregparm=3"
-# LDOPTIONS="-static --cref -s --pie"
-#LDOPTIONS=-static -s --pie
 LDOPTIONS=-static -s
-# LDADDRESSOPTS="-Tbss 0 -Tdata 0 -Ttext 0"
-
 
 all: build
 
@@ -36,7 +32,6 @@ compile:
 	$(CC) $(CCOPTIONS) -g $(CCTESTOPTIONS) -c ulixlib.c
 	$(CC) $(CCOPTIONS) $(CCTESTOPTIONS) -c init.c
 	# link it with linker script "process.ld"
-	# $(LD) $(LDOPTIONS) -T process.ld --entry main -o init init.o ulixlib.o
 	$(LD) $(LDOPTIONS) -T process.ld -o init init.o ulixlib.o
 	touch tools/*.c
 	make -C tools
