@@ -30371,9 +30371,9 @@ For adding and subtracting you can use the \verb#add# and \verb#sub# instruction
 \index{Assembler language!jumps and calls}
 Sometimes you want to jump to a specific program address in order to continue execution elsewhere. For those cases the [[jmp]] instruction can be used. When creating an assembler source file (for use with [[nasm]]) you will normally assign a label to an instruction that you want to jump to and then use it in the [[jmp]] instruction, like this:
 \begin{Verbatim}
-  infinite_loop: mov  al,  byte ptr [eax]
+  infinite_loop: mov  al,  byte ptr [ebx]
                  call printchar
-                 add  eax, 1
+                 add  ebx, 1
                  jmp  infinite_loop
 \end{Verbatim}
 This example shows a further instruction for jumping to a new address: \verb#call# also jumps to the supplied address, but before that it pushes the address of the following instruction (in the example: of \verb#add eax, 1#) onto the stack. The assembler code at \verb#printchar# can then execute the [[ret]] instruction which will pop that address from the stack and continue execution inside the above loop. To summarize the difference: When you [[jmp]], there's no easy way to get back; when you [[call]], you can return with [[ret]].
