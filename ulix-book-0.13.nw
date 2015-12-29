@@ -30590,7 +30590,7 @@ For example, in order to add two variables [[var1]] and [[var2]] and store the s
 \end{Verbatim}
 We don't know what registers will hold the values of [[var1]] and [[var2]], but we simply move or add them to \register{EAX} and finally write the sum (which is in \register{EAX} after the [[addl]] instruction) back to register 0. That is then copied to [[sum]].
 
-We do not want the compiler to use \register{EAX} for one of the variable values, and that it where the \emph{clobber list}\marginnote{clobber list} comes in: With it we can tell the compiler which registers it must not use, so in the case of the above addition we put \register{EAX} on that list. Note that the syntax for the register name is different in the instructions (\verb#%%eax#) and in the clobber list (\verb#%eax#)! In the clobber list you could also write \verb#eax# instead of \verb#%eax#, but not \verb#%%eax#.
+We do not want the compiler to use \register{EAX} for one of the variable values, and that is where the \emph{clobber list}\marginnote{clobber list} comes in: With it we can tell the compiler which registers it must not use, so in the case of the above addition we put \register{EAX} on that list. Note that the syntax for the register name is different in the instructions (\verb#%%eax#) and in the clobber list (\verb#%eax#)! In the clobber list you could also write \verb#eax# instead of \verb#%eax#, but not \verb#%%eax#.
 
 
 \section{Further Reading}
