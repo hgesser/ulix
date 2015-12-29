@@ -30505,7 +30505,6 @@ which the assembler expands to the following lines:
   irq14: push byte 0          ; error code (none)
          push byte 46         ; interrupt number
          jmp irq_common_stub  ; rest is identical for all handlers
-%endmacro
 \end{Verbatim}
 
 In the macro's definition, the parameter \verb#1# in the first line states that the macro can be used with one argument. That argument can be referred to via \verb#%1#.
