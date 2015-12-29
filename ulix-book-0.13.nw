@@ -1864,7 +1864,7 @@ typedef unsigned long long  ulonglong;   // "unsigned long long" (64 bit)
 @ %def uint8_t uint16_t uint32_t uint64_t uint size_t ulong ulonglong
 
 \noindent
-Memory addresses in our code are always 32 bits wide since \UlixI{} is a 32-bit operating system. We intruduce an address type:
+Memory addresses in our code are always 32 bits wide since \UlixI{} is a 32-bit operating system. We introduce an address type:
 
 <<public elementary type definitions>>=
 typedef unsigned int       memaddress;
@@ -2010,7 +2010,7 @@ Note that from a process' point of view, memory is a direct resource and is need
 These are some of the concepts that appear in both memory management and filesystems:
 
 \begin{description}
-\item[Partitioning of resources:] On a system that will handle several processes in parallel, memory must somehow be partitioned so that each process can use a fraction of the RAM. Individual cells of memory are exclusive: They can hold precisely one byte of information, and it has to belong to a specific process (or the operating system itself) at any given time. It may not be necessary that a process has memory throughout his whole lifetime (for we will see that concepts such as swapping and paging allow data to be stored on the disk for a while), but at least in those moments when a process is actually excecuted by the CPU, it will have to be given some memory. It may be useful to limit the maximum RAM that a process can access at any given time.\looseness=1
+\item[Partitioning of resources:] On a system that will handle several processes in parallel, memory must somehow be partitioned so that each process can use a fraction of the RAM. Individual cells of memory are exclusive: They can hold precisely one byte of information, and it has to belong to a specific process (or the operating system itself) at any given time. It may not be necessary that a process has memory throughout his whole lifetime (for we will see that concepts such as swapping and paging allow data to be stored on the disk for a while), but at least in those moments when a process is actually executed by the CPU, it will have to be given some memory. It may be useful to limit the maximum RAM that a process can access at any given time.\looseness=1
 
 Similarly, if a system allows several files (and possibly directories) to be created, accessed and modified on the disk, disk space has to be partitioned in a way that the disk can hold all these files and present simple means to look up files on the disk and access them. The smallest unit of storage would in theory also be a byte, and such a byte (now meaning the fixed location on disk) can only belong to one file (or to the filesystem metadata) at any given time. As in the memory situation, it may be useful to define a maximum filesize so that no file uses too much of this resource, though most filesystems that implement such limits do this on a per-user basis and not on per-file basis---limiting disk usage per user (or per user group) is called a \emph{quota system}\index{quota system}.
 
@@ -2020,7 +2020,7 @@ Access to files is also often handled in a way that makes it exclusive to a file
 
 \item[Free space management:]\index{memory management!free space management}\index{free space management} Memory and disk usage must be handled dynamically, because processes newly appear and are removed from the system all the time, their needs for memory may change during the process runtime, and also files can be created and deleted as well as grown while the system is active.
 
-In many memory management schemes there will be a list of free memory locations. We will see that is not useful to grant memory access byte-wise, memory will often be partitioned into equal-sized smallest chunks of memory that can be assigned to a process or removed from it. If we call these smalles chunks (say, of size 1 KByte) memory frames, then there will be need of a ``free frame list'' that knows which frames are currently unused.
+In many memory management schemes there will be a list of free memory locations. We will see that is not useful to grant memory access byte-wise, memory will often be partitioned into equal-sized smallest chunks of memory that can be assigned to a process or removed from it. If we call these smallest chunks (say, of size 1 KByte) memory frames, then there will be need of a ``free frame list'' that knows which frames are currently unused.
 
 In the same way disks aren't typically accessed byte-, but block-wise, a block being a fixed size segment of the disk space. Note also that read and write operations on the raw disk device always transfer a whole block of data and not a single byte (which is why they are called \emph{block devices} as opposed to \emph{character devices}. We will need a ``free block list'' in order to know which blocks are still available for file storage and which are not.
 
@@ -2403,7 +2403,7 @@ an address space of 4~GByte.
 
 Having 32 bits on the address bus, addresses are 32-bit values between
 \hexaddr{0000.0000} and \hexaddr{FFFF.FFFF}.  In physical memory, not all
-addresses may be backed by real memory cicuits on the mainboard. 
+addresses may be backed by real memory circuits on the mainboard. 
 (Access to such an address usually causes a specific type of
 interrupt on the CPU or returns an undefined value when it is accessed.)
 If we view the physical address space of a computer it therefore
@@ -3115,7 +3115,7 @@ descriptor? Generally we can find these entries:
 In a hierarchic page table, the virtual address is used in a special
 way to traverse the tree of descriptors. If there are $L$ levels in
 the page descriptor tree, the bits of the page address $p$ within a
-virtual address are subivided into $L$ parts $p_1,p_2,\ldots,p_L$ such
+virtual address are subdivided into $L$ parts $p_1,p_2,\ldots,p_L$ such
 that 
 %
 $$p=p_1 \oplus p_2 \oplus \ldots \oplus p_L$$
@@ -3619,7 +3619,7 @@ Here are the binary representations of \hex{10000} and \hex{1FFFF}:\\[-8pt]
 \end{centering}
 
 \noindent
-The 20-bit wide represention of \hex{10000} is
+The 20-bit wide representation of \hex{10000} is
 \bin{00010000000000000000},
 and when we remove the lowest four zero bits, we get
 \bin{0001000000000000} = \hex{10000} [[>> 4]] = \hex{1000}.
@@ -6009,7 +6009,7 @@ bytes (instead of blocks of bytes).
 
 \intelindex{interrupt}%
 The classical IBM PC used the \marginnote{Intel 8259 PIC}\index{Intel 8259 PIC}
-Intel 8259 Programmable Interrupt Controller\index{programmable interrupt controller}, compatible descendents 
+Intel 8259 Programmable Interrupt Controller\index{programmable interrupt controller}, compatible descendants 
 of which are still used in modern computers. The 8259 has eight
 input lines (through which up to eight separate devices may connect)
 and one output line which forwards received interrupt signals to
@@ -7295,7 +7295,7 @@ The interrupt handler should work as follows:
 \end{itemize}
 \vspace{-1mm}%
 
-\verb#kreadline()# performs an infinite loop and checks whether [[(pos>0 && buffer[pos-1] =='\n')]] is true---if so, then the function copies the entered string (from position 0 to [[pos-2]]) to [[s]], sets [[pos=0]] and returns. Note that the string must be [['\0']]-terminated so that [[printf()]] can later use it. You can simply replace the [['\n']] chacracter with [['\0']] if the input is terminated by pressing [Enter]; if you reach the maximum allowed number of characters, you write [['\0']] into the last byte of the string.
+\verb#kreadline()# performs an infinite loop and checks whether [[(pos>0 && buffer[pos-1] =='\n')]] is true---if so, then the function copies the entered string (from position 0 to [[pos-2]]) to [[s]], sets [[pos=0]] and returns. Note that the string must be [['\0']]-terminated so that [[printf()]] can later use it. You can simply replace the [['\n']] character with [['\0']] if the input is terminated by pressing [Enter]; if you reach the maximum allowed number of characters, you write [['\0']] into the last byte of the string.
 
 For copying the string you can use [[strncpy()]]. That function works like the corresponding Linux function (see \verb#man strncpy#), i.\,e., it expects target, source and maximum length of the target string as arguments.
 
@@ -9246,7 +9246,7 @@ tcb->ebp  = (uint)kstack + KERNEL_STACK_SIZE;    // ebp (base pointer) values
 
 \subsection{Activating the New Process}
 
-Finally we can activate the process. We've completed all the required steps, and the program sits in the memory, waiting to be started. Let's declare the varible [[current_task]] (that always holds the ID of the currently executing process or thread)
+Finally we can activate the process. We've completed all the required steps, and the program sits in the memory, waiting to be started. Let's declare the variable [[current_task]] (that always holds the ID of the currently executing process or thread)
 
 <<global variables>>=
 thread_id current_task;
@@ -10256,7 +10256,7 @@ provides a shortcut for copying physical frames since for that task the
 number of bytes to copy is always [[PAGE_SIZE]].
 
 Next comes the definition of [[u_fork]]. This function will be called
-when the \verb#fork# system call is executed. Again, we declare everything that is done in this function as a critcal section. If you ask, why there is no [[<<end critical section in kernel>>]] in this chunk, see [[<<[[u_fork]]: branch parent and child>>]].
+when the \verb#fork# system call is executed. Again, we declare everything that is done in this function as a critical section. If you ask, why there is no [[<<end critical section in kernel>>]] in this chunk, see [[<<[[u_fork]]: branch parent and child>>]].
 
 <<function implementations>>=
 int u_fork (context_t *r) {
@@ -11871,7 +11871,7 @@ void syscall_readline (struct regs *r);
 \end{Verbatim}
 
 \pagebreak
-When it is called, [[r->eax]] contains the syscall number (which you can ignore), and [[r->ebx]] holds the address of a string (that was declared in the user mode program). In the application source file [[test.c]] declare a string variable which can hold 256 characters. We do not provide the string length; when calling \verb#kreadline# you can ask that the returned string be no longer than 256 characters. In the handler you have to enable interrupts before calling \verb#kreadline()# because the system deactives them upon handler entry. Add the following line:
+When it is called, [[r->eax]] contains the syscall number (which you can ignore), and [[r->ebx]] holds the address of a string (that was declared in the user mode program). In the application source file [[test.c]] declare a string variable which can hold 256 characters. We do not provide the string length; when calling \verb#kreadline# you can ask that the returned string be no longer than 256 characters. In the handler you have to enable interrupts before calling \verb#kreadline()# because the system deactivates them upon handler entry. Add the following line:
 
 \begin{Verbatim}
 asm volatile ("sti");   // before kreadline() !
@@ -12977,7 +12977,7 @@ Figure~\ref{img:sched-rr-interaction} visualizes why this approach is helpful: I
 \index{scheduler!virtual round robin}%
 \index{virtual round robin scheduler}%
 \index{round robin scheduler!virtual round robin}%
-There is one problem with the RR strategy: It is unfair to \marginnote{I/O-bound}\emph{I/O-bound processes}. (We define a process to be I/O-bound if it performs I/O very often and thusly uses only small parts of each of its time slices, quickly blocking again. The opposite is a \marginnote{CPU-bound}\emph{CPU-bound process} which typically uses up its time slice completely. Obviously there is a gray are between I/O-bound and CPU-bound where is process can be called neither.)
+There is one problem with the RR strategy: It is unfair to \marginnote{I/O-bound}\emph{I/O-bound processes}. (We define a process to be I/O-bound if it performs I/O very often and thus uses only small parts of each of its time slices, quickly blocking again. The opposite is a \marginnote{CPU-bound}\emph{CPU-bound process} which typically uses up its time slice completely. Obviously there is a gray are between I/O-bound and CPU-bound where is process can be called neither.)
 
 Back to the point: RR treats I/O-bound processes unfairly because they typically use just a tiny fraction of their time slice and then block. Whatever I/O activity they perform, we can assume it to take quite some time (for example, disk access is pretty slow in comparison to CPU instructions, and waiting for a key stroke takes an indefinite amount of time). Once the I/O has completed, RR adds the process to the end of the ready queue. Then it has to wait until all other processes that stand before it in the queue have either used up their time slices or blocked. If you compare the ratio between the needed CPU time (the time that the process actually executes instructions on the CPU) with the wait time, then I/O-bound processes get a much smaller value than CPU-bound ones.
 
@@ -15066,7 +15066,7 @@ void keyboard_handler (context_t *r);
 
 It checks the variable [[LANG_GERMAN]] to decide whether it shall use the German or the US keyboard layout:
 <<global variables>>=
-boolean LANG_GERMAN = 1;   // default: german keyboard
+boolean LANG_GERMAN = 1;   // default: German keyboard
 @ %def LANG_GERMAN
 
 The implementation is rather simple, the function is only long because it needs to handle key presses differently when one of the modifier keys (Left-Shift, Right-Shift, Ctrl, Alt) is held while another key is pressed. Other than that, the handler reads a scan code from the keyboard I/O port.
@@ -16875,7 +16875,7 @@ priority 5 may kick in and its handler be executed. It disables interrupts up to
 level 5. However, when this interrupt handler returns, it would be a
 bad idea to enable interrupts altogether. It rather must
 \emph{restore the interrupt level} that was active \emph{before} the
-interrupt occured.
+interrupt occurred.
 
 A similar situation happens if (on purpose or by accident) one
 critical section is declared within another such as in the following
@@ -17863,7 +17863,7 @@ First we consider the following case: Two user-level threads which are mapped to
 The mechanism of choice to synchronize user-level threads are user-level semaphores. They can be used to block and deblock user-level threads for synchronization. And if the thread library runs on a single kernel-level thread and the library does not support a signal mechanism (a ``user-level interrupt'' mechanism, see Chapter~\ref{chap:ulix:signals}), only one concurrent activity will update the critical thread library data structures at any time. So while there might be critical sections in the thread (library) code, the entry and exit protocols may be empty.
 
 \index{signal masking}
-However, if user-level threads can be interrupted (using signals for example) or if user-level threads run on a virtual multiprocessor (multiple kernel-level threads), we have to ensure mutual exclusion of concurrent activities in the threads library again. For the case of ``interruptible'' user-level threads (via signals), we need to enusure that any invocation of a signal handler does not violate mutual exclusion. A valid method would be to ``mask'' signals (i.\,e., ensure that during certain times user-defined signal handlers are not executed). This situation is analogous to interrupt-masking at lower levels.
+However, if user-level threads can be interrupted (using signals for example) or if user-level threads run on a virtual multiprocessor (multiple kernel-level threads), we have to ensure mutual exclusion of concurrent activities in the threads library again. For the case of ``interruptible'' user-level threads (via signals), we need to ensure that any invocation of a signal handler does not violate mutual exclusion. A valid method would be to ``mask'' signals (i.\,e., ensure that during certain times user-defined signal handlers are not executed). This situation is analogous to interrupt-masking at lower levels.
 
 For the case of a virtual multiprocessor (multiple kernel-level threads), signal masking is not enough since signals target kernel-level threads and so if one kernel-level thread masks signals another can still receive them and invoke a signal handler, thus violating mutual exclusion. So how could mutual exclusion be achieved here?
 
@@ -17921,7 +17921,7 @@ To summarize synchronization issues up to now---and as partially shown in Figure
 
 
 \felix
-\subsubsection{Sychronizing the Kernel}
+\subsubsection{Synchronizing the Kernel}
 
 Kernel synchronization deals with cases (3) and (4) in Figure \ref{fig:sync:hierarchy}. The main task of kernel synchronization is to achieve mutual exclusion of concurrent activities in the kernel. This is a challenge because concurrent activities are natural in operating systems, let they be introduced through interrupts or through multiple CPUs.
 
@@ -17969,8 +17969,8 @@ A kernel built in this way is called an
 Building correct interruptible kernels boils down to finding all critical sections and ensuring that the entry and exit protocols to these sections are implemented correctly. Both problems are non-trivial and have caused much misery in the history of operating systems:
 %
 \begin{itemize}
-\item It is easy to spot some critical sections, but it is hard to overlook no critical section. Overlooking a critcal section (i.\,e., failing to mark it correctly) usually causes hard to diagnose system faults because bugs are usually the result of non-reproducible race conditions (so called \emph{Heisenbugs}).\index{Heisenbug}
-\item It is easy to ``play safe'' and mark all possible candidates for critical sections as such, following the strategy: if in doubt, then it's a critcal section. But this results in rather large critical sections, and large critical sections cause their own problems (inefficiency being one). So the challenge is to declare ``minimal'' critical sections.
+\item It is easy to spot some critical sections, but it is hard to overlook no critical section. Overlooking a critical section (i.\,e., failing to mark it correctly) usually causes hard to diagnose system faults because bugs are usually the result of non-reproducible race conditions (so called \emph{Heisenbugs}).\index{Heisenbug}
+\item It is easy to ``play safe'' and mark all possible candidates for critical sections as such, following the strategy: if in doubt, then it's a critical section. But this results in rather large critical sections, and large critical sections cause their own problems (inefficiency being one). So the challenge is to declare ``minimal'' critical sections.
 \end{itemize}
 %
 A typical approach is to let system call handlers be interruptible while disabling (all or some) interrupts during the execution of interrupt handlers.
@@ -18251,7 +18251,7 @@ For example, the Intel 8259 PIC\index{Intel 8259 PIC} which \Ulix{} uses allows 
 \end{quotation}
 
 \noindent
-(\register{ISR} is the In-Service Register.) Thus it is sufficient to modify handlers for interrupt numbers 7 (coming from the first PIC) and 15 (from the second PIC). In case of an interrupt from the first PIC, no action is required; especially it is not necessary to acknowledge the interrupt. However, if the interrupt comes from the second PIC, the first PIC (and only the first PIC) needs to be sent the acknowledgement.
+(\register{ISR} is the In-Service Register.) Thus it is sufficient to modify handlers for interrupt numbers 7 (coming from the first PIC) and 15 (from the second PIC). In case of an interrupt from the first PIC, no action is required; especially it is not necessary to acknowledge the interrupt. However, if the interrupt comes from the second PIC, the first PIC (and only the first PIC) needs to be sent the acknowledgment.
 
 Certain spurious interrupts can be detected by the system because interrupts usually provide services with prior demands. So if there is an interrupt which has no obvious demand, then it probably is spurious. Other types of spurious interrupts are harder to detect. 
 Since \Ulix{} uses neither interrupt 7 (first parallel port) nor 15 (secondary IDE controller), we fortunately need not deal with this situation.
@@ -18960,7 +18960,7 @@ We have already discussed in Section~\ref{sect:memory:fs:indirection} (p.~\pager
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=12cm]{pics/indirection-general-clipped.pdf}
-\caption[Unix inodes store direct and indirect block addresses.]{In Unix filesystems inodes store direct and single or mulitiple indirection block addresses.}
+\caption[Unix inodes store direct and indirect block addresses.]{In Unix filesystems inodes store direct and single or multiple indirection block addresses.}
 \label{img:disk-indirection-general}
 \end{figure}
 
@@ -19234,7 +19234,7 @@ on \path!/home/!, the second RAM disk\footnote{This version of \UlixI{} does not
 must have been mounted \emph{after} the second floppy
 disk. Thus, if we assume that we store the mount information in the order in which it
 was created by [[mount]], we can search the mount table backwards, starting with the
-last entry, and compare each mount point to the leading chraracters of the absolute
+last entry, and compare each mount point to the leading characters of the absolute
 path name:
 
 <<function implementations>>=
@@ -19716,7 +19716,7 @@ switch (fd) {
 }
 @
 
-Simlilarly, writing to standard output or standard error dumps data on the terminal using the [[kputch]] function, whereas writing to standard input (or pipes) is forbidden:
+Similarly, writing to standard output or standard error dumps data on the terminal using the [[kputch]] function, whereas writing to standard input (or pipes) is forbidden:
 
 <<write: standard I/O and pipes>>=
 byte c;
@@ -21486,7 +21486,7 @@ void mx_write_link (int device, int inodenr, const char *filename);
 
 \begin{itemize}
 \item First, we check whether the directory already contains an entry for the filename---it is not possible to have the same filename twice in a directory.
-\item Then we split the path into the directory name and the base filemame.
+\item Then we split the path into the directory name and the base filename.
 \item We locate the inode that belongs to the directory file using [[mx_pathname_to_ino]] (a function  that we still have to implement; this follows a few pages later).
 \item Then we read all the directory entries (using [[mx_read_dir_entry]] from above) until we find a free entry. If we don't, we have to abort because the directory is full.
 \item Once we've found a free entry, we prepare a directory entry and write it to the free location.
@@ -23762,7 +23762,7 @@ controllers for floppy and hard disks do not provide the functionality
 to read/write single bytes from/to the disk, but can only handle those
 larger chunks. That has consequences for code which wants to change a
 single byte in a disk file: The chunk containing this byte must first
-be read into memory, then modifed and finally rewritten to disk.
+be read into memory, then modified and finally rewritten to disk.
 
 Block devices can be accessed in two ways: in the classical approach
 drivers used the processor's [[in]] and [[out]] instructions for every
@@ -24664,7 +24664,7 @@ Note that we're executing a code chunk [[<<serial hard disk: wake process>>]] if
 
 \subsubsection{Blocking Read/Write Operations}
 
-For a multitasking system it is inacceptable to work with blocking
+For a multitasking system it is unacceptable to work with blocking
 I/O operations, at least for processes. 
 We will now implement the blocking read and write functions. For writing
 there is no difference (because the transfer commands to the serial
@@ -25049,7 +25049,7 @@ can read four bytes (a 32 bit value) in one go. For reading the contents
 of a whole sector we would need $512 / 4 = 128$ of these [[insl]]
 instructions, but the processor has a way of repeating this command
 automatically: if we add a [[rep]]\marginnote{[[rep insl]]} prefix to [[insl]], we get repeated
-executions of [[insl]] witout manually writing a loop.
+executions of [[insl]] without manually writing a loop.
 
 The logic of [[rep insl]] requires us to fill some registers with proper
 values:
@@ -28183,7 +28183,7 @@ macro which creates a debug message and calls [[memcpy]].
 
 \index{printf (standard library)@\texttt{printf} (standard library)}%
 We use a small implementation of the standard functions [[printf]] and [[sprintf]] 
-that is dual-licensed unter the LGPL and the BSD license and available from
+that is dual-licensed under the LGPL and the BSD license and available from
 \url{http://www.menie.org/georges/embedded/} \cite{Menie:2002:printf}---there is 
 no need to reinvent the wheel. We modified the code so that [[printf]] can also
 handle the `o' format character for octal numbers and we changed the
