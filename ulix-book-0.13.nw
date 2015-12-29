@@ -30521,7 +30521,7 @@ Then you access those arguments via \verb#%1#, \verb#%2# and \verb#%3#.
 \index{Assembler language!inline assembler}\index{inline assembler}
 The GNU C compiler [[gcc]] lets developers write inline assembler statements in the middle of C code. That is very helpful if only a few lines of assembler code are required---storing them in a separate assembler source file and making sure that both the C and the assembler code can see the variables which are needed in both places is laborious, and it also costs (a little) CPU time because an external assembler routine must be called via the function call mechanism whereas inline assembler code is just inserted between the translations of the preceding and successive C code.
 
-You can find the best example for a quick line of assembler code in the book: Whenever we need to disable or enable the interrupts, we do this via the [[<<disable interrupts>>]] and [[<<ensable interrupts>>]] code chunks which use the inline assembler instructions
+You can find the best example for a quick line of assembler code in the book: Whenever we need to disable or enable the interrupts, we do this via the [[<<disable interrupts>>]] and [[<<enable interrupts>>]] code chunks which use the inline assembler instructions
 \begin{Verbatim}
   asm ("cli");    // disable interrupts (clear interrupt flag)
 \end{Verbatim}
