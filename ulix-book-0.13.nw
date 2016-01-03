@@ -4836,7 +4836,7 @@ on page \pageref{code:loader configuration}.
 Now we have to modify the setup of the identity mapping:
 
 <<setup identity mapping for kernel>>=
-// file page directory with null entries
+// fill page directory with null entries
 for (int i = 0;  i < 1024;  i++) {
   fill_page_table_desc (&(current_pd->ptds[i]), false, false, false, 0);
 };
