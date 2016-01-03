@@ -4802,7 +4802,7 @@ virtual addresses to physical addresses.
 \end{figure}
 
 This is not an identity mapping, so when we start the system we run
-into a problem: We could link the kernel twice und also physically load it 
+into a problem: We could link the kernel twice and also physically load it 
 twice, into the physical ranges [\,1~MB, 2~MB\,[ and [\,3~GB + 1~MB, 3~GB + 2~MB\,[---but 
 that would require our physical memory to be big enough.
 
