@@ -4507,9 +4507,9 @@ The upper 20 bits contain---again---the upper bits of a
 frame address (in RAM), the same alignment argument allows us to 
 leave out the lowest 12 bits of the address.
 
-The remaining bits in the page descriptor are either unused and can be
+The remaining bits in the page table descriptor are either unused and can be
 used by the operating system for its own purposes (bits 9--11) or 
-store attributes of this page descriptor:
+store attributes of this page table descriptor:
 
 \begin{itemize}
   \item Bits 8 and 7 must always be 0. (Actually if bit 7 is set, this
