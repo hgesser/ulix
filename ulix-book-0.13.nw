@@ -4803,7 +4803,7 @@ virtual addresses to physical addresses.
 
 This is not an identity mapping, so when we start the system we run
 into a problem: We could link the kernel twice and also physically load it 
-twice, into the physical ranges [\,1~MB, 2~MB\,[ and [\,3~GB + 1~MB, 3~GB + 2~MB\,[---but 
+twice, into the physical ranges [\,1~MB, 2~MB\,] and [\,3~GB + 1~MB, 3~GB + 2~MB\,]---but 
 that would require our physical memory to be big enough.
 
 The solution is to work with a double mapping, as can be seen
@@ -4812,21 +4812,21 @@ in Figure~\ref{fig:identity-mapping-3} (during initialization).
 So we do the following:
 
 \begin{enumerate}
-\item Load the kernel to physical addresses [\,1~MB, 2~MB\,[ (\hexrange{100000}{1FFFFF}).
+\item Load the kernel to physical addresses [\,1~MB, 2~MB\,] (\hexrange{100000}{1FFFFF}).
 \item Do the Higher Half Trick\index{higher half trick} (see page \pageref{higher half trick}):
   Enable the trick GDT with base address \hex{40000000} and jump to
   the higher half.
-\item Setup an identity mapping from [\,1~MB, 2~MB\,[ (virtual) to [\,1~MB, 2~MB\,[ (physical).
+\item Setup an identity mapping from [\,1~MB, 2~MB\,] (virtual) to [\,1~MB, 2~MB\,] (physical).
   Actually, we'll map the whole first 4 megabytes, since one page table describes
   4~MByte of virtual memory.
-\item Additionally set up a mapping from [\,3~GB + 1~MB, 3~GB + 2~MB\,[ 
-  (\hexrange{C0100000}{C01F FFFF}; virtual) to [\,1~MB, 2~MB\,[ (physical) -- the 
+\item Additionally set up a mapping from [\,3~GB + 1~MB, 3~GB + 2~MB\,] 
+  (\hexrange{C0100000}{C01F FFFF}; virtual) to [\,1~MB, 2~MB\,] (physical) -- the 
   corresponding page table has the same contents as the first
   one, it just gets pointed to from a different page directory entry.
-  Again, we'll map a whole 4~MByte block, [\,3~GB, 3~GB + 4~MB\,[ to [\,0, 4~MB\,[.
+  Again, we'll map a whole 4~MByte block, [\,3~GB, 3~GB + 4~MB\,] to [\,0, 4~MB\,].
 \item Activate paging.
 \item Install a new ``flat'' GDT with base address \hex{0}.
-\item Get rid of the initial mapping for [\,0, 4~MB\,[ (virtual).
+\item Get rid of the initial mapping for [\,0, 4~MB\,] (virtual).
 \end{enumerate}
 
 After that the kernel sees virtual addresses starting at 3~GByte (\hex{C0000000}) only,
