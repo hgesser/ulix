@@ -14,7 +14,7 @@ ifeq ($(UNAME_S),Darwin)
   OBJDUMP=/usr/cross/bin/i586-elf-objdump
 endif
 
-NOWEBFILE=../ulix-book-0.13.nw
+NOWEBFILE=../ulix-book.nw
 
 CCOPTIONS=-nostdlib -ffreestanding -fforce-addr -fomit-frame-pointer -fno-function-cse -nostartfiles -mtune=i386 -momit-leaf-frame-pointer -O0
 CCASMOPTIONS=-fverbose-asm -masm=intel
