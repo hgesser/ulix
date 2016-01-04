@@ -13,4 +13,4 @@ Your options are ...
 * the full list of publications about Ulix (on the [http://ulixos.org/](http://ulixos.org/) page)
 * lecture notes of Ulix-based courses (on the [http://ulixos.org/](http://ulixos.org/) page) 
 
-Note: ulix-book-0.13.nw is the literate document.
+Note: ulix-book.nw is the literate document.
