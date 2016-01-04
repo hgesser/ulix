@@ -1,9 +1,9 @@
 all: tools bin
 
-pdf: ulix-book-0.13.nw
+pdf: ulix-book.nw
 	make -C tex-build
 
-bin: ulix-book-0.13.nw
+bin: ulix-book.nw
 	make -C bin-build
 
 run:
@@ -12,7 +12,7 @@ run:
 runs:
 	make -C bin-build runs
 
-tools: ulix-book-0.13.nw
+tools: ulix-book.nw
 	make -C lib-build
 
 clean:
