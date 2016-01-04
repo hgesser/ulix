@@ -8,6 +8,7 @@ Ulix has already been used twice in operating system courses at TH Nürnberg (Nu
 Your options are ...
 * [Ulix Development Blog](http://hgesser.de/ulix/)
 * Ulix Source Code (released under the GPL, version 3, on this GitHub page)
+* The [Wiki](https://github.com/hgesser/ulix/wiki) (here on GitHub)
 * [The Ulix Book](http://ulixos.org/doc/ulix-book-0.13.pdf) (Hans-Georg Eßer and Felix Freiling: The Design and Implementation of the Ulix Operating System, 708 pages, September 2015)
 * [Development VM](https://www.dropbox.com/s/3x3iwzvygecivf6/Ulix-0.13-Debian.ova?dl=1) (OVA format, tested with VirtualBox, Debian-based, 1 GByte, expands to ca. 3 GByte)
 * the full list of publications about Ulix (on the [http://ulixos.org/](http://ulixos.org/) page)
