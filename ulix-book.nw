@@ -5081,13 +5081,13 @@ already in use: We have two mappings for the first 4 MByte of physical
 RAM (even though we don't use the first MByte at all). So we
 declare the first 4 MByte as used. 4 MByte contain 1024 pages,
 thus the first 1024 frames must be marked used.
-1024/8 = 128; we set the first 128 bytes to \hex{ff}
+1024/8 = 128; we set the first 128 bytes to \hex{FF}
 = \bin{11111111}. We also 
 subtract the frames in these 4 MByte from [[free_frames]]:
 
 
 <<initialize system>>=
-memset (ftable, 0xff, 128);
+memset (ftable, 0xFF, 128);
 free_frames -= 1024;
 @
 
