@@ -23,7 +23,7 @@ FD1_IMG=minixdata-old.img
 
 ASM=nasm
 ASMFLAGS=-f elf
-TEXSRC_FILE=../ulix-book-0.13.nw
+TEXSRC_FILE=../ulix-book.nw
 TEXSRC_MODULE_FILE=../bachelorarbeit.nw
 EXTRACT_FILES=ulix.c start.asm ulix.ld
 # EXTRACT_FILES=ulix.c printf.c start.asm 
