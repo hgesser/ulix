@@ -30376,7 +30376,7 @@ Sometimes you want to jump to a specific program address in order to continue ex
                  add  ebx, 1
                  jmp  infinite_loop
 \end{Verbatim}
-This example shows a further instruction for jumping to a new address: \verb#call# also jumps to the supplied address, but before that it pushes the address of the following instruction (in the example: of \verb#add eax, 1#) onto the stack. The assembler code at \verb#printchar# can then execute the [[ret]] instruction which will pop that address from the stack and continue execution inside the above loop. To summarize the difference: When you [[jmp]], there's no easy way to get back; when you [[call]], you can return with [[ret]].
+This example shows a further instruction for jumping to a new address: \verb#call# also jumps to the supplied address, but before that it pushes the address of the following instruction (in the example: of \verb#add ebx, 1#) onto the stack. The assembler code at \verb#printchar# can then execute the [[ret]] instruction which will pop that address from the stack and continue execution inside the above loop. To summarize the difference: When you [[jmp]], there's no easy way to get back; when you [[call]], you can return with [[ret]].
 
 Simply jumping (or calling) unconditionally does not allow for any case distinctions: Code that only uses [[jmp]] and [[call]] will always execute the same commands in the same sequence. For a distinction of cases we need comparison operations and based on the result we want to decide whether we jump elsewhere or not.
 
