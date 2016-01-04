@@ -2,7 +2,7 @@ TEX=xelatex -8bit -shell-escape
 
 all:
 	# preprocessing
-	grep -v "REMOVE_DEBUGGING_CODE" ../ulix-book-0.13.nw > tmp.nw
+	grep -v "REMOVE_DEBUGGING_CODE" ../ulix-book.nw > tmp.nw
 	nodefs -auto cee tmp.nw | sort -u > noweb.defs
 	grep -v -f grep-patterns noweb.defs > noweb.filtered.defs
 	noweave -indexfrom noweb.filtered.defs -delay tmp.nw > tmp.tex.in
@@ -28,7 +28,7 @@ all:
 	$(TEX) tmp
 	$(TEX) tmp
 	$(TEX) tmp
-	mv tmp.pdf ../ulix-book-0.13.pdf
+	mv tmp.pdf ../ulix-book.pdf
 
 clean:
 	rm -f ./tmp.* noweb.defs noweb.filtered.defs
