@@ -5414,7 +5414,7 @@ of physical memory. It has the following definition:
 
 <<function implementations>>=
 int request_new_frame () {
-  <<find a free frame und reserve it>>
+  <<find a free frame and reserve it>>
 };
 @ %def request_new_frame
 
@@ -5426,7 +5426,7 @@ and above).
 Finding a free frame is simple: We look at the frame table and
 return the first available frame:
 
-<<find a free frame und reserve it>>=
+<<find a free frame and reserve it>>=
 unsigned int frameid;
 boolean found;
 //inside_req_frame++;                                         // REMOVE_DEBUGGING_CODE
@@ -5445,7 +5445,7 @@ for (frameid = 0;  frameid < NUMBER_OF_FRAMES;  frameid++) {
 
 \noindent
 Then we use [[set_frame]] to mark the frame used and return the frame ID:
-<<find a free frame und reserve it>>=
+<<find a free frame and reserve it>>=
 if (found) {
   // memset ((void*)PHYSICAL(frameid << 12), 0, PAGE_SIZE); // REMOVE_DEBUGGING_CODE
   set_frame (frameid*4096);
