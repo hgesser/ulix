@@ -4507,9 +4507,9 @@ The upper 20 bits contain---again---the upper bits of a
 frame address (in RAM), the same alignment argument allows us to 
 leave out the lowest 12 bits of the address.
 
-The remaining bits in the page descriptor are either unused and can be
+The remaining bits in the page table descriptor are either unused and can be
 used by the operating system for its own purposes (bits 9--11) or 
-store attributes of this page descriptor:
+store attributes of this page table descriptor:
 
 \begin{itemize}
   \item Bits 8 and 7 must always be 0. (Actually if bit 7 is set, this
@@ -4802,7 +4802,7 @@ virtual addresses to physical addresses.
 \end{figure}
 
 This is not an identity mapping, so when we start the system we run
-into a problem: We could link the kernel twice und also physically load it 
+into a problem: We could link the kernel twice and also physically load it 
 twice, into the physical ranges [\,1~MB, 2~MB\,[ and [\,3~GB + 1~MB, 3~GB + 2~MB\,[---but 
 that would require our physical memory to be big enough.
 
@@ -4836,7 +4836,7 @@ on page \pageref{code:loader configuration}.
 Now we have to modify the setup of the identity mapping:
 
 <<setup identity mapping for kernel>>=
-// file page directory with null entries
+// fill page directory with null entries
 for (int i = 0;  i < 1024;  i++) {
   fill_page_table_desc (&(current_pd->ptds[i]), false, false, false, 0);
 };
@@ -5081,13 +5081,13 @@ already in use: We have two mappings for the first 4 MByte of physical
 RAM (even though we don't use the first MByte at all). So we
 declare the first 4 MByte as used. 4 MByte contain 1024 pages,
 thus the first 1024 frames must be marked used.
-1024/8 = 128; we set the first 128 bytes to \hex{ff}
+1024/8 = 128; we set the first 128 bytes to \hex{FF}
 = \bin{11111111}. We also 
 subtract the frames in these 4 MByte from [[free_frames]]:
 
 
 <<initialize system>>=
-memset (ftable, 0xff, 128);
+memset (ftable, 0xFF, 128);
 free_frames -= 1024;
 @
 
@@ -5414,7 +5414,7 @@ of physical memory. It has the following definition:
 
 <<function implementations>>=
 int request_new_frame () {
-  <<find a free frame und reserve it>>
+  <<find a free frame and reserve it>>
 };
 @ %def request_new_frame
 
@@ -5426,7 +5426,7 @@ and above).
 Finding a free frame is simple: We look at the frame table and
 return the first available frame:
 
-<<find a free frame und reserve it>>=
+<<find a free frame and reserve it>>=
 unsigned int frameid;
 boolean found;
 //inside_req_frame++;                                         // REMOVE_DEBUGGING_CODE
@@ -5445,7 +5445,7 @@ for (frameid = 0;  frameid < NUMBER_OF_FRAMES;  frameid++) {
 
 \noindent
 Then we use [[set_frame]] to mark the frame used and return the frame ID:
-<<find a free frame und reserve it>>=
+<<find a free frame and reserve it>>=
 if (found) {
   // memset ((void*)PHYSICAL(frameid << 12), 0, PAGE_SIZE); // REMOVE_DEBUGGING_CODE
   set_frame (frameid*4096);
@@ -30371,12 +30371,12 @@ For adding and subtracting you can use the \verb#add# and \verb#sub# instruction
 \index{Assembler language!jumps and calls}
 Sometimes you want to jump to a specific program address in order to continue execution elsewhere. For those cases the [[jmp]] instruction can be used. When creating an assembler source file (for use with [[nasm]]) you will normally assign a label to an instruction that you want to jump to and then use it in the [[jmp]] instruction, like this:
 \begin{Verbatim}
-  infinite_loop: mov  al,  byte ptr [eax]
+  infinite_loop: mov  al,  byte ptr [ebx]
                  call printchar
-                 add  eax, 1
+                 add  ebx, 1
                  jmp  infinite_loop
 \end{Verbatim}
-This example shows a further instruction for jumping to a new address: \verb#call# also jumps to the supplied address, but before that it pushes the address of the following instruction (in the example: of \verb#add eax, 1#) onto the stack. The assembler code at \verb#printchar# can then execute the [[ret]] instruction which will pop that address from the stack and continue execution inside the above loop. To summarize the difference: When you [[jmp]], there's no easy way to get back; when you [[call]], you can return with [[ret]].
+This example shows a further instruction for jumping to a new address: \verb#call# also jumps to the supplied address, but before that it pushes the address of the following instruction (in the example: of \verb#add ebx, 1#) onto the stack. The assembler code at \verb#printchar# can then execute the [[ret]] instruction which will pop that address from the stack and continue execution inside the above loop. To summarize the difference: When you [[jmp]], there's no easy way to get back; when you [[call]], you can return with [[ret]].
 
 Simply jumping (or calling) unconditionally does not allow for any case distinctions: Code that only uses [[jmp]] and [[call]] will always execute the same commands in the same sequence. For a distinction of cases we need comparison operations and based on the result we want to decide whether we jump elsewhere or not.
 
@@ -30505,7 +30505,6 @@ which the assembler expands to the following lines:
   irq14: push byte 0          ; error code (none)
          push byte 46         ; interrupt number
          jmp irq_common_stub  ; rest is identical for all handlers
-%endmacro
 \end{Verbatim}
 
 In the macro's definition, the parameter \verb#1# in the first line states that the macro can be used with one argument. That argument can be referred to via \verb#%1#.
@@ -30522,7 +30521,7 @@ Then you access those arguments via \verb#%1#, \verb#%2# and \verb#%3#.
 \index{Assembler language!inline assembler}\index{inline assembler}
 The GNU C compiler [[gcc]] lets developers write inline assembler statements in the middle of C code. That is very helpful if only a few lines of assembler code are required---storing them in a separate assembler source file and making sure that both the C and the assembler code can see the variables which are needed in both places is laborious, and it also costs (a little) CPU time because an external assembler routine must be called via the function call mechanism whereas inline assembler code is just inserted between the translations of the preceding and successive C code.
 
-You can find the best example for a quick line of assembler code in the book: Whenever we need to disable or enable the interrupts, we do this via the [[<<disable interrupts>>]] and [[<<ensable interrupts>>]] code chunks which use the inline assembler instructions
+You can find the best example for a quick line of assembler code in the book: Whenever we need to disable or enable the interrupts, we do this via the [[<<disable interrupts>>]] and [[<<enable interrupts>>]] code chunks which use the inline assembler instructions
 \begin{Verbatim}
   asm ("cli");    // disable interrupts (clear interrupt flag)
 \end{Verbatim}
@@ -30591,7 +30590,7 @@ For example, in order to add two variables [[var1]] and [[var2]] and store the s
 \end{Verbatim}
 We don't know what registers will hold the values of [[var1]] and [[var2]], but we simply move or add them to \register{EAX} and finally write the sum (which is in \register{EAX} after the [[addl]] instruction) back to register 0. That is then copied to [[sum]].
 
-We do not want the compiler to use \register{EAX} for one of the variable values, and that it where the \emph{clobber list}\marginnote{clobber list} comes in: With it we can tell the compiler which registers it must not use, so in the case of the above addition we put \register{EAX} on that list. Note that the syntax for the register name is different in the instructions (\verb#%%eax#) and in the clobber list (\verb#%eax#)! In the clobber list you could also write \verb#eax# instead of \verb#%eax#, but not \verb#%%eax#.
+We do not want the compiler to use \register{EAX} for one of the variable values, and that is where the \emph{clobber list}\marginnote{clobber list} comes in: With it we can tell the compiler which registers it must not use, so in the case of the above addition we put \register{EAX} on that list. Note that the syntax for the register name is different in the instructions (\verb#%%eax#) and in the clobber list (\verb#%eax#)! In the clobber list you could also write \verb#eax# instead of \verb#%eax#, but not \verb#%%eax#.
 
 
 \section{Further Reading}
