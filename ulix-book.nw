@@ -4609,13 +4609,45 @@ as equivalent statements.
 
 \index{segmentation!protected mode}%
 The more modern implementation of segmentation does not store addresses in
-the segment registers, instead it works with a 
+the segment registers, instead it works with a
 \emph{segment table}\index{segment table}\marginnote{Segment Table} and lets
-the segment registers point to entries in that table. A table entry does
-not only specify where a segment starts but also what length it has. If the
-length is not set to the maximal value (\hex{FFFFFFFF}), it is possible to
-generate a forbidden access (to an address outside the segment) which the
-CPU will block, generating a fault.
+the segment registers point to entries in that table.
+
+In particular, registers \register{CS}, \register{DS}, and \register{SS} are
+implicitly used by the CPU when fetching instructions (\register{CS}), loading
+or storing data (\register{DS}), and pushing or popping data from the stack
+(\register{SS}). Table \ref{table:implicit segment access} shows how various
+assembly instructions are affected by these registers during execution. The
+format of the logical addresses shown ([[segment:address]]) is similar to that
+discussed in Section \ref{sec:intel:segmentation:realmode}, except that the
+first component now refers to an entry in the segment table rather than a
+start address.
+
+\begin{table}[h!]
+\begin{center}
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Instruction} & \textbf{Implied Instruction} \\
+\hline
+[[jmp]] \emph{address} & [[jmp]] \register{CS}[[:]]\emph{address} \\
+[[mov eax, []]\emph{address}[[]]] & [[mov eax,]] [\register{DS}[[:]]\emph{address}] \\
+[[push]] or [[pop]] & [[push]] or [[pop]] (at \register{SS}[[:]]\register{ESP}) \\
+\hline
+\end{tabular}
+\caption{Implicit use of segmentation registers.}
+\label{table:implicit segment access}
+\end{center}
+\end{table}
+Segment registers \register{ES}, \register{FS}, and \register{GS} have no
+implicit function, but may also be used for segment access. Placing the
+correct values in the segmentation registers is necessary for proper system
+operation, and their usage in \Ulix{} can be seen both as part of the higher
+half trick (Section \ref{higher half trick}) and in [[gdt_flush]].
+
+A segment table entry does not only specify where a segment starts but also
+what length it has. If the length is not set to the maximal value
+(\hex{FFFFFFFF}), it is possible to generate a forbidden access (to an address
+outside the segment) which the CPU will block, generating a fault.
 
 When we start the OS initialization we must provide such a segment table,
 since it is not possible to use Protected Mode without one: Volume 3 of the 
